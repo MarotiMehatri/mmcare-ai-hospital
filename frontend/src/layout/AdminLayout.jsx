@@ -1,6 +1,6 @@
 import React from "react";
 import AdminNavbar from "./AdminNavbar";
-import "../Styles/Admin/adminLayout.css";
+import "../Styles/Admin/AdminLayout.css";
 function AdminLayout({ children }) {
   return (
     <div className="admin-layout">
