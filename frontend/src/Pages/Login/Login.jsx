@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { getDoctorByEmail } from "../../services/Doctor/DoctorAPI";
-import { getUserByEmail } from "../../API/UserAPI";
+import { getUserByEmail } from "../../api/UserAPI";
 import { getPatientByUserId } from "../../services/Patient/PatientAPI";
 import { showError, showSuccess } from "../../utils/toast";
 

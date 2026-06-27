@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import "../../Styles/AI/AISuggestionsPage.css";
+import "../../Styles/AI/AiSuggestionsPage.css";
 
 import {
   generateAISuggestions,

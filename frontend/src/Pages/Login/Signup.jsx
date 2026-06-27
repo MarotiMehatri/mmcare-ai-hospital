@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { signupSchema } from "../../validations/signupValidation";
-import { createUser, getUserByEmail } from "../../API/UserAPI";
+import { createUser, getUserByEmail } from "../../api/UserAPI";
 import {
   FaUser,
   FaEnvelope,

@@ -11,7 +11,7 @@ import DoctorAppointmentsPage from "../Pages/Doctor-Dashboard/DoctorAppointmetsP
 import DoctorMedicalReportsPage from "../Pages/Doctor-Dashboard/DoctorMedicalReportsPage";
 import ProtectedRoute from "./ProtectedRoute";
 import DoctorPayments from "../Pages/Doctor-Dashboard/DoctorPayments";
-import CreatePaymentsPage from "../component/Doctor/CreatePaymentsPage";
+import CreatePaymentsPage from "../Component/Doctor/CreatePaymentsPage";
 
 const DoctorRoutes = () => {
   return (
