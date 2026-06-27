@@ -1,0 +1,222 @@
+.Sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 270px;
+  height: 100vh;
+  background: #0f172a;
+  color: #fff;
+  z-index: 1200;
+  overflow-y: auto;
+
+  /* HIDDEN BY DEFAULT */
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+/* OPEN STATE */
+.Sidebar-container.open {
+  transform: translateX(0);
+}
+/* =========================
+   SIDEBAR PROFILE ROOT
+========================= */
+.patient-sidebar-profile {
+  width: 100%;
+  margin-bottom: 22px;
+}
+
+/* =========================
+   PROFILE CARD
+========================= */
+.patient-sidebar-profile__card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 20px 16px;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fbff 100%);
+  border: 1px solid #e5edf7;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.patient-sidebar-profile__card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 78px;
+  background: linear-gradient(135deg, #2563eb, #0f766e);
+  opacity: 0.1;
+}
+
+.patient-sidebar-profile__card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(15, 23, 42, 0.12);
+  border-color: #cfe0f7;
+}
+
+/* =========================
+   IMAGE
+========================= */
+.patient-sidebar-profile__image-wrap {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 14px;
+}
+
+.patient-sidebar-profile__image {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
+  background: #f8fafc;
+}
+
+.patient-sidebar-profile__placeholder {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e0ecff, #ecfdf5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 4px solid #ffffff;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.08);
+}
+
+.patient-sidebar-profile__placeholder-icon {
+  font-size: 54px;
+  color: #64748b;
+}
+
+/* =========================
+   TEXT
+========================= */
+.patient-sidebar-profile__name {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  text-align: center;
+  word-break: break-word;
+  line-height: 1.4;
+}
+
+.patient-sidebar-profile__role {
+  position: relative;
+  z-index: 1;
+  margin: 6px 0 0;
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* =========================
+   LOADING
+========================= */
+.patient-sidebar-profile__loading {
+  text-align: center;
+  padding: 18px 12px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid #e5edf7;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media (max-width: 767px) {
+  .patient-sidebar-profile__card {
+    padding: 18px 14px;
+    border-radius: 18px;
+  }
+
+  .patient-sidebar-profile__image,
+  .patient-sidebar-profile__placeholder {
+    width: 74px;
+    height: 74px;
+  }
+
+  .patient-sidebar-profile__placeholder-icon {
+    font-size: 44px;
+  }
+
+  .patient-sidebar-profile__name {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   TABLET / LAPTOP
+========================= */
+@media (min-width: 768px) and (max-width: 1200px) {
+  .patient-sidebar-profile__card {
+    padding: 18px 14px;
+  }
+
+  .patient-sidebar-profile__image,
+  .patient-sidebar-profile__placeholder {
+    width: 82px;
+    height: 82px;
+  }
+}
+
+/* Menu */
+
+.sidebar-menu {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar-menu-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 10px;
+  border-radius: 8px;
+
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar-menu-item:hover {
+  background: #374151;
+}
+
+.active-menu {
+  background: #2563eb;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .Sidebar-container {
+    transform: translateX(-100%);
+    z-index: 1000;
+  }
+
+  .Sidebar-container.open {
+    transform: translateX(0);
+  }
+}

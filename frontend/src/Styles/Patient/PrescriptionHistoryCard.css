@@ -1,0 +1,174 @@
+/* ==========================================
+   PRESCRIPTION HISTORY
+========================================== */
+
+.prescription-history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.prescription-history-item {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  padding: 18px;
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(226, 232, 240, 0.8);
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.06),
+    0 2px 8px rgba(59, 130, 246, 0.05);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.prescription-history-item:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 16px 40px rgba(37, 99, 235, 0.15),
+    0 4px 16px rgba(15, 23, 42, 0.08);
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.prescription-history-icon {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 18px;
+
+  font-size: 1.4rem;
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.prescription-history-content {
+  flex: 1;
+}
+
+.prescription-history-content h4 {
+  margin-bottom: 8px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+.prescription-history-content p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  margin: 4px 0;
+
+  font-size: 0.9rem;
+  color: #64748b;
+}
+
+.prescription-history-content svg {
+  color: #2563eb;
+  font-size: 0.9rem;
+}
+
+/* ==========================================
+   EMPTY STATE
+========================================== */
+
+.prescription-card-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 180px;
+
+  border-radius: 24px;
+
+  background: linear-gradient(135deg, #f8fafc, #eef4ff);
+
+  border: 2px dashed #cbd5e1;
+
+  color: #64748b;
+
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+/* ==========================================
+   SCROLL
+========================================== */
+
+.prescription-history-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.prescription-history-list::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 20px;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 768px) {
+  .prescription-history-item {
+    padding: 15px;
+    gap: 14px;
+  }
+
+  .prescription-history-icon {
+    width: 48px;
+    height: 48px;
+
+    font-size: 1.1rem;
+  }
+
+  .prescription-history-content h4 {
+    font-size: 0.95rem;
+  }
+
+  .prescription-history-content p {
+    font-size: 0.82rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prescription-history-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .prescription-history-icon {
+    margin-bottom: 6px;
+  }
+
+  .prescription-history-content {
+    width: 100%;
+  }
+}

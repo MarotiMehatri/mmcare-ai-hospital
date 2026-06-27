@@ -1,0 +1,149 @@
+/* ================= ROOT ================= */
+.patient-profile-card {
+  width: 100%;
+  max-width: 420px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.patient-profile-card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= HEADER ================= */
+.patient-profile-card__header {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+/* AVATAR */
+.patient-profile-card__avatar {
+  flex-shrink: 0;
+}
+
+.patient-profile-card__img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2563eb;
+}
+
+.patient-profile-card__default-icon {
+  font-size: 80px;
+  color: #94a3b8;
+}
+
+/* INFO */
+.patient-profile-card__info {
+  flex: 1;
+}
+
+.patient-profile-card__name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.patient-profile-card__meta {
+  font-size: 13px;
+  color: #64748b;
+  margin: 4px 0;
+}
+
+.patient-profile-card__id {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #2563eb;
+}
+
+.card-inline-icon {
+  font-size: 14px;
+}
+
+/* ================= DIVIDER ================= */
+.patient-profile-card__divider {
+  height: 1px;
+  background: #e2e8f0;
+  margin: 16px 0;
+}
+
+/* ================= CONTACT ================= */
+.patient-profile-card__contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+}
+
+.contact-icon {
+  color: #0f766e;
+  font-size: 16px;
+}
+
+/* ================= BUTTON ================= */
+.patient-profile-card__btn {
+  margin-top: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  text-decoration: none;
+  padding: 12px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #2563eb, #0f766e);
+  color: #fff;
+  font-weight: 600;
+
+  transition: 0.3s;
+}
+
+.patient-profile-card__btn:hover {
+  transform: scale(1.03);
+}
+
+.btn-icon {
+  font-size: 14px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .patient-profile-card {
+    max-width: 100%;
+    padding: 16px;
+  }
+
+  .patient-profile-card__img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .patient-profile-card__default-icon {
+    font-size: 65px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .patient-profile-card {
+    max-width: 100%;
+  }
+}

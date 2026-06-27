@@ -1,0 +1,339 @@
+.patient-medical-reports-page {
+  min-height: 100vh;
+  padding: 24px;
+  background: linear-gradient(180deg, #f7fbff 0%, #edf5ff 100%);
+  box-sizing: border-box;
+}
+
+/* Header */
+.patient-medical-reports-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.patient-medical-reports-page-title h2 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 800;
+  color: #163a57;
+}
+
+.patient-medical-reports-page-title p {
+  margin: 0;
+  color: #667f93;
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 760px;
+}
+
+.patient-medical-reports-profile-box {
+  min-width: 220px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(14px);
+  border: 1px solid #dbe7f3;
+  border-radius: 20px;
+  padding: 16px 18px;
+  box-shadow: 0 10px 25px rgba(26, 92, 177, 0.08);
+}
+
+.patient-medical-reports-profile-box span {
+  display: block;
+  font-size: 12px;
+  color: #7a90a6;
+  margin-bottom: 5px;
+}
+
+.patient-medical-reports-profile-box strong {
+  display: block;
+  font-size: 16px;
+  color: #153651;
+  margin-bottom: 4px;
+}
+
+.patient-medical-reports-profile-box small {
+  color: #688196;
+  font-size: 12px;
+}
+
+/* Summary Cards */
+.patient-medical-reports-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.patient-medical-report-summary-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border-radius: 22px;
+  padding: 20px;
+  box-shadow: 0 14px 34px rgba(20, 88, 201, 0.08);
+  transition: 0.25s ease;
+}
+
+.patient-medical-report-summary-card:hover {
+  transform: translateY(-4px);
+}
+
+.patient-medical-report-summary-icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  font-size: 22px;
+  background: rgba(255, 255, 255, 0.75);
+  color: #16415f;
+}
+
+.patient-medical-report-summary-content h4 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #587389;
+}
+
+.patient-medical-report-summary-content span {
+  font-size: 28px;
+  font-weight: 800;
+  color: #143651;
+}
+
+/* Card color themes */
+.patient-report-card-blue {
+  background: linear-gradient(135deg, #ffffff, #eef5ff);
+  border: 1px solid #d7e6ff;
+}
+
+.patient-report-card-sky {
+  background: linear-gradient(135deg, #ffffff, #edfaff);
+  border: 1px solid #d8f2ff;
+}
+
+.patient-report-card-orange {
+  background: linear-gradient(135deg, #ffffff, #fff7ea);
+  border: 1px solid #fde7c4;
+}
+
+.patient-report-card-green {
+  background: linear-gradient(135deg, #ffffff, #edfdf2);
+  border: 1px solid #d7f3df;
+}
+
+/* Main Section */
+.patient-medical-reports-main-section {
+  width: 100%;
+}
+
+/* Loading + Empty */
+.patient-medical-reports-loading-box,
+.patient-medical-reports-empty-state {
+  background: #ffffff;
+  border: 1px solid #dce9f5;
+  border-radius: 24px;
+  padding: 42px 24px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(21, 83, 163, 0.08);
+}
+
+.patient-medical-reports-loading-box {
+  color: #587287;
+  font-size: 15px;
+}
+
+.patient-medical-reports-empty-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #e9f4ff, #f4fbff);
+  color: #1976d2;
+  font-size: 30px;
+}
+
+.patient-medical-reports-empty-state h3 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #173954;
+}
+
+.patient-medical-reports-empty-state p {
+  margin: 0 auto;
+  max-width: 520px;
+  color: #6d8397;
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+/* Table Card */
+.patient-medical-reports-table-card {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid #dce8f4;
+  border-radius: 24px;
+  padding: 22px;
+  box-shadow: 0 14px 34px rgba(22, 84, 163, 0.08);
+}
+
+.patient-medical-reports-table-header {
+  margin-bottom: 18px;
+}
+
+.patient-medical-reports-table-header h3 {
+  margin: 0 0 8px;
+  font-size: 22px;
+  color: #173a56;
+}
+
+.patient-medical-reports-table-header p {
+  margin: 0;
+  color: #688095;
+  font-size: 14px;
+}
+
+.patient-medical-reports-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.patient-medical-reports-table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.patient-medical-reports-table thead th {
+  text-align: left;
+  padding: 14px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #5d758b;
+  background: #f8fbff;
+  border-bottom: 1px solid #e4edf6;
+}
+
+.patient-medical-reports-table tbody td {
+  padding: 14px 12px;
+  font-size: 14px;
+  color: #254662;
+  border-bottom: 1px solid #edf3f8;
+  vertical-align: top;
+}
+
+.patient-medical-reports-table tbody tr:hover {
+  background: #fbfdff;
+}
+
+.patient-report-title-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.patient-report-title-cell strong {
+  color: #173750;
+  font-size: 14px;
+}
+
+.patient-report-title-cell span {
+  color: #72879a;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+/* Badges */
+.patient-report-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 11px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.patient-priority-normal {
+  background: #eef4f8;
+  color: #50687d;
+}
+
+.patient-priority-urgent {
+  background: #fff0e5;
+  color: #c96a00;
+}
+
+.patient-priority-critical {
+  background: #ffe7e7;
+  color: #c73232;
+}
+
+.patient-status-uploaded {
+  background: #e6f4ff;
+  color: #0f72c7;
+}
+
+.patient-status-pending-review {
+  background: #fff5de;
+  color: #b07400;
+}
+
+.patient-status-reviewed {
+  background: #e7faef;
+  color: #11824b;
+}
+
+/* File Link */
+.patient-report-view-link {
+  color: #146fcb;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.patient-report-view-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .patient-medical-reports-cards-grid {
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-medical-reports-page {
+    padding: 16px;
+  }
+
+  .patient-medical-reports-page-title h2 {
+    font-size: 24px;
+  }
+
+  .patient-medical-reports-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-medical-reports-profile-box {
+    width: 100%;
+  }
+
+  .patient-medical-reports-table-card,
+  .patient-medical-reports-loading-box,
+  .patient-medical-reports-empty-state {
+    padding: 18px;
+    border-radius: 18px;
+  }
+}

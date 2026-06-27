@@ -1,0 +1,71 @@
+.medical-history-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+/* Search Box */
+.medical-history-filter input {
+  flex: 1;
+  height: 52px;
+  padding: 0 18px;
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+  outline: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #1e293b;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.medical-history-filter input::placeholder {
+  color: #94a3b8;
+}
+
+.medical-history-filter input:focus {
+  border-color: #0891b2;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.12);
+}
+
+/* Select */
+.medical-history-filter select {
+  width: 220px;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid #dbe3ec;
+  border-radius: 14px;
+  outline: none;
+  cursor: pointer;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.medical-history-filter select:focus {
+  border-color: #0891b2;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(8, 145, 178, 0.12);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .medical-history-filter {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .medical-history-filter select {
+    width: 100%;
+  }
+}

@@ -1,0 +1,393 @@
+/* ===== Main Navbar ===== */
+.doctor-navbar {
+  width: 100%;
+  min-height: 74px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #ffffff, #f4f9ff);
+  border-bottom: 1px solid #dbe7f3;
+  box-shadow: 0 8px 24px rgba(15, 76, 129, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-sizing: border-box;
+}
+
+/* ===== Left Section ===== */
+.navbar-left {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* ===== Logo ===== */
+.logo {
+  flex-shrink: 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: #0f4c81;
+  letter-spacing: 0.4px;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
+
+.logo:hover {
+  color: #1565c0;
+  transform: translateY(-1px);
+}
+
+/* ===== Search Box ===== */
+.search-box {
+  flex: 1;
+  max-width: 460px;
+  min-width: 220px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 16px;
+  background: #ffffff;
+  border: 1px solid #d6e4f0;
+  border-radius: 14px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.search-box:hover {
+  border-color: #b8d4ec;
+}
+
+.search-box:focus-within {
+  border-color: #1e88e5;
+  box-shadow: 0 0 0 4px rgba(30, 136, 229, 0.12);
+}
+
+.search-box svg {
+  font-size: 15px;
+  color: #6b7c93;
+  flex-shrink: 0;
+}
+
+.search-box input {
+  flex: 1;
+  height: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #223344;
+}
+
+.search-box input::placeholder {
+  color: #8ea0b5;
+  font-size: 14px;
+}
+
+/* ===== Right Section ===== */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-shrink: 0;
+}
+
+/* ===== Icon Buttons ===== */
+.nav-icon {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  color: #0f4c81;
+  border: 1px solid #d9e6f2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(15, 76, 129, 0.06);
+}
+
+.nav-icon:hover {
+  background: #eaf4ff;
+  color: #1565c0;
+  border-color: #b9d8f5;
+  transform: translateY(-2px);
+}
+
+.nav-icon svg {
+  font-size: 18px;
+}
+
+/* ===== Badge ===== */
+.badge {
+  position: absolute;
+  top: -5px;
+  right: -4px;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 5px;
+  border-radius: 999px;
+  background: #ff4d4f;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #fff;
+  line-height: 1;
+}
+.doctor-navbar-photo {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-main {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+/* ===== Profile Section ===== */
+.profile-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  min-height: 46px;
+  background: #ffffff;
+  border: 1px solid #d9e6f2;
+  border-radius: 14px;
+  cursor: pointer;
+  color: #0f4c81;
+  box-shadow: 0 4px 12px rgba(15, 76, 129, 0.06);
+  transition: all 0.3s ease;
+}
+
+.profile-section:hover {
+  background: #eef6ff;
+  border-color: #bdd9f1;
+}
+
+.profile-section svg {
+  color: #1565c0;
+  flex-shrink: 0;
+}
+
+.profile-section span {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1d3557;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Dropdown ===== */
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  right: 0;
+  width: 210px;
+  background: #ffffff;
+  border: 1px solid #d8e5f1;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px rgba(15, 76, 129, 0.14);
+  overflow: hidden;
+  z-index: 1000;
+  animation: doctorDropdownFade 0.25s ease;
+}
+
+.profile-dropdown div {
+  padding: 14px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #23384d;
+  border-bottom: 1px solid #edf3f8;
+  transition: all 0.25s ease;
+}
+
+.profile-dropdown div:last-child {
+  border-bottom: none;
+}
+
+.profile-dropdown div:hover {
+  background: #f1f8ff;
+  color: #1565c0;
+}
+
+.profile-dropdown .logout {
+  color: #d93025;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.profile-dropdown .logout:hover {
+  background: #fff2f0;
+  color: #c62828;
+}
+
+@keyframes doctorDropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Laptop ===== */
+@media (max-width: 1024px) {
+  .doctor-navbar {
+    padding: 12px 18px;
+    gap: 16px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .search-box {
+    max-width: 340px;
+  }
+
+  .profile-section span {
+    max-width: 100px;
+  }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+  .doctor-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .navbar-left {
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+  }
+
+  .search-box {
+    max-width: 100%;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .profile-section {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .profile-dropdown {
+    right: 0;
+    left: auto;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .doctor-navbar {
+    padding: 12px;
+    border-radius: 0;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .search-box {
+    height: 42px;
+    padding: 0 12px;
+    border-radius: 12px;
+  }
+
+  .search-box input {
+    font-size: 13px;
+  }
+
+  .search-box input::placeholder {
+    font-size: 13px;
+  }
+
+  .navbar-right {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .nav-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+
+  .nav-icon svg {
+    font-size: 16px;
+  }
+
+  .profile-section {
+    width: 100%;
+    min-height: 42px;
+    padding: 8px 12px;
+    border-radius: 12px;
+  }
+
+  .profile-section span {
+    font-size: 13px;
+    max-width: 120px;
+  }
+
+  .profile-dropdown {
+    width: 100%;
+    top: calc(100% + 10px);
+  }
+
+  .profile-dropdown div {
+    padding: 13px 14px;
+    font-size: 13px;
+  }
+
+  .badge {
+    min-width: 18px;
+    height: 18px;
+    font-size: 10px;
+  }
+}

@@ -1,0 +1,61 @@
+.patient-medical-empty {
+  width: 100%;
+  min-height: 380px;
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 50px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.patient-medical-empty-icon {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 42px;
+  margin-bottom: 24px;
+}
+
+.patient-medical-empty h3 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.patient-medical-empty p {
+  max-width: 500px;
+  color: #6b7280;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.patient-medical-empty-btn {
+  border: none;
+  outline: none;
+  padding: 14px 24px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.patient-medical-empty-btn:hover {
+  transform: translateY(-2px);
+}

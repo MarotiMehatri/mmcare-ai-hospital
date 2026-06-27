@@ -1,0 +1,206 @@
+/* ======================================
+   DOCTOR FILTERS CONTAINER
+====================================== */
+
+.doctor-filters {
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+
+  padding: 24px;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+}
+
+.doctor-search-box {
+  flex: 1;
+  position: relative;
+  /* min-width: 320px; */
+}
+
+.doctor-search-icon {
+  position: absolute;
+
+  left: 16px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  color: #64748b;
+
+  /* font-size: 14px; */
+}
+
+.doctor-search-box input {
+  width: 100%;
+  padding-left: 45px;
+}
+
+/* ======================================
+   SEARCH INPUT
+====================================== */
+
+.doctor-filters input {
+  flex: 1;
+
+  min-width: 320px;
+
+  height: 54px;
+
+  padding: 0 18px;
+
+  border: 1px solid #dbe4ee;
+
+  border-radius: 16px;
+
+  background: #f8fafc;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  color: #0f172a;
+
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+.doctor-filters input::placeholder {
+  color: #94a3b8;
+}
+
+.doctor-filters input:hover {
+  border-color: #93c5fd;
+}
+
+.doctor-filters input:focus {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ======================================
+   SELECT DROPDOWNS
+====================================== */
+
+.doctor-filters select {
+  min-width: 220px;
+
+  height: 54px;
+
+  padding: 0 16px;
+
+  border: 1px solid #dbe4ee;
+
+  border-radius: 16px;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  outline: none;
+
+  transition: all 0.3s ease;
+}
+
+.doctor-filters select:hover {
+  border-color: #93c5fd;
+}
+
+.doctor-filters select:focus {
+  border-color: #2563eb;
+
+  background: #ffffff;
+
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* ======================================
+   LARGE SCREEN
+====================================== */
+
+@media (min-width: 1400px) {
+  .doctor-filters {
+    padding: 28px;
+  }
+
+  .doctor-filters input,
+  .doctor-filters select {
+    height: 58px;
+  }
+}
+
+/* ======================================
+   TABLET
+====================================== */
+
+@media (max-width: 992px) {
+  .doctor-filters {
+    padding: 20px;
+  }
+
+  .doctor-filters input {
+    min-width: 100%;
+  }
+
+  .doctor-filters select {
+    flex: 1;
+    min-width: 220px;
+  }
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 768px) {
+  .doctor-filters {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 18px;
+  }
+
+  .doctor-filters input,
+  .doctor-filters select {
+    width: 100%;
+
+    min-width: 100%;
+  }
+}
+
+/* ======================================
+   SMALL MOBILE
+====================================== */
+
+@media (max-width: 480px) {
+  .doctor-filters {
+    padding: 16px;
+
+    border-radius: 18px;
+  }
+
+  .doctor-filters input,
+  .doctor-filters select {
+    height: 48px;
+
+    font-size: 13px;
+  }
+}

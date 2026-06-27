@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #f4f7fc;
+  --card-bg: #ffffff;
+  --text-color: #1f2937;
+  --text-secondary: #6b7280;
+  --border-color: #e5e7eb;
+  --primary-color: #0f6cbd;
+  --primary-hover: #0d5ca2;
+  --success-color: #22c55e;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  --info-color: #06b6d4;
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #111827;
+  --text-color: #f9fafb;
+  --text-secondary: #cbd5e1;
+  --border-color: #334155;
+}

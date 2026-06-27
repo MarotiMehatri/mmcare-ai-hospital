@@ -1,0 +1,359 @@
+.doctor-health-analytics-card {
+  position: relative;
+  overflow: hidden;
+  padding: 26px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(219, 234, 254, 0.9);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.1);
+  color: #0f172a;
+}
+
+.analytics-glow {
+  position: absolute;
+  top: -90px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(37, 99, 235, 0.16),
+    rgba(14, 165, 233, 0.08)
+  );
+}
+
+.doctor-health-analytics-header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.analytics-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.doctor-health-analytics-header h3 {
+  margin: 0;
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.doctor-health-analytics-header p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.doctor-health-analytics-icon {
+  min-width: 58px;
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-size: 24px;
+  box-shadow: 0 16px 34px rgba(37, 99, 235, 0.25);
+}
+
+.doctor-health-stats-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.doctor-health-stat-box {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 18px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #ffffff, #f8fafc);
+  border: 1px solid #e2e8f0;
+  transition: 0.25s ease;
+}
+
+.doctor-health-stat-box:hover {
+  transform: translateY(-3px);
+  border-color: #bfdbfe;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.1);
+}
+
+.stat-icon {
+  min-width: 48px;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 21px;
+}
+
+.stat-icon.blue {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.stat-icon.green {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.stat-icon.red {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+
+.stat-icon.purple {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.doctor-health-stat-box h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.doctor-health-stat-box p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.doctor-health-analytics-content {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.doctor-health-panel,
+.doctor-health-chart-panel {
+  padding: 20px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+}
+
+.doctor-health-panel h4,
+.doctor-health-chart-panel h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.doctor-health-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.doctor-health-list-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 14px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.doctor-health-list-row span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.doctor-health-list-row strong {
+  color: #0f172a;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.doctor-health-list-row.scheduled strong,
+.doctor-health-list-row.other strong {
+  color: #2563eb;
+}
+
+.doctor-health-list-row.completed strong,
+.doctor-health-list-row.male strong {
+  color: #16a34a;
+}
+
+.doctor-health-list-row.cancelled strong,
+.doctor-health-list-row.female strong {
+  color: #ef4444;
+}
+
+.chart-title-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.chart-title-row p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.chart-title-row span {
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.doctor-health-bar-chart {
+  height: 180px;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 12px;
+}
+
+.doctor-health-bar-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.doctor-health-bar-value {
+  margin-bottom: 7px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.bar-track {
+  width: 100%;
+  max-width: 34px;
+  height: 125px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  border-radius: 999px;
+  background: #eff6ff;
+  overflow: hidden;
+}
+
+.doctor-health-bar {
+  width: 100%;
+  min-height: 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #2563eb, #60a5fa);
+  transition: height 0.35s ease;
+}
+
+.doctor-health-bar-item p {
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.analytics-loading {
+  padding: 34px 20px;
+  text-align: center;
+}
+
+.analytics-loader {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  border: 5px solid #dbeafe;
+  border-top-color: #2563eb;
+  animation: analyticsSpin 0.8s linear infinite;
+}
+
+@keyframes analyticsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.analytics-loading h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.analytics-loading p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+@media (max-width: 1100px) {
+  .doctor-health-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .doctor-health-analytics-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctor-health-analytics-card {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .doctor-health-analytics-header {
+    flex-direction: column;
+  }
+
+  .doctor-health-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-health-analytics-header h3 {
+    font-size: 23px;
+  }
+
+  .chart-title-row {
+    flex-direction: column;
+  }
+
+  .doctor-health-bar-chart {
+    gap: 7px;
+  }
+}

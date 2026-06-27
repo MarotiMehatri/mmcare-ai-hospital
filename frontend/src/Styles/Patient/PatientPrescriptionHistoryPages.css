@@ -1,0 +1,395 @@
+/* ===========================
+   PAGE
+=========================== */
+
+.patient-prescription-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: #f5f8fc;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+
+.patient-prescription-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+
+.patient-prescription-header h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.patient-prescription-header p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.patient-history-count-card {
+  min-width: 180px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  padding: 20px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.25);
+}
+
+.patient-history-count-card span {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.patient-history-count-card h2 {
+  font-size: 32px;
+  margin-top: 8px;
+}
+
+/* ===========================
+   CARD
+=========================== */
+
+.patient-prescription-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 24px;
+  margin-bottom: 25px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+/* ===========================
+   TOP
+=========================== */
+
+.Patient-prescription-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.Patient-prescription-card-top h2 {
+  font-size: 24px;
+  color: #0f172a;
+}
+
+.patient-prescription-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* ===========================
+   STATUS
+=========================== */
+
+.patient-prescription-status {
+  padding: 7px 14px;
+  border-radius: 50px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.patient-prescription-status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.patient-prescription-status.active {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.patient-prescription-status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+/* ===========================
+   DOCTOR INFO
+=========================== */
+
+.patient-prescription-doctor-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-bottom: 25px;
+  gap: 16px;
+}
+
+.patient-prescription-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 18px;
+  background: #f8fafc;
+  border-radius: 16px;
+}
+
+.patient-prescription-info-item svg {
+  font-size: 26px;
+  color: #2563eb;
+}
+
+.patient-prescription-info-item span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.patient-prescription-info-item h4 {
+  color: #0f172a;
+  margin-top: 4px;
+}
+
+/* ===========================
+   VITALS
+=========================== */
+
+.patient-prescription-vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 25px;
+}
+
+.patient-vital-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 18px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.patient-vital-card:hover {
+  transform: translateY(-4px);
+}
+
+.patient-vital-card svg {
+  font-size: 28px;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.patient-vital-card span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.patient-vital-card h4 {
+  margin-top: 6px;
+  color: #0f172a;
+}
+
+/* ===========================
+   SECTION
+=========================== */
+
+.patient-prescription-section {
+  margin-bottom: 24px;
+}
+
+.patient-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.patient-section-title svg {
+  color: #2563eb;
+  font-size: 20px;
+}
+
+.patient-section-title h3 {
+  color: #0f172a;
+  font-size: 18px;
+}
+
+/* ===========================
+   VISIT INFO
+=========================== */
+
+.patient-visit-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.patient-info-card {
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 16px;
+}
+
+.patient-info-card span {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.patient-info-card h4 {
+  margin-top: 6px;
+  color: #0f172a;
+}
+
+/* ===========================
+   TAGS
+=========================== */
+
+.patient-tags-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.patient-tag {
+  padding: 8px 14px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.symptom-tag {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.test-tag {
+  background: #dbeafe;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+/* ===========================
+   TABLE
+=========================== */
+
+.patient-medicine-table-wrapper {
+  overflow-x: auto;
+}
+
+.patient-medicine-table-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.patient-medicine-table-wrapper th {
+  background: #eff6ff;
+  color: #1e3a8a;
+  padding: 14px;
+  text-align: left;
+}
+
+.patient-medicine-table-wrapper td {
+  padding: 14px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.patient-medicine-table-wrapper tr:hover {
+  background: #f8fafc;
+}
+
+/* ===========================
+   ADVICE
+=========================== */
+
+.patient-advice-box {
+  background: #f8fafc;
+  border-left: 4px solid #2563eb;
+  padding: 18px;
+  border-radius: 12px;
+  line-height: 1.7;
+  color: #334155;
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.patient-prescription-footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+  color: #475569;
+}
+
+.patient-prescription-footer strong {
+  color: #0f172a;
+}
+
+/* ===========================
+   LOADING / ERROR
+=========================== */
+
+.patient-prescription-loading,
+.patient-prescription-error {
+  background: white;
+  padding: 25px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.patient-prescription-error {
+  color: #dc2626;
+}
+
+/* ===========================
+   EMPTY STATE
+=========================== */
+
+.patient-prescription-empty {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.patient-prescription-empty img {
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.patient-prescription-empty h3 {
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+.patient-prescription-empty p {
+  color: #64748b;
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width: 768px) {
+  .patient-prescription-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .Patient-prescription-card-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .patient-prescription-footer {
+    flex-direction: column;
+    gap: 10px;
+  }
+}

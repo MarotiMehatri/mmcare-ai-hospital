@@ -1,0 +1,190 @@
+.reminder-form-card {
+  padding: 24px;
+}
+
+.reminder-form-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.reminder-form-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: white;
+  font-size: 25px;
+}
+
+.reminder-form-header span {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.reminder-form-header h3 {
+  margin: 4px 0;
+  color: #0f172a;
+  font-size: 24px;
+}
+
+.reminder-form-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.ai-parse-box {
+  background: linear-gradient(135deg, #eff6ff, #f0fdfa);
+  border: 1px solid #dbeafe;
+  border-radius: 22px;
+  padding: 18px;
+  margin-bottom: 20px;
+}
+
+.ai-parse-title {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.ai-parse-title svg {
+  font-size: 24px;
+}
+
+.ai-parse-title h4 {
+  margin: 0 0 4px;
+  color: #0f172a;
+}
+
+.ai-parse-title p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.ai-parse-box textarea {
+  margin-bottom: 12px;
+}
+
+.medicine-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.medicine-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.medicine-field label,
+.medicine-time-header label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #0f172a;
+  font-weight: 900;
+  margin-bottom: 8px;
+}
+
+.medicine-time-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.medicine-time-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.medicine-time-list {
+  display: grid;
+  gap: 10px;
+}
+
+.medicine-time-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 10px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.medicine-btn {
+  border: none;
+  border-radius: 15px;
+  padding: 11px 15px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primary-btn,
+.ai-btn {
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: white;
+}
+
+.secondary-btn {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.outline-btn {
+  background: white;
+  color: #2563eb;
+  border: 1px solid #bfdbfe;
+}
+
+.danger-btn {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.medicine-form-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 700px) {
+  .reminder-form-card {
+    padding: 18px;
+  }
+
+  .reminder-form-header {
+    align-items: flex-start;
+  }
+
+  .medicine-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-time-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .medicine-time-header .medicine-btn,
+  .medicine-form-actions .medicine-btn {
+    width: 100%;
+  }
+}

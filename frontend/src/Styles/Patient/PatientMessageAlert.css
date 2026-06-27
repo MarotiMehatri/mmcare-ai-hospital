@@ -1,0 +1,139 @@
+.patient-message-alert {
+  position: relative;
+}
+
+.message-alert-icon {
+  position: relative;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 14px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+
+  color: white;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.message-alert-icon:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+.message-alert-icon svg {
+  font-size: 1.1rem;
+}
+
+.message-count {
+  position: absolute;
+
+  top: -5px;
+  right: -5px;
+
+  min-width: 20px;
+  height: 20px;
+
+  border-radius: 50%;
+
+  background: #ef4444;
+
+  color: white;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.message-dropdown {
+  position: absolute;
+
+  top: 60px;
+  right: 0;
+
+  width: 320px;
+
+  background: white;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+
+  z-index: 999;
+}
+
+.message-dropdown-header {
+  padding: 16px;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+
+  color: white;
+}
+
+.message-item {
+  padding: 15px;
+
+  border-bottom: 1px solid #f1f5f9;
+
+  transition: 0.3s ease;
+}
+
+.message-item:hover {
+  background: #f8fafc;
+}
+
+.message-item h4 {
+  margin: 0;
+
+  font-size: 0.95rem;
+
+  color: #0f172a;
+}
+
+.message-item p {
+  margin: 6px 0;
+
+  font-size: 0.88rem;
+
+  color: #475569;
+
+  line-height: 1.4;
+}
+
+.message-item span {
+  font-size: 0.75rem;
+
+  color: #94a3b8;
+}
+
+.no-message {
+  padding: 20px;
+
+  text-align: center;
+
+  color: #64748b;
+}
+
+@media (max-width: 480px) {
+  .message-dropdown {
+    width: 290px;
+
+    right: -70px;
+  }
+}

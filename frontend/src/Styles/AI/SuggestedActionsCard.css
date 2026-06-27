@@ -1,0 +1,26 @@
+.suggested-actions-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(15, 111, 255, 0.08);
+}
+
+.suggested-actions-card h3 {
+  margin-top: 0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.action-section {
+  margin-top: 16px;
+}
+
+.action-section h4 {
+  margin-bottom: 10px;
+}
+
+.action-section ul {
+  padding-left: 20px;
+  line-height: 1.8;
+}

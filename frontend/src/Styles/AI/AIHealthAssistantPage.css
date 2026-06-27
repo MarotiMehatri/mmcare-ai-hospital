@@ -1,0 +1,263 @@
+.ai-health-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 30px;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 0%, rgba(37, 99, 235, 0.14), transparent 34%),
+    radial-gradient(
+      circle at 100% 10%,
+      rgba(20, 184, 166, 0.13),
+      transparent 32%
+    ),
+    linear-gradient(135deg, #f8fbff 0%, #eef7ff 45%, #f8fafc 100%);
+}
+
+.ai-health-bg-glow {
+  position: fixed;
+  z-index: 0;
+  border-radius: 999px;
+  filter: blur(70px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.ai-health-bg-glow-one {
+  width: 280px;
+  height: 280px;
+  top: 80px;
+  left: 40px;
+  background: #60a5fa;
+}
+
+.ai-health-bg-glow-two {
+  width: 320px;
+  height: 320px;
+  right: 30px;
+  top: 180px;
+  background: #2dd4bf;
+}
+
+.ai-health-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.ai-health-section {
+  width: 100%;
+  animation: aiSmoothUp 0.55s ease both;
+}
+
+.ai-health-section:nth-child(2) {
+  animation-delay: 0.05s;
+}
+
+.ai-health-section:nth-child(3) {
+  animation-delay: 0.1s;
+}
+
+.ai-health-section:nth-child(4) {
+  animation-delay: 0.15s;
+}
+
+.ai-health-section:nth-child(5) {
+  animation-delay: 0.2s;
+}
+
+.ai-health-section:nth-child(6) {
+  animation-delay: 0.25s;
+}
+
+.ai-health-summary-section,
+.ai-health-chat-section,
+.ai-health-tools-section,
+.ai-health-insights-section {
+  padding: 24px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.1);
+  backdrop-filter: blur(18px);
+  position: relative;
+  overflow: hidden;
+}
+
+.ai-health-summary-section::before,
+.ai-health-chat-section::before,
+.ai-health-tools-section::before,
+.ai-health-insights-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(120deg, rgba(37, 99, 235, 0.07), transparent 35%),
+    radial-gradient(circle at 92% 8%, rgba(14, 165, 233, 0.14), transparent 28%);
+  pointer-events: none;
+}
+
+.ai-health-section-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+.ai-health-section-badge {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 7px 12px;
+  border-radius: 999px;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+  border: 1px solid rgba(37, 99, 235, 0.16);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+}
+
+.ai-health-section-heading h2 {
+  margin: 12px 0 0;
+  color: #0f172a;
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.ai-health-section-heading p {
+  max-width: 760px;
+  margin: 8px 0 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.ai-health-summary-card,
+.ai-health-chat-card {
+  position: relative;
+  z-index: 1;
+  border-radius: 26px;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    0 18px 50px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.ai-health-chat-card {
+  min-height: 520px;
+}
+
+.ai-health-chat-card .ai-chat-page,
+.ai-health-chat-card .ai-chat-container,
+.ai-health-chat-card .ai-chat-wrapper,
+.ai-health-summary-card .ai-health-summary-page {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-shadow: none;
+}
+
+.ai-health-page button,
+.ai-health-page a,
+.ai-health-page input,
+.ai-health-page textarea,
+.ai-health-page select {
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease,
+    background 0.22s ease;
+}
+
+.ai-health-page button:hover,
+.ai-health-page a:hover {
+  transform: translateY(-1px);
+}
+
+@keyframes aiSmoothUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.ai-health-page ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.ai-health-page ::-webkit-scrollbar-track {
+  background: #eef2f7;
+  border-radius: 20px;
+}
+
+.ai-health-page ::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  border-radius: 20px;
+}
+
+@media (max-width: 1024px) {
+  .ai-health-page {
+    padding: 22px;
+  }
+
+  .ai-health-container {
+    gap: 24px;
+  }
+
+  .ai-health-summary-section,
+  .ai-health-chat-section,
+  .ai-health-tools-section,
+  .ai-health-insights-section {
+    padding: 20px;
+    border-radius: 26px;
+  }
+
+  .ai-health-section-heading h2 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-health-page {
+    padding: 14px;
+  }
+
+  .ai-health-container {
+    gap: 18px;
+  }
+
+  .ai-health-summary-section,
+  .ai-health-chat-section,
+  .ai-health-tools-section,
+  .ai-health-insights-section {
+    padding: 14px;
+    border-radius: 22px;
+  }
+
+  .ai-health-summary-card,
+  .ai-health-chat-card {
+    border-radius: 18px;
+  }
+
+  .ai-health-section-heading h2 {
+    font-size: 21px;
+  }
+
+  .ai-health-section-heading p {
+    font-size: 13px;
+  }
+}

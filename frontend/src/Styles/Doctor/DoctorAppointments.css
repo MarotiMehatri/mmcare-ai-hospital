@@ -1,0 +1,269 @@
+.doctor-appointments-page {
+  padding: 24px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc, #ecfeff);
+}
+
+.doctor-appointments-page__head {
+  margin-bottom: 20px;
+}
+
+.doctor-appointments-page__head h2 {
+  margin: 0 0 8px;
+  font-size: 30px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.doctor-appointments-page__head p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.7;
+}
+
+.doctor-appointments-page__loading {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.doctor-appointments-filter {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.doctor-appointments-filter input,
+.doctor-appointments-filter select {
+  min-height: 52px;
+  border: 1px solid #dbe2ea;
+  border-radius: 14px;
+  padding: 0 16px;
+  background: #ffffff;
+  outline: none;
+  font-size: 14px;
+}
+
+.doctor-appointments-table-wrapper {
+  overflow-x: auto;
+  background: #ffffff;
+  border-radius: 22px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.doctor-appointments-table {
+  width: 100%;
+  min-width: 1150px;
+  border-collapse: collapse;
+}
+
+.doctor-appointments-table th {
+  padding: 16px;
+  text-align: left;
+  font-size: 13px;
+  font-weight: 800;
+  color: #334155;
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.doctor-appointments-table td {
+  padding: 16px;
+  font-size: 14px;
+  color: #0f172a;
+  border-bottom: 1px solid #eef2f7;
+  vertical-align: middle;
+}
+
+.doctor-appointments-table__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.doctor-appointments-table__status.booked {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.doctor-appointments-table__status.confirmed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.doctor-appointments-table__status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.doctor-appointments-table__status.completed {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.doctor-appointments-table__empty {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+}
+
+.doctor-appointments-preview__head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.doctor-appointments-preview__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.doctor-appointments-preview__icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+}
+
+.doctor-appointments-preview__title-wrap h3 {
+  margin: 0 0 4px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.doctor-appointments-preview__title-wrap p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.doctor-appointments-preview__view-btn {
+  min-height: 44px;
+  padding: 0 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.doctor-appointments-preview__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.doctor-appointments-preview__item {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr auto;
+  gap: 14px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 18px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.doctor-appointments-preview__left h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.doctor-appointments-preview__left p,
+.doctor-appointments-preview__middle span,
+.doctor-appointments-preview__middle small {
+  margin: 0;
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.doctor-appointments-preview__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.doctor-appointments-preview__status.booked {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.doctor-appointments-preview__status.confirmed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.doctor-appointments-preview__status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.doctor-appointments-preview__status.completed {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.doctor-appointments-preview__empty {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+}
+
+@media (max-width: 992px) {
+  .doctor-appointments-preview__item {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-appointments-page {
+    padding: 16px;
+  }
+
+  .doctor-appointments-filter {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-appointments-page__head h2 {
+    font-size: 24px;
+  }
+
+  .doctor-appointments-preview__head {
+    flex-direction: column;
+  }
+
+  .doctor-appointments-preview__view-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,189 @@
+.hospital-services {
+  position: relative;
+  width: 100%;
+  padding: 30px 0;
+  overflow: hidden;
+}
+
+.hospital-services::before {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  top: -160px;
+  left: -150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.14), transparent 70%);
+}
+
+.hospital-services__header {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.hospital-services__header span {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: #eef7ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
+  margin-bottom: 18px;
+}
+
+.hospital-services__header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.1;
+  font-weight: 950;
+  letter-spacing: -1.3px;
+}
+
+.hospital-services__header p {
+  margin: 18px auto 0;
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.hospital-services__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(230px, 1fr));
+  gap: 26px;
+}
+
+.hospital-service-card {
+  position: relative;
+  min-height: 280px;
+  padding: 30px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  transition: 0.35s ease;
+}
+
+.hospital-service-card::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  top: -85px;
+  right: -85px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.22),
+    transparent 70%
+  );
+  transition: 0.35s ease;
+}
+
+.hospital-service-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 35px 85px rgba(37, 99, 235, 0.18);
+}
+
+.hospital-service-card:hover::before {
+  transform: scale(1.4);
+}
+
+.hospital-service-card__icon {
+  position: relative;
+  z-index: 2;
+  width: 66px;
+  height: 66px;
+  border-radius: 22px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 29px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.28);
+  margin-bottom: 24px;
+}
+
+.hospital-service-card h3 {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 12px;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.hospital-service-card p {
+  position: relative;
+  z-index: 2;
+  min-height: 58px;
+  margin: 0 0 22px;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.hospital-service-card button {
+  position: relative;
+  z-index: 2;
+  border: none;
+  outline: none;
+  padding: 12px 17px;
+  border-radius: 999px;
+  background: #eef7ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  transition: 0.3s ease;
+}
+
+.hospital-service-card button:hover {
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  transform: translateX(4px);
+}
+
+@media (max-width: 1200px) {
+  .hospital-services__grid {
+    grid-template-columns: repeat(3, minmax(230px, 1fr));
+  }
+}
+
+@media (max-width: 850px) {
+  .hospital-services__grid {
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .hospital-services {
+    padding: 10px 0;
+  }
+
+  .hospital-services__header p {
+    font-size: 16px;
+  }
+
+  .hospital-services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hospital-service-card {
+    padding: 26px;
+    min-height: auto;
+  }
+}

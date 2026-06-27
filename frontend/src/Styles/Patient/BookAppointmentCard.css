@@ -1,0 +1,90 @@
+/* ================= ROOT ================= */
+.patient-appointment-card-ui {
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* HOVER EFFECT */
+.patient-appointment-card-ui:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* ================= HEADER ================= */
+.patient-appointment-card-ui__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.patient-appointment-card-ui__icon {
+  font-size: 22px;
+  color: #2563eb;
+}
+
+.patient-appointment-card-ui__title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* ================= DESC ================= */
+.patient-appointment-card-ui__desc {
+  font-size: 13px;
+  color: #64748b;
+  margin: 10px 0 15px;
+}
+
+/* ================= BODY ================= */
+.patient-appointment-card-ui__body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.patient-appointment-card-ui__item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #334155;
+}
+
+/* ICON */
+.item-icon {
+  color: #0f766e;
+  font-size: 15px;
+}
+
+/* ================= BUTTON ================= */
+.patient-appointment-card-ui__btn {
+  margin-top: 16px;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #2563eb, #0f766e);
+  transition: 0.3s;
+}
+
+.patient-appointment-card-ui__btn:hover {
+  transform: scale(1.03);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .patient-appointment-card-ui {
+    padding: 16px;
+  }
+
+  .patient-appointment-card-ui__title {
+    font-size: 16px;
+  }
+}

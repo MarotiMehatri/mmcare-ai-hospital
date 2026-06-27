@@ -1,0 +1,254 @@
+.doctor-payments-box {
+  width: 100%;
+}
+
+.doctor-payment-summary {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.doctor-payment-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  border-radius: 24px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  transition: 0.25s ease;
+}
+
+.doctor-payment-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 60px rgba(15, 23, 42, 0.13);
+}
+
+.doctor-payment-card::after {
+  content: "";
+  position: absolute;
+  right: -45px;
+  top: -45px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  opacity: 0.18;
+}
+
+.doctor-payment-card.total::after {
+  background: #2563eb;
+}
+
+.doctor-payment-card.paid::after {
+  background: #16a34a;
+}
+
+.doctor-payment-card.pending::after {
+  background: #f97316;
+}
+
+.doctor-payment-icon {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 24px;
+}
+
+.doctor-payment-card.total .doctor-payment-icon {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+}
+
+.doctor-payment-card.paid .doctor-payment-icon {
+  background: linear-gradient(135deg, #16a34a, #15803d);
+}
+
+.doctor-payment-card.pending .doctor-payment-icon {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+}
+
+.doctor-payment-card span {
+  display: block;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.doctor-payment-card strong {
+  display: block;
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.doctor-payments-table-wrapper {
+  padding: 24px;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 55px rgba(15, 23, 42, 0.09);
+}
+
+.doctor-table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.doctor-table-header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 25px;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+}
+
+.doctor-table-header p {
+  margin: 7px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.doctor-record-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 15px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.doctor-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid #e2e8f0;
+}
+
+.doctor-payments-table {
+  width: 100%;
+  min-width: 1250px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.doctor-payments-table th {
+  padding: 15px;
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 900;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.doctor-payments-table td {
+  padding: 15px;
+  border-top: 1px solid #e2e8f0;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.doctor-payments-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.doctor-payments-table tbody tr:hover {
+  background: #eff6ff;
+}
+
+.payment-id {
+  display: inline-flex;
+  padding: 7px 11px;
+  border-radius: 999px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.total-amount,
+.doctor-share {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+.payment-status {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.payment-status.paid {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.payment-status.pending {
+  background: #fff7ed;
+  color: #c2410c;
+}
+
+.payment-status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.no-payments {
+  padding: 34px !important;
+  text-align: center;
+  color: #64748b !important;
+  font-weight: 900 !important;
+  background: #f8fafc;
+}
+
+@media (max-width: 900px) {
+  .doctor-payment-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-table-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctor-record-count {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .doctor-payments-table-wrapper {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .doctor-payment-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .doctor-table-header h2 {
+    font-size: 22px;
+  }
+}

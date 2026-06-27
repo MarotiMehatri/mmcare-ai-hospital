@@ -1,0 +1,160 @@
+.admin-recent-bills {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+
+.admin-recent-bills-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admin-recent-bills-header h2 {
+  color: #1e293b;
+}
+
+.admin-recent-bills-header p {
+  color: #64748b;
+}
+
+/* Button */
+
+.view-all-bills-btn {
+  border: none;
+  background: #2563eb;
+  color: white;
+  padding: 12px 18px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.view-all-bills-btn:hover {
+  background: #1d4ed8;
+}
+
+/* Grid */
+
+.admin-bills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+/* Card */
+
+.admin-bill-card {
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 20px;
+  transition: 0.3s;
+  background: #fff;
+}
+
+.admin-bill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Top */
+
+.bill-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.bill-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 18px;
+  background: #eff6ff;
+  color: #2563eb;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+}
+
+/* Patient */
+
+.admin-bill-card h3 {
+  color: #0f172a;
+  margin-bottom: 18px;
+}
+
+/* Info */
+
+.bill-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.bill-info p {
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+/* Amount */
+
+.bill-price {
+  margin-top: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #10b981;
+}
+
+/* Status */
+
+.bill-status {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.bill-status.paid {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.bill-status.pending {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.bill-status.overdue {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Loading */
+
+.admin-bills-loading {
+  text-align: center;
+  padding: 60px;
+  color: #94a3b8;
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .admin-recent-bills-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}

@@ -1,0 +1,108 @@
+.book-appointment-form {
+  width: 100%;
+}
+
+.book-appointment-form__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 800;
+  color: #334155;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  border: 1px solid #dbe3ef;
+  outline: none;
+  border-radius: 16px;
+  padding: 14px 15px;
+  background: #f8fbff;
+  color: #0f172a;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #94a3b8;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.form-group input[readonly] {
+  background: linear-gradient(135deg, #eff6ff, #f8fbff);
+  color: #475569;
+  cursor: not-allowed;
+  font-weight: 700;
+}
+
+.form-group select {
+  cursor: pointer;
+}
+
+.form-group select:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 110px;
+  font-family: inherit;
+}
+
+.book-appointment-form__submit {
+  width: 100%;
+  margin-top: 22px;
+  border: none;
+  border-radius: 18px;
+  padding: 15px 18px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.25);
+  transition: 0.25s ease;
+}
+
+.book-appointment-form__submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 42px rgba(37, 99, 235, 0.32);
+}
+
+.book-appointment-form__submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .book-appointment-form__grid {
+    grid-template-columns: 1fr;
+  }
+}

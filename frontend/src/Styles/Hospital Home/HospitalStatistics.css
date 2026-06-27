@@ -1,0 +1,78 @@
+/* ===============================
+   STATISTICS SECTION
+=================================*/
+
+.statistics {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 70px 10%;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  text-align: center;
+}
+
+/* Individual Stat Card */
+.statistics div {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 35px 20px;
+  border-radius: 20px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover Effect */
+.statistics div:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  box-shadow: 0 15px 35px rgba(0, 114, 255, 0.6);
+}
+.stat-box h3 {
+  font-size: 36px;
+  color: #0052d4;
+}
+
+/* Number Highlight */
+.statistics div::first-letter {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00f7ff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .statistics {
+    padding: 50px 5%;
+    gap: 20px;
+  }
+
+  .statistics div {
+    font-size: 18px;
+    padding: 25px 15px;
+  }
+}
+@media (max-width: 480px) {
+  .statistics {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 14px;
+  }
+
+  .statistics div {
+    padding: 14px;
+    font-size: 15px;
+    font-weight: 600;
+    color:  #1f2937;
+    background: linear-gradient(135deg, #e0f2fe, #f0f9ff);
+    border-radius: 12px;
+    text-align: center;
+  }
+}

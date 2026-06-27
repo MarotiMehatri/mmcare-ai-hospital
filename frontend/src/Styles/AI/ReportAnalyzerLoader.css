@@ -1,0 +1,20 @@
+.report-loader {
+  background: #fff;
+  border-radius: 18px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(15, 111, 255, 0.08);
+}
+
+.report-loader .spin {
+  font-size: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 12px;
+  color: #0f6fff;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

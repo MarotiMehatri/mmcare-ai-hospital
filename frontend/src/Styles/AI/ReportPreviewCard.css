@@ -1,0 +1,42 @@
+.report-preview-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(15, 111, 255, 0.08);
+}
+
+.report-preview-card.empty {
+  text-align: center;
+  color: #6b7280;
+}
+
+.preview-icon {
+  font-size: 44px;
+  margin-bottom: 10px;
+}
+
+.preview-info p {
+  margin: 8px 0;
+}
+
+.preview-box {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.file-type-icon {
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.file-type-icon.pdf {
+  color: #d32f2f;
+}
+
+.report-image-preview {
+  width: 100%;
+  max-height: 320px;
+  object-fit: contain;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}

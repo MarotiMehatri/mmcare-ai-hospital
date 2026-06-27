@@ -1,0 +1,118 @@
+.admin-departments-page {
+  padding: 24px;
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+.admin-departments-header {
+  margin-bottom: 20px;
+}
+
+.admin-departments-header h2 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: #0f172a;
+}
+
+.admin-departments-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.admin-departments-filter {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.admin-departments-filter input,
+.admin-departments-filter select {
+  padding: 12px 14px;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  background: #fff;
+  outline: none;
+}
+
+.admin-departments-table-wrapper {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.admin-departments-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.admin-departments-table th,
+.admin-departments-table td {
+  padding: 14px;
+  border-bottom: 1px solid #edf2f7;
+  text-align: left;
+  font-size: 14px;
+}
+
+.admin-departments-table th {
+  background: #f8fafc;
+  color: #334155;
+}
+
+.admin-department-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-department-status.active {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.admin-department-status.inactive {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.admin-departments-actions {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.admin-departments-actions select {
+  padding: 8px 10px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+}
+
+.admin-departments-actions button {
+  border: none;
+  background: #ef4444;
+  color: #fff;
+  padding: 9px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.admin-no-departments,
+.admin-departments-loading {
+  text-align: center;
+  padding: 24px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .admin-departments-page {
+    padding: 16px;
+  }
+
+  .admin-departments-filter {
+    grid-template-columns: 1fr;
+  }
+}

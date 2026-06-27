@@ -1,0 +1,59 @@
+.report-upload-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(15, 111, 255, 0.08);
+}
+
+.card-header h3 {
+  margin: 0 0 8px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.card-header p {
+  margin: 0 0 18px;
+  color: #666;
+}
+
+.upload-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.upload-field label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.upload-field input,
+.upload-field select,
+.upload-field textarea {
+  padding: 12px 14px;
+  border: 1px solid #d8e1eb;
+  border-radius: 12px;
+  outline: none;
+  font-size: 15px;
+}
+
+.analyze-btn {
+  width: 100%;
+  border: none;
+  border-radius: 14px;
+  background: #0f6fff;
+  color: white;
+  padding: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.analyze-btn:disabled {
+  background: #aabedb;
+  cursor: not-allowed;
+}

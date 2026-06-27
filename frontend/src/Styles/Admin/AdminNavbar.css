@@ -1,0 +1,241 @@
+.admin-navbar {
+  height: 78px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  display: grid;
+  grid-template-columns: 220px 1fr auto;
+  align-items: center;
+  gap: 18px;
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.admin-navbar-left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-navbar-logo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: 800;
+  cursor: pointer;
+  user-select: none;
+}
+
+.admin-navbar-logo-main {
+  color: #2563eb;
+}
+
+.admin-navbar-logo-sub {
+  color: #0f172a;
+}
+
+.admin-navbar-center {
+  display: flex;
+  justify-content: center;
+}
+
+.admin-navbar-search {
+  width: 100%;
+  max-width: 460px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #dbe3ef;
+  border-radius: 14px;
+  padding: 0 14px;
+}
+
+.admin-navbar-search-icon {
+  color: #64748b;
+  font-size: 14px;
+}
+
+.admin-navbar-search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #0f172a;
+}
+
+.admin-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-navbar-icon-btn {
+  width: 44px;
+  height: 44px;
+  border: 1px solid #dbe3ef;
+  background: #f8fafc;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #0f172a;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-navbar-icon-btn:hover {
+  background: #eef4ff;
+}
+
+.admin-navbar-badge {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-navbar-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+  position: relative;
+}
+
+.admin-navbar-profile-icon {
+  font-size: 34px;
+  color: #2563eb;
+}
+
+.admin-navbar-profile-info h4 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.admin-navbar-profile-info p {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.admin-navbar-dropdown {
+  position: absolute;
+  top: 58px;
+  right: 0;
+  width: 190px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  z-index: 1200;
+}
+
+.admin-navbar-dropdown button {
+  border: none;
+  background: none;
+  text-align: left;
+  padding: 12px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-navbar-dropdown button:hover {
+  background: #f1f5f9;
+}
+
+.admin-navbar-logout-btn {
+  color: #dc2626 !important;
+}
+
+/* tablet */
+@media (max-width: 992px) {
+  .admin-navbar {
+    grid-template-columns: 180px 1fr auto;
+    padding: 0 18px;
+  }
+
+  .admin-navbar-search {
+    max-width: 320px;
+  }
+
+  .admin-navbar-profile-info {
+    display: none;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .admin-navbar {
+    height: auto;
+    grid-template-columns: 1fr;
+    padding: 14px;
+    gap: 14px;
+  }
+
+  .admin-navbar-left,
+  .admin-navbar-center,
+  .admin-navbar-right {
+    width: 100%;
+  }
+
+  .admin-navbar-center {
+    justify-content: stretch;
+  }
+
+  .admin-navbar-search {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .admin-navbar-right {
+    justify-content: space-between;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .admin-navbar-logo {
+    font-size: 20px;
+  }
+
+  .admin-navbar-icon-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .admin-navbar-profile {
+    padding: 6px 10px;
+  }
+
+  .admin-navbar-profile-icon {
+    font-size: 30px;
+  }
+}

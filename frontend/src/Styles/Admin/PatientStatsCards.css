@@ -1,0 +1,217 @@
+/* .patient-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.patient-stat-card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+.patient-stat-card h4 {
+  color: #64748b;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.patient-stat-card h2 {
+  font-size: 28px;
+  color: #0f172a;
+} */
+
+/* =====================================
+   PATIENT STATS GRID
+===================================== */
+
+.patient-stats-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+  gap: 20px;
+}
+
+/* =====================================
+   STAT CARD
+===================================== */
+
+.patient-stat-card {
+  position: relative;
+
+  background: #ffffff;
+
+  border-radius: 24px;
+
+  padding: 24px;
+
+  overflow: hidden;
+
+  border: 1px solid #e2e8f0;
+
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.06);
+
+  transition: all 0.35s ease;
+
+  cursor: pointer;
+}
+
+/* Top Gradient Line */
+
+.patient-stat-card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(90deg, #2563eb, #06b6d4, #10b981);
+}
+
+.patient-stat-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 40px rgba(37, 99, 235, 0.12);
+}
+
+/* =====================================
+   TITLE
+===================================== */
+
+.patient-stat-card h4 {
+  margin: 0 0 12px;
+
+  font-size: 14px;
+
+  font-weight: 600;
+
+  color: #64748b;
+
+  text-transform: uppercase;
+
+  letter-spacing: 0.5px;
+}
+
+/* =====================================
+   VALUE
+===================================== */
+
+.patient-stat-card h2 {
+  margin: 0;
+
+  font-size: 34px;
+
+  font-weight: 800;
+
+  color: #0f172a;
+
+  line-height: 1;
+}
+
+/* =====================================
+   ANIMATED BACKGROUND
+===================================== */
+
+.patient-stat-card::after {
+  content: "";
+
+  position: absolute;
+
+  right: -30px;
+  bottom: -30px;
+
+  width: 120px;
+  height: 120px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.05);
+
+  transition: all 0.4s ease;
+}
+
+.patient-stat-card:hover::after {
+  transform: scale(1.2);
+}
+
+/* =====================================
+   DESKTOP LARGE
+===================================== */
+
+@media (min-width: 1440px) {
+  .patient-stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .patient-stat-card {
+    padding: 28px;
+  }
+
+  .patient-stat-card h2 {
+    font-size: 40px;
+  }
+}
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 992px) {
+  .patient-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .patient-stat-card {
+    padding: 20px;
+  }
+
+  .patient-stat-card h2 {
+    font-size: 30px;
+  }
+}
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 768px) {
+  .patient-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-stat-card {
+    padding: 18px;
+  }
+
+  .patient-stat-card h2 {
+    font-size: 28px;
+  }
+}
+
+/* =====================================
+   SMALL MOBILE
+===================================== */
+
+@media (max-width: 480px) {
+  .patient-stat-card {
+    border-radius: 18px;
+    padding: 16px;
+  }
+
+  .patient-stat-card h4 {
+    font-size: 12px;
+  }
+
+  .patient-stat-card h2 {
+    font-size: 24px;
+  }
+}

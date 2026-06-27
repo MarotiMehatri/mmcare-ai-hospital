@@ -1,0 +1,246 @@
+.ai-memory-page {
+  padding: 24px;
+  background: #f4f8fb;
+  min-height: 100vh;
+}
+
+.memory-header-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+}
+
+.memory-page-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: #12344d;
+}
+
+.memory-page-subtitle {
+  margin-top: 8px;
+  color: #5b7083;
+  font-size: 15px;
+}
+
+.memory-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #0ea5e9, #2563eb);
+  color: #ffffff;
+  padding: 12px 16px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.memory-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 20px;
+}
+
+.memory-stat-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+}
+
+.memory-stat-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0f2fe;
+  color: #0284c7;
+  font-size: 20px;
+}
+
+.memory-stat-value {
+  margin: 0;
+  font-size: 24px;
+  color: #12344d;
+}
+
+.memory-stat-title {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.memory-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.memory-filter-btn {
+  border: none;
+  background: #ffffff;
+  color: #334155;
+  padding: 10px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(15, 23, 42, 0.05);
+  transition: all 0.2s ease;
+  text-transform: capitalize;
+}
+
+.memory-filter-btn.active,
+.memory-filter-btn:hover {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.memory-timeline {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.memory-card {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+  border-left: 5px solid #2563eb;
+}
+
+.memory-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.memory-card-title {
+  margin: 0;
+  font-size: 18px;
+  color: #0f172a;
+}
+
+.memory-card-type {
+  margin-top: 6px;
+  font-size: 13px;
+  color: #64748b;
+  text-transform: capitalize;
+}
+
+.memory-priority-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.memory-priority-badge.low {
+  background: #16a34a;
+}
+
+.memory-priority-badge.medium {
+  background: #f59e0b;
+}
+
+.memory-priority-badge.high {
+  background: #ef4444;
+}
+
+.memory-card-summary {
+  margin: 0 0 14px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.memory-tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.memory-tag {
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.memory-card-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.memory-loading,
+.memory-error-box,
+.memory-empty {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 32px 20px;
+  text-align: center;
+  box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
+}
+
+.memory-empty-icon {
+  font-size: 40px;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.memory-error-box {
+  color: #b91c1c;
+  font-weight: 600;
+}
+
+@media (max-width: 1024px) {
+  .memory-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-memory-page {
+    padding: 16px;
+  }
+
+  .memory-header-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .memory-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .memory-card-top {
+    flex-direction: column;
+  }
+
+  .memory-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

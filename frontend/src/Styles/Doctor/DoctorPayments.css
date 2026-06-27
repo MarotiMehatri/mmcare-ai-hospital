@@ -1,0 +1,205 @@
+.doctor-payments {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fbff, #eef4ff 45%, #f9fafb);
+  color: #0f172a;
+}
+
+.doctor-payments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 22px;
+  padding: 30px;
+  margin-bottom: 24px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: white;
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.22);
+}
+
+.doctor-payments-header h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.doctor-payments-header p {
+  margin: 10px 0 0;
+  color: #dbeafe;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.create-payment-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-size: 14px;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.2);
+  transition: 0.25s ease;
+  white-space: nowrap;
+}
+
+.create-payment-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px rgba(15, 23, 42, 0.28);
+}
+
+.doctor-payments__cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.doctor-payments__search {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin: 24px 0;
+  padding: 18px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.doctor-payments__search input,
+.doctor-payments__search select {
+  height: 50px;
+  border: 1px solid #dbe3ef;
+  border-radius: 16px;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
+  transition: 0.2s ease;
+}
+
+.doctor-payments__search input {
+  flex: 1;
+  padding: 0 16px;
+}
+
+.doctor-payments__search select {
+  min-width: 180px;
+  padding: 0 14px;
+  cursor: pointer;
+}
+
+.doctor-payments__search input:focus,
+.doctor-payments__search select:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.doctor-payments__search button {
+  height: 50px;
+  border: none;
+  padding: 0 20px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 0 14px 28px rgba(37, 99, 235, 0.22);
+  transition: 0.25s ease;
+}
+
+.doctor-payments__search button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(37, 99, 235, 0.3);
+}
+
+.payments-loading-text {
+  padding: 28px;
+  border-radius: 22px;
+  background: #ffffff;
+  color: #64748b;
+  font-weight: 900;
+  text-align: center;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* Optional: style DoctorPaymentCard if class names are simple */
+
+.doctor-payment-card,
+.payment-card {
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  transition: 0.25s ease;
+}
+
+.doctor-payment-card:hover,
+.payment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 65px rgba(15, 23, 42, 0.13);
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .doctor-payments__cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 850px) {
+  .doctor-payments {
+    padding: 18px;
+  }
+
+  .doctor-payments-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .create-payment-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .doctor-payments__search {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .doctor-payments__search select,
+  .doctor-payments__search button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 600px) {
+  .doctor-payments__cards {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-payments-header h1 {
+    font-size: 28px;
+  }
+
+  .doctor-payments-header p {
+    font-size: 14px;
+  }
+}

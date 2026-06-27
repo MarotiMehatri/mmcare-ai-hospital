@@ -1,0 +1,36 @@
+[
+  {
+    "patientId": 3,
+    "patientName": "Bhumanna Mehatri",
+    "email": "bhumannamehatri@gmail.com",
+    "age": "30",
+    "dob": "1995-05-06",
+    "gender": "Male",
+    "bloodGroup": "O+",
+    "medicalHistory": [
+      "No major medical history"
+    ],
+    "medications": [
+      "Aspirin 75 mg - 75 mg - Once Daily",
+      "Atorvastation 20 mg - 20 mg - Once Daily",
+      "Metoprolol 25 mg - 25 mg - Twice Daily",
+      "Nitroglycerin 0.5 mg - 0.5 mg - As Needed",
+      "Clopidogrel 75 mg - 75 mg - Once Daily",
+      "Paclitaxel - 175 mg/m² - Once per cycle",
+      "Cisplatin - 75 mg/m² - Every 3 weeks",
+      "Ondansetron - 8 mg - Twice daily",
+      "Tamoxifen - 20 mg - Once daily"
+    ],
+    "vitalsHistory": [
+      {
+        "id": 1781980351357,
+        "date": "2026-06-20",
+        "bloodPressure": "120/80",
+        "sugar": 95,
+        "heartRate": 75,
+        "weight": 65,
+        "spo2": 98
+      }
+    ]
+  }
+]

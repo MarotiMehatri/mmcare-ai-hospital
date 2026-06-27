@@ -1,0 +1,139 @@
+/* ==============================
+   HEADER CONTAINER
+============================== */
+
+.patient-header {
+  height: 60px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 25px;
+  /* background: linear-gradient(90deg, #2563eb, #1e40af); */
+  background: #27f5b0;
+  border-bottom: 1px solid #e5e7eb;
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* ==============================
+   HEADER LEFT
+============================== */
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ==============================
+   MENU BUTTON
+============================== */
+
+.header-menu-btn {
+  border: none;
+  background: transparent;
+
+  font-size: 22px;
+
+  cursor: pointer;
+
+  display: none;
+}
+
+/* Hover */
+
+.header-menu-btn:hover {
+  color: #2563eb;
+}
+
+/* ==============================
+   TITLE
+============================== */
+
+.header-title {
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #1f2937;
+}
+
+/* ==============================
+   HEADER RIGHT
+============================== */
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* ==============================
+   LOGIN BUTTON
+============================== */
+
+.header-login-btn {
+  padding: 8px 16px;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.header-login-btn:hover {
+  background: #1e40af;
+}
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 992px) {
+  .header-title {
+    font-size: 18px;
+  }
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 768px) {
+  .header-menu-btn {
+    display: block;
+  }
+
+  .header-title {
+    font-size: 16px;
+  }
+
+  .patient-header {
+    padding: 0 18px;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE
+============================== */
+
+@media (max-width: 480px) {
+  .header-title {
+    font-size: 15px;
+  }
+
+  .header-login-btn {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}

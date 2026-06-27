@@ -1,0 +1,235 @@
+/* ===== Doctor Welcome Banner ===== */
+.doctor-welcome-banner {
+  width: 100%;
+  min-height: 220px;
+  padding: 28px 32px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0f4c81 0%, #1565c0 45%, #42a5f5 100%);
+  box-shadow: 0 18px 40px rgba(15, 76, 129, 0.18);
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Optional shared class safety */
+.banner-container {
+  width: 100%;
+}
+
+/* Decorative circles */
+.doctor-welcome-banner::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 180px;
+  height: 180px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 50%;
+}
+
+.doctor-welcome-banner::after {
+  content: "";
+  position: absolute;
+  bottom: -55px;
+  left: -55px;
+  width: 200px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 50%;
+}
+
+/* Inner content */
+.doctor-banner-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Text section */
+.doctor-banner-text {
+  flex: 1;
+  max-width: 60%;
+}
+
+.banner-text-left {
+  text-align: left;
+}
+
+.doctor-banner-heading {
+  margin: 0 0 12px;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #ffffff;
+  letter-spacing: 0.3px;
+}
+
+.doctor-banner-subtext {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 540px;
+}
+
+/* Image section */
+.doctor-banner-image {
+  flex: 0 0 260px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.banner-image-right {
+  text-align: right;
+}
+
+.doctor-banner-img {
+  width: 240px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.18));
+}
+
+/* ===== Hover effect ===== */
+.doctor-welcome-banner:hover {
+  transform: translateY(-2px);
+  transition: all 0.3s ease;
+  box-shadow: 0 22px 45px rgba(15, 76, 129, 0.22);
+}
+
+/* ===== Large screens ===== */
+@media (min-width: 1400px) {
+  .doctor-banner-heading {
+    font-size: 38px;
+  }
+
+  .doctor-banner-subtext {
+    font-size: 17px;
+  }
+
+  .doctor-banner-img {
+    width: 270px;
+  }
+}
+
+/* ===== Laptop ===== */
+@media (max-width: 1024px) {
+  .doctor-welcome-banner {
+    min-height: 200px;
+    padding: 24px 26px;
+    border-radius: 20px;
+  }
+
+  .doctor-banner-heading {
+    font-size: 30px;
+  }
+
+  .doctor-banner-subtext {
+    font-size: 15px;
+  }
+
+  .doctor-banner-image {
+    flex: 0 0 220px;
+  }
+
+  .doctor-banner-img {
+    width: 210px;
+  }
+}
+
+/* ===== Tablet ===== */
+@media (max-width: 768px) {
+  .doctor-welcome-banner {
+    min-height: auto;
+    padding: 22px 20px;
+    border-radius: 18px;
+  }
+
+  .doctor-banner-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .doctor-banner-text {
+    max-width: 100%;
+  }
+
+  .banner-text-left {
+    text-align: center;
+  }
+
+  .doctor-banner-heading {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .doctor-banner-subtext {
+    font-size: 14px;
+    max-width: 100%;
+  }
+
+  .doctor-banner-image {
+    flex: unset;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .banner-image-right {
+    text-align: center;
+  }
+
+  .doctor-banner-img {
+    width: 180px;
+  }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 480px) {
+  .doctor-welcome-banner {
+    padding: 18px 14px;
+    border-radius: 16px;
+  }
+
+  .doctor-banner-content {
+    gap: 14px;
+  }
+
+  .doctor-banner-heading {
+    font-size: 21px;
+    line-height: 1.4;
+  }
+
+  .doctor-banner-subtext {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .doctor-banner-img {
+    width: 130px;
+    /* height: 200px; */
+    border-radius: 10%;
+  }
+
+  .doctor-welcome-banner::before {
+    width: 120px;
+    height: 120px;
+    top: -30px;
+    right: -30px;
+  }
+
+  .doctor-welcome-banner::after {
+    width: 130px;
+    height: 130px;
+    bottom: -35px;
+    left: -35px;
+  }
+}

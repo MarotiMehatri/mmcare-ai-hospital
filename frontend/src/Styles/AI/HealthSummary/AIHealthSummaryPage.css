@@ -1,0 +1,321 @@
+/* AIHealthSummaryPage.css */
+
+.ai-health-summary-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 32px;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(0, 195, 255, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(124, 58, 237, 0.14),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fbff, #eef6ff);
+}
+
+.ai-summary-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+.ai-summary-glow-one {
+  width: 320px;
+  height: 320px;
+  top: 80px;
+  left: -120px;
+  background: #38bdf8;
+}
+
+.ai-summary-glow-two {
+  width: 380px;
+  height: 380px;
+  right: -140px;
+  bottom: 120px;
+  background: #8b5cf6;
+}
+
+/* Header */
+
+.ai-summary-page-header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 26px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.08);
+}
+
+.ai-summary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  color: #0369a1;
+  background: rgba(14, 165, 233, 0.12);
+  font-weight: 800;
+  font-size: 13px;
+}
+
+.ai-summary-page-header h2 {
+  margin: 14px 0 8px;
+  font-size: clamp(28px, 4vw, 46px);
+  font-weight: 950;
+  color: #0f172a;
+  letter-spacing: -1.4px;
+}
+
+.ai-summary-page-header p {
+  max-width: 720px;
+  margin: 0;
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.ai-summary-refresh-btn {
+  border: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 18px;
+  color: #fff;
+  font-weight: 900;
+  white-space: nowrap;
+  background: linear-gradient(135deg, #0284c7, #2563eb, #7c3aed);
+  box-shadow: 0 16px 35px rgba(37, 99, 235, 0.28);
+  transition: 0.3s ease;
+}
+
+.ai-summary-refresh-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 42px rgba(37, 99, 235, 0.36);
+}
+
+.ai-summary-refresh-btn svg {
+  transition: 0.4s ease;
+}
+
+.ai-summary-refresh-btn:hover svg {
+  transform: rotate(180deg);
+}
+
+/* Grid Layouts */
+
+.ai-summary-top-grid,
+.ai-summary-main-grid,
+.ai-summary-wide-grid,
+.ai-summary-bottom-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.ai-summary-top-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.ai-summary-main-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.ai-summary-wide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+  margin-bottom: 22px;
+}
+
+.ai-summary-bottom-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 22px;
+}
+
+/* Modern Card Wrapper */
+
+.ai-summary-card-wrap {
+  position: relative;
+  overflow: hidden;
+  min-height: 260px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.82);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(255, 255, 255, 0.78);
+  box-shadow:
+    0 22px 55px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: 0.35s ease;
+}
+
+.ai-summary-card-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: linear-gradient(
+    135deg,
+    rgba(14, 165, 233, 0.5),
+    rgba(124, 58, 237, 0.28),
+    rgba(255, 255, 255, 0.15)
+  );
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask-composite: xor;
+  pointer-events: none;
+}
+
+.ai-summary-card-wrap::after {
+  content: "";
+  position: absolute;
+  width: 130px;
+  height: 130px;
+  right: -48px;
+  top: -48px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(56, 189, 248, 0.22),
+    transparent 70%
+  );
+  transition: 0.35s ease;
+  pointer-events: none;
+}
+
+.ai-summary-card-wrap:hover {
+  transform: translateY(-7px);
+  box-shadow:
+    0 28px 70px rgba(15, 23, 42, 0.13),
+    0 0 45px rgba(14, 165, 233, 0.15);
+}
+
+.ai-summary-card-wrap:hover::after {
+  transform: scale(1.35);
+}
+
+.ai-summary-card-wrap > * {
+  width: 100%;
+  height: 100%;
+}
+
+/* Special Cards */
+
+.ai-summary-patient-wrap {
+  min-height: 280px;
+}
+
+.ai-summary-download-wrap {
+  padding: 24px;
+}
+
+.ai-summary-download-heading {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.ai-summary-download-heading > svg {
+  width: 54px;
+  height: 54px;
+  padding: 14px;
+  border-radius: 18px;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.ai-summary-download-heading h3 {
+  margin: 0 0 5px;
+  font-size: 22px;
+  font-weight: 900;
+  color: #0f172a;
+}
+
+.ai-summary-download-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 1200px) {
+  .ai-summary-top-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .ai-summary-patient-wrap {
+    grid-column: span 2;
+  }
+
+  .ai-summary-main-grid,
+  .ai-summary-bottom-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-health-summary-page {
+    padding: 18px;
+  }
+
+  .ai-summary-page-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+    border-radius: 24px;
+  }
+
+  .ai-summary-refresh-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ai-summary-top-grid,
+  .ai-summary-main-grid,
+  .ai-summary-wide-grid,
+  .ai-summary-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .ai-summary-patient-wrap {
+    grid-column: auto;
+  }
+
+  .ai-summary-card-wrap {
+    min-height: auto;
+    border-radius: 24px;
+  }
+}

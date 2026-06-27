@@ -1,0 +1,109 @@
+.doctor-voice-recorder {
+  display: flex;
+  align-items: center;
+}
+
+.doctor-voice-btn {
+  border: none;
+  cursor: pointer;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.doctor-voice-btn:hover {
+  transform: scale(1.05);
+}
+
+.doctor-voice-btn.start {
+  background: #ef4444;
+  color: white;
+}
+
+.doctor-voice-btn.stop {
+  background: #f97316;
+  color: white;
+}
+
+.doctor-voice-btn.delete {
+  background: #dc2626;
+  color: white;
+}
+
+.doctor-voice-btn.send {
+  background: #16a34a;
+  color: white;
+}
+
+.doctor-recording-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-recording-time {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.doctor-recording-animation {
+  display: flex;
+  gap: 4px;
+}
+
+.doctor-recording-animation span {
+  width: 5px;
+  height: 18px;
+  background: #ef4444;
+  animation: voiceWave 1s infinite;
+}
+
+.doctor-recording-animation span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.doctor-recording-animation span:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes voiceWave {
+  0% {
+    height: 10px;
+  }
+  50% {
+    height: 24px;
+  }
+  100% {
+    height: 10px;
+  }
+}
+
+.doctor-audio-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.doctor-audio-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.doctor-voice-error {
+  color: red;
+  font-size: 13px;
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .doctor-audio-preview {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .doctor-audio-preview audio {
+    width: 220px;
+  }
+}

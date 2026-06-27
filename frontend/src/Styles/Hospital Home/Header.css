@@ -1,0 +1,232 @@
+.hospital-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  width: 100%;
+  min-height: 86px;
+  padding: 14px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.86);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(37, 99, 235, 0.12);
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.hospital-header__logo {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.hospital-header__logo-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 24px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.28);
+}
+
+.hospital-header__logo h2 {
+  margin: 0;
+  font-size: 26px;
+  line-height: 1;
+  color: #0f172a;
+  font-weight: 950;
+  letter-spacing: -0.8px;
+}
+
+.hospital-header__logo h2 span {
+  color: #2563eb;
+  margin-left: 3px;
+}
+
+.hospital-header__logo p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.hospital-header__nav ul {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hospital-header__nav li {
+  position: relative;
+  padding: 11px 14px;
+  border-radius: 999px;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.hospital-header__nav li:hover {
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.hospital-header__right {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hospital-header__emergency {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  color: #dc2626;
+  background: rgba(254, 242, 242, 0.95);
+  font-weight: 900;
+  box-shadow: 0 12px 28px rgba(220, 38, 38, 0.12);
+}
+
+.hospital-header__login,
+.hospital-header__login-mobile {
+  border: none;
+  outline: none;
+  padding: 13px 21px;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  font-size: 15px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  box-shadow: 0 15px 34px rgba(37, 99, 235, 0.28);
+  transition: 0.3s ease;
+}
+
+.hospital-header__login:hover,
+.hospital-header__login-mobile:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(37, 99, 235, 0.35);
+}
+
+.hospital-header__login-mobile {
+  display: none;
+}
+
+.hospital-header__menu-toggle {
+  display: none;
+  width: 46px;
+  height: 46px;
+  border-radius: 15px;
+  place-items: center;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.09);
+  font-size: 27px;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .hospital-header {
+    padding: 14px 5%;
+  }
+
+  .hospital-header__emergency {
+    display: none;
+  }
+
+  .hospital-header__nav li {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 860px) {
+  .hospital-header {
+    min-height: 78px;
+  }
+
+  .hospital-header__menu-toggle {
+    display: grid;
+  }
+
+  .hospital-header__right {
+    display: none;
+  }
+
+  .hospital-header__nav {
+    position: fixed;
+    top: 78px;
+    left: 16px;
+    right: 16px;
+    padding: 22px;
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.16);
+    transform: translateY(-18px);
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.35s ease;
+  }
+
+  .hospital-header__nav.active {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .hospital-header__nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .hospital-header__nav li {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+    background: rgba(37, 99, 235, 0.06);
+  }
+
+  .hospital-header__login-mobile {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hospital-header {
+    padding: 12px 16px;
+  }
+
+  .hospital-header__logo-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    font-size: 20px;
+  }
+
+  .hospital-header__logo h2 {
+    font-size: 22px;
+  }
+
+  .hospital-header__logo p {
+    font-size: 10px;
+  }
+}

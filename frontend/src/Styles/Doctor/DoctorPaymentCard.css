@@ -1,0 +1,94 @@
+.doctor-payment-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 22px;
+  position: relative;
+  overflow: hidden;
+
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.3s ease;
+}
+
+.doctor-payment-card:hover {
+  transform: translateY(-6px);
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.doctor-payment-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doctor-payment-card__icon {
+  width: 62px;
+  height: 62px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 18px;
+
+  font-size: 1.6rem;
+
+  color: white;
+
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+.doctor-payment-card__growth {
+  background: #dcfce7;
+  color: #15803d;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.doctor-payment-card__body {
+  margin-top: 18px;
+}
+
+.doctor-payment-card__title {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.doctor-payment-card__value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 8px;
+}
+
+.doctor-payment-card__subtitle {
+  color: #94a3b8;
+  font-size: 0.85rem;
+}
+
+.doctor-payment-card__footer {
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid #f1f5f9;
+
+  color: #2563eb;
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.doctor-payment-card__footer:hover {
+  color: #1d4ed8;
+}

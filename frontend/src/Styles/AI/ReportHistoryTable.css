@@ -1,0 +1,37 @@
+.report-history-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  overflow-x: auto;
+  box-shadow: 0 10px 25px rgba(15, 111, 255, 0.08);
+}
+
+.report-history-card h3 {
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.history-table {
+  min-width: 650px;
+  margin-top: 14px;
+}
+
+.history-row {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1fr 1fr;
+  gap: 10px;
+  padding: 12px 10px;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.history-head {
+  font-weight: 700;
+  background: #f8fbff;
+  border-radius: 10px;
+}
+
+.empty-history {
+  color: #6b7280;
+}

@@ -1,0 +1,130 @@
+.ai-disease-card {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border: 1px solid #e5eef8;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+  transition: 0.3s ease;
+}
+
+.ai-disease-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.14);
+}
+
+.ai-disease-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.ai-disease-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #ef4444, #fb7185);
+  color: #fff;
+  font-size: 26px;
+  box-shadow: 0 12px 25px rgba(239, 68, 68, 0.3);
+}
+
+.ai-disease-header h2 {
+  margin: 0;
+  font-size: 21px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.ai-disease-header p {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.ai-disease-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.ai-disease-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 16px;
+  border-radius: 16px;
+  background: #fff7f7;
+  border: 1px solid #ffe0e0;
+  transition: 0.25s ease;
+}
+
+.ai-disease-item:hover {
+  background: #fff1f2;
+  transform: translateX(5px);
+}
+
+.disease-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.disease-left span {
+  font-size: 15px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.disease-warning {
+  color: #f59e0b;
+  font-size: 18px;
+}
+
+.disease-check {
+  color: #22c55e;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+.ai-no-disease {
+  min-height: 110px;
+  border-radius: 18px;
+  background: #ecfdf5;
+  color: #16a34a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.ai-no-disease svg {
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .ai-disease-card {
+    padding: 20px;
+  }
+
+  .ai-disease-header {
+    align-items: flex-start;
+  }
+
+  .ai-disease-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 23px;
+  }
+
+  .ai-disease-header h2 {
+    font-size: 19px;
+  }
+}

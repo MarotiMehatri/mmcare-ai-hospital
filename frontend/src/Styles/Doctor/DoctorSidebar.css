@@ -1,0 +1,82 @@
+/* Sidebar Container */
+
+.doctor-sidebar {
+  margin-top: 90px;
+  width: 260px;
+  height: 100vh;
+  background: linear-gradient(180deg, #0f172a, #020617);
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Logo */
+
+.sidebar-logo {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  padding: 25px 0;
+  color: #38bdf8;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Menu Container */
+
+.sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+
+  position: fixed;
+  top: 170px;
+  left: 0;
+  width: 260px;
+  height: 70vh;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  padding: 20px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+/* Menu Item */
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 25px;
+  text-decoration: none;
+  color: #cbd5f5;
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+/* Hover Effect */
+
+.sidebar-item:hover {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border-left: 4px solid #38bdf8;
+}
+
+/* Active Menu */
+
+.sidebar-item.active {
+  background: rgba(56, 189, 248, 0.2);
+  color: #38bdf8;
+  border-left: 4px solid #38bdf8;
+}
+
+/* Icons */
+
+.sidebar-icon {
+  font-size: 18px;
+}

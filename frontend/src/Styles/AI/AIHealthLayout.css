@@ -1,0 +1,127 @@
+/* AIHealthLayout.css */
+
+.ai-health-layout {
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(14, 165, 233, 0.16),
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(124, 58, 237, 0.14),
+      transparent 34%
+    ),
+    linear-gradient(135deg, #f8fbff, #eef6ff);
+}
+
+.ai-health-layout::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(15, 23, 42, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
+  background-size: 38px 38px;
+  mask-image: linear-gradient(to bottom, black, transparent 85%);
+}
+
+.ai-health-layout::after {
+  content: "";
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  right: -140px;
+  top: 120px;
+  border-radius: 50%;
+  background: rgba(56, 189, 248, 0.24);
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.ai-health-main {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  min-width: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.ai-health-content {
+  position: relative;
+  flex: 1;
+  padding: 26px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Smooth scrollbar */
+
+.ai-health-content::-webkit-scrollbar {
+  width: 10px;
+}
+
+.ai-health-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.ai-health-content::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: linear-gradient(180deg, #38bdf8, #6366f1);
+  border: 3px solid #eef6ff;
+}
+
+/* Content animation */
+
+.ai-health-content > * {
+  animation: aiHealthFadeUp 0.45s ease both;
+}
+
+@keyframes aiHealthFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* With sidebar future support */
+
+.ai-health-layout .ai-health-sidebar {
+  flex: 0 0 280px;
+  min-height: 100vh;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  .ai-health-content {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ai-health-layout {
+    overflow: auto;
+  }
+
+  .ai-health-main {
+    min-height: 100vh;
+  }
+
+  .ai-health-content {
+    padding: 16px;
+  }
+}

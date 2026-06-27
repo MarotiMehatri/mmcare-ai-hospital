@@ -1,0 +1,68 @@
+.ai-diet-card {
+  padding: 20px;
+  border-radius: 26px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  border: 1px solid #e2e8f0;
+}
+
+.ai-diet-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.ai-diet-icon {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #16a34a, #14b8a6);
+  color: #fff;
+  font-size: 22px;
+}
+
+.ai-diet-header h3 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.ai-diet-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.ai-diet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-diet-item {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 16px;
+  background: #f0fdf4;
+  color: #14532d;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ai-diet-item svg {
+  color: #16a34a;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.ai-diet-empty {
+  padding: 18px;
+  border-radius: 16px;
+  background: #f8fafc;
+  color: #64748b;
+  font-weight: 700;
+}

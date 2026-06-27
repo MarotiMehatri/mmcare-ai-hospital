@@ -1,0 +1,123 @@
+.slot-picker-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  padding: 22px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.slot-picker-header {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.slot-picker-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 19px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: white;
+  font-size: 23px;
+}
+
+.slot-picker-header span {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.slot-picker-header h3 {
+  margin: 4px 0;
+  color: #0f172a;
+}
+
+.slot-picker-header p {
+  margin: 0;
+  color: #64748b;
+}
+
+.ai-slot-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 11px;
+}
+
+.ai-slot-btn {
+  border: 1px solid #dbeafe;
+  background: #f8fafc;
+  color: #334155;
+  border-radius: 16px;
+  padding: 12px;
+  font-weight: 900;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  transition: 0.25s ease;
+}
+
+.ai-slot-btn:hover {
+  transform: translateY(-3px);
+  border-color: #2563eb;
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.ai-slot-btn.selected-slot {
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 12px 26px rgba(37, 99, 235, 0.22);
+}
+
+.slot-check {
+  color: #bbf7d0;
+}
+
+.slot-empty-state {
+  text-align: center;
+  padding: 24px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px dashed #cbd5e1;
+}
+
+.slot-empty-state svg {
+  font-size: 38px;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.slot-empty-state h4 {
+  margin: 0 0 6px;
+  color: #0f172a;
+}
+
+.slot-empty-state p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+  .ai-slot-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .ai-slot-list {
+    grid-template-columns: 1fr;
+  }
+
+  .slot-picker-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+}

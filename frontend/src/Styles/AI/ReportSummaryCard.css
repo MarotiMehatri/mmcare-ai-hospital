@@ -1,0 +1,74 @@
+.report-summary-card {
+  background: #fff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(15, 111, 255, 0.08);
+}
+
+.summary-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.summary-top h3 {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.urgency-badge {
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.urgency-badge.low {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.urgency-badge.medium {
+  background: #fff8e1;
+  color: #ef6c00;
+}
+
+.urgency-badge.high {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.summary-text {
+  margin-top: 14px;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.summary-meta {
+  margin-top: 16px;
+  display: grid;
+  gap: 12px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #334155;
+}
+
+.key-findings {
+  margin-top: 18px;
+}
+
+.key-findings h4 {
+  margin-bottom: 10px;
+}
+
+.key-findings ul {
+  padding-left: 20px;
+}

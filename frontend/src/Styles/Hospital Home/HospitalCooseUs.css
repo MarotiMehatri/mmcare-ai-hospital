@@ -1,0 +1,110 @@
+/* =========================
+   WHY US SECTION
+========================= */
+
+.why-us {
+  padding: 80px 60px;
+  background: linear-gradient(to right, #f4f8fb, #e9f2ff);
+  text-align: center;
+}
+
+/* Container */
+
+.why-container {
+  max-width: 1100px;
+  margin: auto;
+  text-align: center;
+}
+
+.why-box {
+  padding: 20px;
+  margin: 15px;
+}
+/* Title */
+
+.why-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0d6efd;
+  margin-bottom: 50px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Title underline effect */
+
+.why-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #0d6efd;
+  margin: 15px auto 0;
+  border-radius: 5px;
+  transition: 0.4s;
+}
+
+.why-title:hover::after {
+  width: 140px;
+}
+
+/* List Grid */
+
+.why-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+/* Individual Feature Card */
+
+.why-list li {
+  background: white;
+  padding: 25px 20px;
+  border-radius: 18px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  transition: all 0.4s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Left Accent Bar */
+
+.why-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 5px;
+  background: #0d6efd;
+  border-radius: 5px;
+}
+
+/* Hover Effect */
+
+.why-list li:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+  color: #0d6efd;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .why-us {
+    padding: 60px 25px;
+  }
+
+  .why-title {
+    font-size: 26px;
+  }
+
+  .why-list li {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,97 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Sidebar */
+.patient-sidebar {
+  width: 260px;
+  background: #1e3a5f;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+}
+
+.patient-dashboard {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background: #f4f7fb;
+  box-sizing: border-box;
+}
+
+/* Main content area */
+.patient-main {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+  margin-left: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+/* Inner wrapper */
+.patient-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Page content rendered by Outlet */
+.patient-page-content {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: block;
+}
+
+/* Desktop large */
+@media (min-width: 1200px) {
+  .patient-main {
+    padding: 24px 28px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1199px) {
+  .patient-main {
+    padding: 20px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .patient-dashboard {
+    flex-direction: column;
+  }
+
+  .patient-main {
+    width: 100%;
+    padding: 18px;
+  }
+
+  .patient-container,
+  .patient-page-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .patient-main {
+    padding: 12px;
+  }
+
+  .patient-container,
+  .patient-page-content {
+    width: 100%;
+    max-width: 100%;
+  }
+}

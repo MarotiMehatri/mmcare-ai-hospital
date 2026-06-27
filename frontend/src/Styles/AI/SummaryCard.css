@@ -1,0 +1,147 @@
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 24px 0;
+}
+
+.summary-card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 120px;
+  padding: 22px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  transition: 0.3s ease;
+}
+
+.summary-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background: linear-gradient(135deg, var(--card-color), transparent 65%);
+}
+
+.summary-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.14);
+}
+
+.summary-icon {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-size: 24px;
+  background: linear-gradient(135deg, var(--card-color), var(--card-dark));
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18);
+}
+
+.summary-card h4 {
+  position: relative;
+  margin: 0 0 8px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #64748b;
+  margin-bottom: 6px;
+}
+
+.summary-card p {
+  position: relative;
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  word-break: break-word;
+}
+
+.summary-card.patient {
+  --card-color: #2563eb;
+  --card-dark: #1d4ed8;
+}
+
+.summary-card.blood {
+  --card-color: #dc2626;
+  --card-dark: #991b1b;
+}
+
+.summary-card.score {
+  --card-color: #16a34a;
+  --card-dark: #15803d;
+}
+
+.summary-card.trend {
+  --card-color: #7c3aed;
+  --card-dark: #5b21b6;
+}
+
+.summary-card.risk {
+  --card-color: #f97316;
+  --card-dark: #c2410c;
+}
+
+.summary-card.followup {
+  --card-color: #0891b2;
+  --card-dark: #0e7490;
+}
+
+.summary-card.medicine {
+  --card-color: #db2777;
+  --card-dark: #be185d;
+}
+
+.summary-card.history {
+  --card-color: #475569;
+  --card-dark: #334155;
+}
+
+.summary-card.bp {
+  --card-color: #ef4444;
+  --card-dark: #b91c1c;
+}
+
+.summary-card.sugar {
+  --card-color: #eab308;
+  --card-dark: #a16207;
+}
+
+@media (max-width: 1200px) {
+  .summary-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .summary-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .summary-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .summary-card p {
+    font-size: 17px;
+  }
+}

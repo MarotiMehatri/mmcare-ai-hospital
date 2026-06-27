@@ -1,0 +1,187 @@
+.hospital-testimonials {
+  position: relative;
+  width: 100%;
+  padding: 35px 0;
+  overflow: hidden;
+}
+
+.hospital-testimonials::before {
+  content: "";
+  position: absolute;
+  width: 430px;
+  height: 430px;
+  top: -160px;
+  right: -160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.16), transparent 70%);
+}
+
+.hospital-testimonials__header {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+  margin: 0 auto 48px;
+  text-align: center;
+}
+
+.hospital-testimonials__header span {
+  display: inline-block;
+  padding: 11px 20px;
+  border-radius: 999px;
+  background: #eef7ff;
+  color: #2563eb;
+  font-size: 14px;
+  font-weight: 900;
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.12);
+  margin-bottom: 18px;
+}
+
+.hospital-testimonials__header h2 {
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.1;
+  font-weight: 950;
+  letter-spacing: -1.3px;
+}
+
+.hospital-testimonials__header p {
+  margin: 18px auto 0;
+  color: #64748b;
+  font-size: 18px;
+  line-height: 1.7;
+  font-weight: 500;
+}
+
+.hospital-testimonials__grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(230px, 1fr));
+  gap: 26px;
+}
+
+.hospital-testimonial-card {
+  position: relative;
+  min-height: 310px;
+  padding: 30px;
+  border-radius: 32px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.94);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1);
+  transition: 0.35s ease;
+}
+
+.hospital-testimonial-card::before {
+  content: "";
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  top: -80px;
+  right: -80px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(14, 165, 233, 0.22),
+    transparent 70%
+  );
+}
+
+.hospital-testimonial-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 35px 85px rgba(37, 99, 235, 0.18);
+}
+
+.hospital-testimonial-card__quote {
+  width: 58px;
+  height: 58px;
+  border-radius: 20px;
+  display: grid;
+  place-items: center;
+  color: #ffffff;
+  font-size: 24px;
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+  box-shadow: 0 16px 36px rgba(37, 99, 235, 0.26);
+  margin-bottom: 18px;
+}
+
+.hospital-testimonial-card__stars {
+  display: flex;
+  gap: 5px;
+  color: #f59e0b;
+  margin-bottom: 16px;
+  font-size: 16px;
+}
+
+.hospital-testimonial-card__text {
+  min-height: 88px;
+  margin: 0 0 24px;
+  color: #475569;
+  font-size: 15.5px;
+  line-height: 1.75;
+  font-weight: 600;
+}
+
+.hospital-testimonial-card__user {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-top: 18px;
+  border-top: 1px solid #e2e8f0;
+}
+
+.hospital-testimonial-card__avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #2563eb;
+  background: #eef7ff;
+  font-size: 32px;
+}
+
+.hospital-testimonial-card__user h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.hospital-testimonial-card__user span {
+  display: block;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@media (max-width: 1200px) {
+  .hospital-testimonials__grid {
+    grid-template-columns: repeat(2, minmax(230px, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .hospital-testimonials {
+    padding: 15px 0;
+  }
+
+  .hospital-testimonials__header p {
+    font-size: 16px;
+  }
+
+  .hospital-testimonials__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hospital-testimonial-card {
+    min-height: auto;
+    padding: 26px;
+  }
+
+  .hospital-testimonial-card__text {
+    min-height: auto;
+  }
+}

@@ -1,0 +1,184 @@
+.ai-appointment-hero {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1.25fr 0.75fr;
+  gap: 26px;
+  align-items: center;
+  padding: 34px;
+  border-radius: 34px;
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.96), rgba(20, 184, 166, 0.92)),
+    radial-gradient(
+      circle at top left,
+      rgba(255, 255, 255, 0.3),
+      transparent 35%
+    );
+  color: white;
+  box-shadow: 0 24px 60px rgba(37, 99, 235, 0.28);
+}
+
+.ai-hero-glow {
+  position: absolute;
+  border-radius: 999px;
+  filter: blur(4px);
+  opacity: 0.45;
+}
+
+.ai-hero-glow-one {
+  width: 190px;
+  height: 190px;
+  background: rgba(255, 255, 255, 0.22);
+  top: -70px;
+  right: 28%;
+}
+
+.ai-hero-glow-two {
+  width: 150px;
+  height: 150px;
+  background: rgba(255, 255, 255, 0.18);
+  bottom: -55px;
+  left: 8%;
+}
+
+.ai-appointment-hero-left,
+.ai-appointment-hero-right {
+  position: relative;
+  z-index: 1;
+}
+
+.ai-hero-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 900;
+  margin-bottom: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.ai-appointment-hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.ai-appointment-hero p {
+  margin: 0;
+  max-width: 740px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.ai-hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.ai-hero-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 800;
+  backdrop-filter: blur(10px);
+}
+
+.ai-hero-icon {
+  font-size: 18px;
+}
+
+.ai-hero-card {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 26px;
+  padding: 22px;
+  backdrop-filter: blur(14px);
+}
+
+.ai-hero-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.ai-hero-card-header span {
+  display: block;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  opacity: 0.82;
+  margin-bottom: 5px;
+}
+
+.ai-hero-card-header h3 {
+  margin: 0;
+  font-size: 23px;
+}
+
+.ai-hero-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.ai-hero-card li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.16);
+  font-weight: 800;
+}
+
+.ai-step-number {
+  width: 32px;
+  height: 32px;
+  border-radius: 12px;
+  background: white;
+  color: #2563eb;
+  display: grid;
+  place-items: center;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.ai-hero-card li svg {
+  margin-left: auto;
+  color: #bbf7d0;
+}
+
+@media (max-width: 900px) {
+  .ai-appointment-hero {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .ai-appointment-hero {
+    padding: 24px;
+    border-radius: 26px;
+  }
+
+  .ai-hero-highlights {
+    flex-direction: column;
+  }
+
+  .ai-hero-highlight {
+    width: 100%;
+  }
+}

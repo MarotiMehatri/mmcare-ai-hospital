@@ -1,0 +1,449 @@
+.doctor-small-card {
+  width: 100%;
+  max-width: 440px;
+
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+
+  border-radius: 28px;
+
+  padding: 24px;
+
+  border: 1px solid rgba(255, 255, 255, 0.5);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+  position: relative;
+}
+
+/* Top Gradient Line */
+
+.doctor-small-card::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 5px;
+
+  background: linear-gradient(90deg, #2563eb, #06b6d4, #10b981);
+}
+
+.doctor-small-card:hover {
+  transform: translateY(-8px);
+
+  box-shadow: 0 20px 45px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================
+   PROFILE HEADER
+========================= */
+
+.doctor-small-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  text-align: center;
+
+  margin-bottom: 24px;
+}
+
+/* =========================
+   PROFILE IMAGE
+========================= */
+
+.doctor-small-image-box {
+  width: 110px;
+  height: 110px;
+
+  border-radius: 50%;
+
+  overflow: hidden;
+
+  padding: 4px;
+
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+
+  margin-bottom: 15px;
+}
+
+.doctor-small-image {
+  width: 100%;
+  height: 100%;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  background: white;
+}
+
+.doctor-small-icon {
+  font-size: 60px;
+  color: #2563eb;
+}
+
+/* =========================
+   DOCTOR INFO
+========================= */
+
+.doctor-small-info {
+  width: 100%;
+}
+
+.doctor-small-name {
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+
+  margin-bottom: 5px;
+}
+
+.doctor-small-department {
+  font-size: 14px;
+  color: #64748b;
+
+  margin-bottom: 10px;
+}
+
+/* Online Badge */
+
+.doctor-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 14px;
+
+  border-radius: 25px;
+
+  background: #dcfce7;
+
+  color: #15803d;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.doctor-status::before {
+  content: "";
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.doctor-small-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 12px;
+
+  margin-top: 20px;
+  margin-bottom: 22px;
+}
+
+.doctor-detail-row {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  padding: 14px;
+
+  border-radius: 16px;
+
+  background: #f8fafc;
+
+  transition: 0.3s;
+}
+
+.doctor-detail-row:hover {
+  background: #eff6ff;
+}
+
+.detail-icon {
+  font-size: 18px;
+
+  color: #2563eb;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.doctor-view-btn {
+  width: 100%;
+  min-height: 52px;
+
+  margin-left: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  padding: 16px 24px;
+
+  border: none;
+  border-radius: 18px;
+
+  text-decoration: none;
+
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #06b6d4 100%);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  position: relative;
+  overflow: hidden;
+
+  transition: all 0.35s ease;
+
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.25);
+}
+
+/* Shine Effect */
+.doctor-view-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -100%;
+
+  width: 100%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.35),
+    transparent
+  );
+
+  transition: 0.6s;
+}
+
+.doctor-view-btn:hover::before {
+  left: 100%;
+}
+
+/* Hover */
+.doctor-view-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 15px 30px rgba(37, 99, 235, 0.35);
+}
+
+/* Click */
+.doctor-view-btn:active {
+  transform: translateY(0);
+}
+
+/* Focus */
+.doctor-view-btn:focus {
+  outline: none;
+
+  box-shadow:
+    0 0 0 4px rgba(59, 130, 246, 0.2),
+    0 15px 30px rgba(37, 99, 235, 0.3);
+}
+
+.doctor-small-department {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin-top: 10px;
+
+  padding: 10px 18px;
+
+  border-radius: 50px;
+
+  background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+
+  color: #2563eb;
+
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+
+  border: 1px solid #bfdbfe;
+
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+
+  transition: all 0.3s ease;
+}
+
+.doctor-small-department:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 8px 18px rgba(37, 99, 235, 0.15);
+}
+
+.doctor-small-department svg {
+  font-size: 14px;
+  color: #2563eb;
+}
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .doctor-small-card {
+    max-width: 100%;
+    padding: 20px;
+    border-radius: 24px;
+  }
+
+  .doctor-small-image-box {
+    width: 95px;
+    height: 95px;
+  }
+
+  .doctor-small-name {
+    font-size: 20px;
+  }
+
+  .doctor-small-department {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+
+  .doctor-detail-row {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .doctor-view-btn {
+    padding: 13px;
+    font-size: 14px;
+  }
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .doctor-small-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .doctor-small-image-box {
+    width: 90px;
+    height: 90px;
+  }
+
+  .doctor-small-name {
+    font-size: 20px;
+  }
+
+  .doctor-detail-row {
+    padding: 12px;
+  }
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 576px) {
+  .doctor-small-card {
+    width: 100%;
+    max-width: 100%;
+
+    padding: 16px;
+
+    border-radius: 20px;
+  }
+
+  .doctor-small-top {
+    margin-bottom: 18px;
+  }
+
+  .doctor-small-image-box {
+    width: 80px;
+    height: 80px;
+  }
+
+  .doctor-small-icon {
+    font-size: 45px;
+  }
+
+  .doctor-small-name {
+    font-size: 18px;
+  }
+
+  .doctor-small-department {
+    font-size: 11px;
+    padding: 7px 12px;
+    gap: 6px;
+  }
+
+  .doctor-small-details {
+    gap: 10px;
+    margin-top: 15px;
+    margin-bottom: 18px;
+  }
+
+  .doctor-detail-row {
+    padding: 10px 12px;
+    font-size: 13px;
+
+    gap: 10px;
+  }
+
+  .detail-icon {
+    font-size: 15px;
+  }
+
+  .doctor-view-btn {
+    padding: 12px;
+    font-size: 14px;
+    border-radius: 14px;
+  }
+}
+
+@media (max-width: 400px) {
+  .doctor-small-card {
+    padding: 14px;
+  }
+
+  .doctor-small-image-box {
+    width: 70px;
+    height: 70px;
+  }
+
+  .doctor-small-name {
+    font-size: 16px;
+  }
+
+  .doctor-detail-row {
+    font-size: 12px;
+  }
+
+  .doctor-small-department {
+    font-size: 10px;
+  }
+}

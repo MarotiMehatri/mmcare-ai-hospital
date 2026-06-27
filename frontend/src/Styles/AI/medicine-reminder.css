@@ -1,0 +1,316 @@
+.medicine-reminder-page {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.16),
+      transparent 34%
+    ),
+    radial-gradient(
+      circle at top right,
+      rgba(20, 184, 166, 0.14),
+      transparent 32%
+    ),
+    linear-gradient(180deg, #f8fafc, #eef6ff);
+}
+
+/* Header */
+.medicine-page-header {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding: 34px;
+  border-radius: 34px;
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: #ffffff;
+  box-shadow: 0 24px 60px rgba(37, 99, 235, 0.28);
+  margin-bottom: 24px;
+}
+
+.medicine-page-header::before {
+  content: "";
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.medicine-page-header::after {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  left: 10%;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.medicine-page-header-left {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.medicine-header-icon-box {
+  width: 76px;
+  height: 76px;
+  border-radius: 26px;
+  display: grid;
+  place-items: center;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 34px;
+  backdrop-filter: blur(10px);
+  flex-shrink: 0;
+}
+
+.medicine-header-badge {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 13px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.medicine-page-header h1 {
+  margin: 0 0 8px;
+  font-size: clamp(28px, 4vw, 42px);
+  letter-spacing: -0.04em;
+}
+
+.medicine-page-header p {
+  margin: 0;
+  max-width: 760px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.medicine-page-header-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.medicine-action-btn {
+  border: none;
+  border-radius: 16px;
+  padding: 13px 17px;
+  font-weight: 900;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.25s ease;
+}
+
+.medicine-action-btn:hover {
+  transform: translateY(-2px);
+}
+
+.medicine-action-btn:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.medicine-action-btn.primary {
+  background: #ffffff;
+  color: #2563eb;
+}
+
+.medicine-action-btn.secondary {
+  background: rgba(255, 255, 255, 0.18);
+  color: #ffffff;
+  backdrop-filter: blur(10px);
+}
+
+/* Error */
+.medicine-error-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fee2e2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  padding: 14px 16px;
+  border-radius: 18px;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.spin-icon {
+  animation: medicineSpin 1s linear infinite;
+}
+
+@keyframes medicineSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Layout */
+.medicine-main-grid,
+.medicine-bottom-grid {
+  display: grid;
+  gap: 24px;
+  align-items: start;
+}
+
+.medicine-main-grid {
+  grid-template-columns: 1.05fr 0.95fr;
+  margin-top: 24px;
+}
+
+.medicine-bottom-grid {
+  grid-template-columns: 1.2fr 0.8fr;
+  margin-top: 24px;
+}
+
+.medicine-left-column,
+.medicine-right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.medicine-right-column {
+  position: sticky;
+  top: 18px;
+}
+
+/* Global card look inside page */
+.medicine-reminder-page .ai-card,
+.medicine-reminder-page .medicine-card,
+.medicine-reminder-page .reminder-card,
+.medicine-reminder-page .dashboard-card,
+.medicine-reminder-page .refill-alert-card,
+.medicine-reminder-page .smart-suggestion-box,
+.medicine-reminder-page .today-schedule-card,
+.medicine-reminder-page .adherence-card {
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid #e2e8f0;
+  border-radius: 28px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+/* Common header style */
+.medicine-reminder-page .ai-card-header,
+.medicine-reminder-page .medicine-card-header {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 18px;
+}
+
+.medicine-reminder-page .ai-card-header-icon,
+.medicine-reminder-page .medicine-card-header-icon {
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+  border-radius: 17px;
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+  color: #ffffff;
+}
+
+/* Form fields */
+.medicine-reminder-page input,
+.medicine-reminder-page select,
+.medicine-reminder-page textarea {
+  width: 100%;
+  border: 1px solid #cbd5e1;
+  background: #f8fafc;
+  border-radius: 16px;
+  padding: 12px 14px;
+  outline: none;
+  font-size: 15px;
+}
+
+.medicine-reminder-page input:focus,
+.medicine-reminder-page select:focus,
+.medicine-reminder-page textarea:focus {
+  border-color: #2563eb;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+/* Common buttons */
+.medicine-reminder-page button {
+  transition: 0.25s ease;
+}
+
+.medicine-reminder-page button:hover {
+  transform: translateY(-1px);
+}
+
+/* Mobile */
+@media (max-width: 992px) {
+  .medicine-main-grid,
+  .medicine-bottom-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-right-column {
+    position: static;
+  }
+
+  .medicine-page-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .medicine-reminder-page {
+    padding: 16px;
+  }
+
+  .medicine-page-header {
+    padding: 22px;
+    border-radius: 26px;
+  }
+
+  .medicine-page-header-left {
+    align-items: flex-start;
+  }
+
+  .medicine-header-icon-box {
+    width: 58px;
+    height: 58px;
+    border-radius: 20px;
+    font-size: 26px;
+  }
+
+  .medicine-page-header-actions,
+  .medicine-action-btn {
+    width: 100%;
+  }
+
+  .medicine-action-btn {
+    justify-content: center;
+  }
+
+  .medicine-reminder-page .ai-card,
+  .medicine-reminder-page .medicine-card,
+  .medicine-reminder-page .reminder-card,
+  .medicine-reminder-page .dashboard-card,
+  .medicine-reminder-page .refill-alert-card,
+  .medicine-reminder-page .smart-suggestion-box,
+  .medicine-reminder-page .today-schedule-card,
+  .medicine-reminder-page .adherence-card {
+    border-radius: 22px;
+  }
+}

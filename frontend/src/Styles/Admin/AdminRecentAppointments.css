@@ -1,0 +1,108 @@
+.admin-recent-appointments {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 24px;
+  margin-top: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.admin-recent-appointments-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.admin-recent-appointments-top h3 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+}
+
+.admin-recent-appointments-top p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.admin-view-all-appointments-btn {
+  border: none;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.admin-recent-appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.admin-recent-appointment-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+}
+
+.admin-recent-appointment-left h4 {
+  margin: 0 0 6px;
+  color: #0f172a;
+}
+
+.admin-recent-appointment-left p,
+.admin-recent-appointment-left span,
+.admin-recent-appointment-middle p,
+.admin-recent-appointment-middle span {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.admin-appointment-badge {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-appointment-badge.booked {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.admin-appointment-badge.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.admin-appointment-badge.cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.admin-recent-appointments-message {
+  text-align: center;
+  padding: 20px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .admin-recent-appointment-card {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-view-all-appointments-btn {
+    width: 100%;
+  }
+}

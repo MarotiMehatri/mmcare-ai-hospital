@@ -1,0 +1,499 @@
+/* =========================================
+   PATIENT NAVBAR
+========================================= */
+
+.patient-navbar {
+  position: sticky;
+  top: 0;
+
+  width: 100%;
+  height: 82px;
+
+  padding: 0 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(135deg, #07152f, #0b1f44, #102a5c);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+
+  z-index: 999;
+}
+
+/* =========================================
+   LEFT
+========================================= */
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.navbar-menu-btn {
+  width: 48px;
+  height: 48px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  font-size: 1.2rem;
+
+  transition: 0.3s ease;
+}
+
+.navbar-menu-btn:hover {
+  transform: scale(1.05);
+
+  background: linear-gradient(135deg, #00b7ff, #0077ff);
+}
+
+.navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 900;
+
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #ffffff, #7cecff, #00ffbf);
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* =========================================
+   RIGHT
+========================================= */
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  position: relative;
+}
+
+/* =========================================
+   ICONS
+========================================= */
+
+.nav-icon {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  font-size: 1.1rem;
+
+  transition: 0.3s ease;
+}
+
+.nav-icon:hover {
+  transform: translateY(-3px);
+
+  background: linear-gradient(135deg, #00b7ff, #0077ff);
+}
+
+/* =========================================
+   BADGE
+========================================= */
+
+.badge {
+  position: absolute;
+
+  top: -6px;
+  right: -4px;
+
+  min-width: 18px;
+  height: 18px;
+
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 6px;
+
+  background: #ff3d57;
+
+  color: #ffffff;
+
+  font-size: 0.75rem;
+  font-weight: 700;
+
+  border: 2px solid #07152f;
+}
+
+/* =========================================
+   SUPPORT
+========================================= */
+
+.nav-support {
+  padding: 12px 18px;
+
+  border-radius: 14px;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.nav-support:hover {
+  background: linear-gradient(135deg, #00d9ff, #00ffbf);
+
+  color: #07152f;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.nav-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 8px 14px;
+
+  border-radius: 18px;
+
+  cursor: pointer;
+
+  background: rgba(255, 255, 255, 0.08);
+
+  color: #ffffff;
+
+  transition: 0.3s ease;
+}
+
+.nav-profile:hover {
+  transform: translateY(-2px);
+
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.profile-img {
+  width: 42px;
+  height: 42px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 2px solid #00d9ff;
+}
+
+.nav-profile span {
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* =========================================
+   PROFILE DROPDOWN
+========================================= */
+
+.profile-dropdown {
+  position: absolute;
+
+  top: 78px;
+  right: 0;
+
+  width: 220px;
+
+  border-radius: 20px;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+
+  animation: dropdownFade 0.25s ease;
+}
+
+.profile-dropdown div {
+  padding: 16px 20px;
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  font-weight: 600;
+
+  transition: 0.3s ease;
+}
+
+.profile-dropdown div:hover {
+  background: #f3f8ff;
+}
+
+.logout {
+  color: #ff3d57;
+}
+
+/* =========================================
+   MESSAGE ALERT
+========================================= */
+
+.message-alert-wrapper {
+  position: relative;
+}
+
+/* =========================================
+   MESSAGE DROPDOWN
+========================================= */
+
+.message-dropdown {
+  position: absolute;
+
+  top: 70px;
+  right: 0;
+
+  width: 320px;
+  max-height: 420px;
+
+  overflow-y: auto;
+
+  border-radius: 22px;
+
+  background: #ffffff;
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+
+  animation: dropdownFade 0.3s ease;
+
+  z-index: 9999;
+}
+
+.message-header {
+  padding: 18px 22px;
+
+  border-bottom: 1px solid #edf2f7;
+
+  font-size: 1rem;
+  font-weight: 800;
+
+  color: #07152f;
+
+  background: #f8fbff;
+}
+
+.no-message {
+  padding: 40px 20px;
+
+  text-align: center;
+
+  color: #7a8ca5;
+
+  font-weight: 600;
+}
+
+/* =========================================
+   MESSAGE ITEM
+========================================= */
+
+.message-item {
+  padding: 18px 20px;
+
+  border-bottom: 1px solid #f1f5fa;
+
+  transition: 0.3s ease;
+
+  cursor: pointer;
+}
+
+.message-item:hover {
+  background: #f7fbff;
+}
+
+.message-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 8px;
+}
+
+.message-top h4 {
+  margin: 0;
+
+  font-size: 0.95rem;
+  font-weight: 800;
+
+  color: #07152f;
+}
+
+.message-top span {
+  font-size: 0.75rem;
+
+  color: #7a8ca5;
+}
+
+.message-item p {
+  margin: 0;
+
+  color: #516275;
+
+  font-size: 0.9rem;
+
+  line-height: 1.5;
+}
+
+/* =========================================
+   VIEW ALL BUTTON
+========================================= */
+
+.view-all-btn {
+  width: calc(100% - 30px);
+
+  margin: 15px;
+
+  height: 52px;
+
+  border: none;
+  outline: none;
+
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  font-size: 0.95rem;
+  font-weight: 700;
+
+  color: #ffffff;
+
+  background: linear-gradient(135deg, #00b7ff, #0077ff);
+
+  transition: 0.3s ease;
+}
+
+.view-all-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 12px 25px rgba(0, 119, 255, 0.25);
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+.message-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.message-dropdown::-webkit-scrollbar-thumb {
+  background: #c7d5e5;
+
+  border-radius: 50px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .patient-navbar {
+    height: 74px;
+
+    padding: 0 14px;
+  }
+
+  .navbar-logo {
+    font-size: 1.3rem;
+  }
+
+  .nav-support {
+    display: none;
+  }
+
+  .nav-profile span {
+    display: none;
+  }
+
+  .message-dropdown {
+    width: 310px;
+
+    right: -40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-navbar {
+    padding: 0 10px;
+  }
+
+  .navbar-left {
+    gap: 10px;
+  }
+
+  .navbar-logo {
+    font-size: 1.1rem;
+  }
+
+  .navbar-right {
+    gap: 10px;
+  }
+
+  .nav-icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .message-dropdown {
+    width: 290px;
+
+    right: -70px;
+  }
+
+  .profile-dropdown {
+    width: 190px;
+  }
+}
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,181 @@
+.create-payment-page {
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 30px;
+  background: #f4f7fc;
+}
+
+.create-payment-page h2 {
+  text-align: center;
+  color: #1e293b;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.payment-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.payment-grid > div {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.payment-grid > div:hover {
+  transform: translateY(-3px);
+}
+
+.payment-grid label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  margin-bottom: 8px;
+}
+
+.payment-grid input,
+.payment-grid select {
+  width: 100%;
+  padding: 13px 15px;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+  background: #fff;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.payment-grid input:focus,
+.payment-grid select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.2);
+}
+
+.payment-grid input[readonly] {
+  background: #f8fafc;
+  color: #334155;
+}
+
+/* Medicine Section */
+
+.medicine-section {
+  grid-column: 1/-1;
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.medicine-section h3 {
+  color: #1e293b;
+  margin-bottom: 25px;
+  font-size: 24px;
+}
+
+.medicine-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr auto;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.medicine-row input {
+  margin: 0;
+}
+
+/* Add Medicine Button */
+
+.add-medicine-btn {
+  margin-top: 15px;
+  border: none;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: white;
+  padding: 13px 25px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.add-medicine-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.3);
+}
+
+/* Remove Button */
+
+.remove-dedicine-btn {
+  border: none;
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+  padding: 12px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.remove-dedicine-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Payment Status */
+
+select[name="paymentStatus"] {
+  font-weight: 600;
+}
+
+/* Submit Button */
+
+button[type="submit"] {
+  width: 100%;
+  margin-top: 35px;
+  border: none;
+  padding: 18px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 16px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transition: 0.3s;
+}
+
+button[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
+}
+
+/* Medical Bill and Total Amount */
+
+input[value] {
+  font-weight: 600;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .medicine-row {
+    grid-template-columns: 1fr;
+  }
+
+  .payment-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .create-payment-page {
+    padding: 15px;
+  }
+
+  .create-payment-page h2 {
+    font-size: 26px;
+  }
+}

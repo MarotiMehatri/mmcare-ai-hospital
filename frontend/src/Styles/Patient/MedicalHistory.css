@@ -1,0 +1,151 @@
+.patient-medical-history-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: linear-gradient(135deg, #eef7ff 0%, #f8fbff 45%, #ffffff 100%);
+}
+
+/* Header */
+.patient-medical-history-page__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+  padding: 24px 28px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0f766e, #0891b2);
+  color: #ffffff;
+  box-shadow: 0 18px 40px rgba(8, 145, 178, 0.25);
+}
+
+.patient-medical-history-page__head h2 {
+  margin: 0;
+  font-size: 30px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.patient-medical-history-page__head p {
+  margin: 8px 0 0;
+  max-width: 760px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #e0f7fa;
+}
+
+/* Summary Cards */
+.medical-history-summary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+.medical-history-summary__card {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 22px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(12px);
+  transition: all 0.3s ease;
+}
+
+.medical-history-summary__card::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(20, 184, 166, 0.12);
+}
+
+.medical-history-summary__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.13);
+}
+
+.medical-history-summary__icon {
+  z-index: 1;
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 24px;
+  background: linear-gradient(135deg, #0f766e, #06b6d4);
+  box-shadow: 0 12px 24px rgba(8, 145, 178, 0.3);
+}
+
+.medical-history-summary__card h4 {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.medical-history-summary__card h3 {
+  margin: 6px 0 0;
+  font-size: 25px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* Loading and Error */
+.patient-medical-history-page__loading,
+.patient-medical-history-page__error {
+  margin-top: 24px;
+  padding: 22px;
+  border-radius: 18px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.patient-medical-history-page__loading {
+  color: #0369a1;
+  background: #e0f2fe;
+  border: 1px solid #bae6fd;
+}
+
+.patient-medical-history-page__error {
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .medical-history-summary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-medical-history-page {
+    padding: 16px;
+  }
+
+  .patient-medical-history-page__head {
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .patient-medical-history-page__head h2 {
+    font-size: 24px;
+  }
+
+  .medical-history-summary {
+    grid-template-columns: 1fr;
+  }
+}

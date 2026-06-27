@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+}
+
+.create-prescription-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: linear-gradient(135deg, #eef7ff, #f8fbff 45%, #ecfff7);
+  color: #102033;
+}
+
+.create-prescription-hero {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #075985, #0f766e);
+  color: #fff;
+  box-shadow: 0 20px 50px rgba(15, 118, 110, 0.25);
+}
+
+.back-btn {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.18);
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-badge {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.create-prescription-hero h2 {
+  margin: 0;
+  font-size: 34px;
+}
+
+.create-prescription-hero p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+}
+
+.create-prescription-form {
+  display: grid;
+  gap: 22px;
+}
+
+.prescription-card {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.card-title svg {
+  width: 44px;
+  height: 44px;
+  padding: 12px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #e0f2fe, #ccfbf1);
+  color: #0f766e;
+}
+
+.card-title h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #0f172a;
+}
+
+.card-title p {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  border: 1px solid #dbe7f0;
+  border-radius: 14px;
+  padding: 13px 15px;
+  font-size: 14px;
+  outline: none;
+  background: #fff;
+  color: #0f172a;
+  transition: 0.25s ease;
+}
+
+textarea {
+  min-height: 105px;
+  resize: vertical;
+  margin-top: 16px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #0f766e;
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+}
+
+input[readonly] {
+  background: #f8fafc;
+  color: #64748b;
+  cursor: not-allowed;
+}
+
+.selected-patient-info {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ecfeff, #f0fdf4);
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  border: 1px solid #ccfbf1;
+}
+
+.selected-patient-info h4 {
+  margin: 0;
+  color: #0f766e;
+}
+
+.selected-patient-info p {
+  margin: 0;
+  color: #475569;
+  font-weight: 600;
+}
+
+.medicine-box {
+  padding: 18px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px dashed #b6d8e6;
+  margin-bottom: 18px;
+}
+
+.medicine-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.medicine-head h4 {
+  margin: 0;
+  color: #0f172a;
+}
+
+.add-medicine-btn,
+.remove-medicine-btn,
+.submit-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 13px 18px;
+  font-weight: 800;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.25s ease;
+}
+
+.add-medicine-btn {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.add-medicine-btn:hover {
+  background: #bae6fd;
+  transform: translateY(-2px);
+}
+
+.remove-medicine-btn {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.remove-medicine-btn:hover {
+  background: #fecaca;
+}
+
+.ai-memory-card {
+  background: linear-gradient(135deg, #ffffff, #f5f3ff);
+}
+
+.prescription-submit-area {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 30px;
+}
+
+.submit-btn {
+  min-width: 220px;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f766e, #075985);
+  color: #fff;
+  box-shadow: 0 16px 35px rgba(15, 118, 110, 0.28);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 45px rgba(15, 118, 110, 0.35);
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.prescription-loader {
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  font-weight: 800;
+  color: #0f766e;
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .selected-patient-info {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .create-prescription-page {
+    padding: 16px;
+  }
+
+  .create-prescription-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+    border-radius: 22px;
+  }
+
+  .create-prescription-hero h2 {
+    font-size: 26px;
+  }
+
+  .prescription-card {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selected-patient-info {
+    grid-template-columns: 1fr;
+  }
+
+  .medicine-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .prescription-submit-area {
+    justify-content: stretch;
+  }
+
+  .submit-btn {
+    width: 100%;
+  }
+}

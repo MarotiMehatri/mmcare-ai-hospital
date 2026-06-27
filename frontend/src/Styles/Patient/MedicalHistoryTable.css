@@ -1,0 +1,134 @@
+.medical-history-table-wrapper {
+  background: #ffffff;
+  border-radius: 22px;
+  overflow-x: auto;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+  border: 1px solid #e2e8f0;
+}
+
+.medical-history-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 1200px;
+}
+
+.medical-history-table thead {
+  background: linear-gradient(135deg, #0f766e, #0891b2);
+}
+
+.medical-history-table thead th {
+  padding: 18px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.medical-history-table tbody tr {
+  transition: 0.3s ease;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.medical-history-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.medical-history-table td {
+  padding: 16px;
+  vertical-align: top;
+}
+
+/* Visit ID */
+.medical-history-table__visit-id {
+  background: #e0f2fe;
+  color: #0369a1;
+  padding: 6px 12px;
+  border-radius: 50px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Doctor */
+.medical-history-table__doctor {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Department */
+.medical-history-table__department {
+  display: inline-block;
+  background: #ecfeff;
+  color: #0f766e;
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Diagnosis */
+.medical-history-table__diagnosis {
+  font-weight: 600;
+  color: #dc2626;
+}
+
+/* Treatment */
+.medical-history-table__treatment {
+  color: #334155;
+  line-height: 1.5;
+}
+
+/* Date */
+.medical-history-table__date {
+  font-weight: 600;
+  color: #475569;
+}
+
+/* Notes */
+.medical-history-table__notes {
+  max-width: 250px;
+  line-height: 1.5;
+  color: #64748b;
+}
+
+/* Status */
+.medical-history-table__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 7px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Status Colors */
+.medical-history-table__status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.medical-history-table__status.ongoing {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.medical-history-table__status.follow-up-required {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.medical-history-table__status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Empty */
+.medical-history-table__empty {
+  padding: 60px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 16px;
+  font-weight: 600;
+}

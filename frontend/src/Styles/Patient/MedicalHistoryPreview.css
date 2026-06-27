@@ -1,0 +1,209 @@
+.medical-history-preview {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+  margin-top: 24px;
+}
+
+/* Header */
+.medical-history-preview__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.medical-history-preview__title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.medical-history-preview__icon {
+  width: 54px;
+  height: 54px;
+  min-width: 54px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0f766e, #06b6d4);
+  color: #ffffff;
+  font-size: 22px;
+  box-shadow: 0 10px 25px rgba(8, 145, 178, 0.25);
+}
+
+.medical-history-preview__title-wrap h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.medical-history-preview__title-wrap p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  color: #64748b;
+}
+
+/* View Button */
+.medical-history-preview__view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: #0891b2;
+  background: #ecfeff;
+  transition: all 0.3s ease;
+}
+
+.medical-history-preview__view-btn:hover {
+  background: #0891b2;
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+/* List */
+.medical-history-preview__list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* Item */
+.medical-history-preview__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.medical-history-preview__item:hover {
+  background: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
+}
+
+/* Left */
+.medical-history-preview__left {
+  flex: 1;
+}
+
+.medical-history-preview__left h4 {
+  margin: 0 0 6px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.medical-history-preview__left p {
+  margin: 0;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* Middle */
+.medical-history-preview__middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 140px;
+}
+
+.medical-history-preview__middle span {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0f766e;
+  background: #ecfeff;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+
+.medical-history-preview__middle small {
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Right */
+.medical-history-preview__right {
+  min-width: 130px;
+  text-align: right;
+}
+
+/* Status */
+.medical-history-preview__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 110px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Status Colors */
+.medical-history-preview__status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.medical-history-preview__status.pending-review {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.medical-history-preview__status.follow-up-required {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.medical-history-preview__status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Empty State */
+.medical-history-preview__empty {
+  padding: 40px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .medical-history-preview {
+    padding: 18px;
+  }
+
+  .medical-history-preview__head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .medical-history-preview__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .medical-history-preview__middle,
+  .medical-history-preview__right {
+    align-items: flex-start;
+    text-align: left;
+  }
+}

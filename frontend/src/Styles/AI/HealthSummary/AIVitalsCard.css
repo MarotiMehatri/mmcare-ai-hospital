@@ -1,0 +1,150 @@
+.ai-vitals-card {
+  position: relative;
+  overflow: hidden;
+  padding: 22px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff, #f8fbff);
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.08);
+}
+
+.ai-vitals-glow {
+  position: absolute;
+  right: -70px;
+  top: -70px;
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  background: rgba(37, 99, 235, 0.12);
+}
+
+.ai-vitals-header,
+.ai-vitals-grid {
+  position: relative;
+  z-index: 1;
+}
+
+.ai-vitals-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.ai-vitals-icon {
+  width: 58px;
+  height: 58px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 25px;
+  background: linear-gradient(135deg, #ef4444, #14b8a6);
+  box-shadow: 0 14px 30px rgba(37, 99, 235, 0.18);
+}
+
+.ai-vitals-header span {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.ai-vitals-header h2 {
+  margin: 5px 0 0;
+  color: #0f172a;
+  font-size: 22px;
+  font-weight: 950;
+}
+
+.ai-vitals-header p {
+  margin: 5px 0 0;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.ai-vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.ai-vital-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: 0.25s ease;
+}
+
+.ai-vital-item:hover {
+  transform: translateY(-3px);
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.ai-vital-item-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #2563eb, #14b8a6);
+}
+
+.ai-vital-content span {
+  display: block;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.ai-vital-content strong {
+  display: block;
+  margin-top: 4px;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 950;
+}
+
+.ai-vital-content small {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 7px;
+  color: #0f766e;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.ai-vital-temp .ai-vital-item-icon {
+  background: linear-gradient(135deg, #ef4444, #f97316);
+}
+
+.ai-vital-sugar .ai-vital-item-icon {
+  background: linear-gradient(135deg, #7c3aed, #6366f1);
+}
+
+.ai-vital-oxygen .ai-vital-item-icon {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+}
+
+.ai-vital-bmi .ai-vital-item-icon {
+  background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+@media (max-width: 640px) {
+  .ai-vitals-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .ai-vitals-grid {
+    grid-template-columns: 1fr;
+  }
+}

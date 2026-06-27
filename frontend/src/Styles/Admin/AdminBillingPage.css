@@ -1,0 +1,270 @@
+/* ===================================
+   BILLING PAGE
+=================================== */
+
+.admin-billing-page {
+  min-height: 100vh;
+  background: #f4f7fc;
+  padding: 25px;
+}
+
+/* ===================================
+   HERO SECTION
+=================================== */
+
+.admin-billing-hero {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  border-radius: 25px;
+  padding: 35px;
+  color: white;
+  margin-bottom: 30px;
+  box-shadow:
+    0 20px 40px rgba(37, 99, 235, 0.2),
+    0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-billing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.admin-billing-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+}
+
+.admin-billing-subtitle {
+  max-width: 700px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ===================================
+   STAT GRID
+=================================== */
+
+.admin-billing-stats-grid {
+  margin-top: 35px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+/* ===================================
+   STAT CARD
+=================================== */
+
+.billing-stat-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  padding: 24px;
+  border-radius: 20px;
+
+  transition: 0.3s ease;
+}
+
+.billing-stat-card:hover {
+  transform: translateY(-8px);
+}
+
+.billing-stat-card h4 {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.billing-stat-card h2 {
+  font-size: 1.9rem;
+  font-weight: 700;
+}
+
+/* Color Indicators */
+
+.billing-stat-card.paid {
+  border-left: 5px solid #22c55e;
+}
+
+.billing-stat-card.pending {
+  border-left: 5px solid #f59e0b;
+}
+
+.billing-stat-card.revenue {
+  border-left: 5px solid #06b6d4;
+}
+
+.billing-stat-card.warning {
+  border-left: 5px solid #ef4444;
+}
+
+/* ===================================
+   FILTER SECTION
+=================================== */
+
+.admin-billing-filter-wrapper {
+  margin-bottom: 30px;
+}
+
+/* ===================================
+   TABLE SECTION
+=================================== */
+
+.admin-billing-table-wrapper {
+  background: #ffffff;
+  border-radius: 25px;
+  padding: 25px;
+  overflow-x: auto;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* ===================================
+   LOADING
+=================================== */
+
+.admin-billing-loading {
+  text-align: center;
+  padding: 80px 20px;
+  color: #64748b;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ===================================
+   SCROLLBAR
+=================================== */
+
+.admin-billing-table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.admin-billing-table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+/* ===================================
+   LARGE SCREEN
+=================================== */
+
+@media (max-width: 1400px) {
+  .admin-billing-stats-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ===================================
+   LAPTOP
+=================================== */
+
+@media (max-width: 1200px) {
+  .admin-billing-page {
+    padding: 20px;
+  }
+
+  .admin-billing-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ===================================
+   TABLET
+=================================== */
+
+@media (max-width: 992px) {
+  .admin-billing-hero {
+    padding: 30px;
+  }
+
+  .admin-billing-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .admin-billing-title {
+    font-size: 1.8rem;
+  }
+}
+
+/* ===================================
+   MOBILE
+=================================== */
+
+@media (max-width: 768px) {
+  .admin-billing-page {
+    padding: 15px;
+  }
+
+  .admin-billing-hero {
+    padding: 25px;
+    border-radius: 20px;
+  }
+
+  .admin-billing-title {
+    font-size: 1.5rem;
+  }
+
+  .admin-billing-subtitle {
+    font-size: 0.85rem;
+  }
+
+  .admin-billing-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .billing-stat-card {
+    padding: 20px;
+  }
+
+  .billing-stat-card h2 {
+    font-size: 1.6rem;
+  }
+
+  .admin-billing-table-wrapper {
+    padding: 18px;
+    border-radius: 20px;
+  }
+}
+
+/* ===================================
+   SMALL MOBILE
+=================================== */
+
+@media (max-width: 480px) {
+  .admin-billing-page {
+    padding: 10px;
+  }
+
+  .admin-billing-hero {
+    padding: 20px;
+  }
+
+  .admin-billing-title {
+    font-size: 1.3rem;
+  }
+
+  .admin-billing-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .billing-stat-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .billing-stat-card h4 {
+    font-size: 0.8rem;
+  }
+
+  .billing-stat-card h2 {
+    font-size: 1.3rem;
+  }
+}

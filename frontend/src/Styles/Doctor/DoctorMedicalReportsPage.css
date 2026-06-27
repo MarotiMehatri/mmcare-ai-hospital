@@ -1,0 +1,643 @@
+/* =========================
+   PAGE BASE
+========================= */
+.doctor-medical-reports-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 2px;
+  background: linear-gradient(135deg, #eef5ff, #f9fcff);
+  font-family: "Inter", sans-serif;
+  box-sizing: border-box;
+}
+
+/* =========================
+   HEADER
+========================= */
+.doctor-medical-reports-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 26px 30px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+  color: #ffffff;
+  box-shadow: 0 16px 35px rgba(15, 118, 110, 0.22);
+  margin-bottom: 24px;
+}
+
+.doctor-medical-reports-header h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 800;
+}
+
+.doctor-medical-reports-header p {
+  margin: 8px 0 0;
+  opacity: 0.9;
+  font-size: 15px;
+}
+
+/* Doctor Box */
+.doctor-medical-reports-doctor-box {
+  min-width: 220px;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+}
+
+.doctor-medical-reports-doctor-box span {
+  display: block;
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+.doctor-medical-reports-doctor-box strong {
+  display: block;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.doctor-medical-reports-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.doctor-medical-reports-top,
+.doctor-medical-reports-bottom {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 24px;
+  border: 1px solid #e5eef5;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+}
+
+.doctor-report-loading-box {
+  padding: 30px;
+  text-align: center;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.doctor-report-loading-box {
+  padding: 30px;
+  text-align: center;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.doctor-medical-reports-bottom {
+  overflow-x: auto;
+}
+
+.doctor-medical-reports-bottom table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+/* =========================
+   STATS CARDS
+========================= */
+.doctor-reports-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.doctor-reports-stat-card {
+  background: linear-gradient(145deg, #ffffff, #f4f8ff);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0, 80, 180, 0.08);
+  transition: 0.3s ease;
+}
+
+.doctor-reports-stat-card:hover {
+  transform: translateY(-4px);
+}
+
+.doctor-reports-stat-card h4 {
+  font-size: 14px;
+  color: #6a8298;
+  margin-bottom: 8px;
+}
+
+.doctor-reports-stat-card span {
+  font-size: 28px;
+  font-weight: 800;
+  color: #0f2f4f;
+}
+
+/* =========================
+   LAYOUT GRID
+========================= */
+.doctor-medical-reports-stack-layout {
+  display: grid;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* =========================
+   FORM CARD
+========================= */
+.doctor-report-form-card {
+  border-radius: 22px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1px solid #e2edf8;
+  box-shadow: 0 14px 40px rgba(0, 90, 200, 0.08);
+}
+
+/* Header inside form */
+.doctor-report-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.doctor-report-card-header h3 {
+  font-size: 22px;
+  color: #103b5c;
+}
+
+.doctor-report-card-header p {
+  font-size: 14px;
+  color: #6c879c;
+}
+
+/* =========================
+   FORM GRID
+========================= */
+.doctor-report-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* Inputs */
+.doctor-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.doctor-form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #3c5870;
+}
+
+.doctor-form-group input,
+.doctor-form-group select,
+.doctor-form-group textarea {
+  border-radius: 12px;
+  border: 1px solid #d5e4f3;
+  padding: 12px 14px;
+  font-size: 14px;
+  background: #fdfefe;
+  transition: 0.2s;
+}
+
+/* Focus effect */
+.doctor-form-group input:focus,
+.doctor-form-group select:focus,
+.doctor-form-group textarea:focus {
+  border-color: #2d8cff;
+  box-shadow: 0 0 0 3px rgba(45, 140, 255, 0.15);
+}
+
+/* Full width textarea */
+.doctor-form-group-full {
+  grid-column: span 2;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.doctor-report-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* Base Button */
+.doctor-btn {
+  border: none;
+  border-radius: 14px;
+  padding: 12px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+/* Primary */
+.doctor-btn-primary {
+  background: linear-gradient(135deg, #1d8cf8, #3c5bff);
+  color: white;
+}
+
+.doctor-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 18px rgba(0, 90, 255, 0.2);
+}
+
+/* Secondary */
+.doctor-btn-secondary {
+  background: #eef5fb;
+  color: #2c4a64;
+}
+
+/* 🔥 NEW MODERN VIEW BUTTON */
+.doctor-btn-view {
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: white;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.doctor-btn-view:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 140, 255, 0.25);
+}
+
+/* =========================
+   TABLE CARD
+========================= */
+.doctor-reports-table-card {
+  border-radius: 22px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e4edf6;
+  box-shadow: 0 14px 35px rgba(0, 80, 180, 0.08);
+}
+
+.doctor-reports-table-wrapper {
+  overflow-x: auto;
+}
+
+.doctor-reports-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doctor-reports-table th {
+  background: #f4f8fc;
+  padding: 14px;
+  text-align: left;
+  font-size: 13px;
+  color: #5a738a;
+}
+
+.doctor-reports-table td {
+  padding: 14px;
+  border-bottom: 1px solid #eef4fa;
+}
+
+/* Hover effect */
+.doctor-reports-table tr:hover {
+  background: #f9fcff;
+}
+
+/* =========================
+   BADGES
+========================= */
+.doctor-report-badge {
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Status */
+.doctor-status-uploaded {
+  background: #e6f4ff;
+  color: #0077cc;
+}
+
+.doctor-status-reviewed {
+  background: #e7faef;
+  color: #1a8f5a;
+}
+
+.doctor-status-pending-review {
+  background: #fff4dc;
+  color: #c27a00;
+}
+
+/* Priority */
+.doctor-priority-normal {
+  background: #eef4f8;
+}
+
+.doctor-priority-urgent {
+  background: #fff0e5;
+  color: #cc6a00;
+}
+
+.doctor-priority-critical {
+  background: #ffe7e7;
+  color: #d62828;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 1024px) {
+  .doctor-medical-reports-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-reports-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .doctor-medical-reports-page {
+    padding: 20px;
+  }
+
+  .doctor-medical-reports-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .doctor-medical-reports-header h2 {
+    font-size: 24px;
+  }
+
+  .doctor-medical-reports-doctor-box {
+    width: 100%;
+    min-width: unset;
+    box-sizing: border-box;
+  }
+
+  .doctor-medical-reports-top,
+  .doctor-medical-reports-bottom {
+    padding: 20px;
+    border-radius: 18px;
+  }
+  .doctor-reports-table-card {
+    padding: 18px;
+    border-radius: 16px;
+  }
+
+  .doctor-report-card-header h3 {
+    font-size: 18px;
+  }
+
+  .doctor-reports-table th,
+  .doctor-reports-table td {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  /* Keep table scrollable */
+  .doctor-reports-table-wrapper {
+    overflow-x: auto;
+  }
+}
+
+/* ===============================
+   Mobile - 480px
+================================ */
+
+@media (max-width: 480px) {
+  /* Page spacing */
+  .doctor-medical-reports-page {
+    padding: 10px;
+  }
+
+  /* HEADER → Card style */
+  .doctor-medical-reports-header {
+    padding: 16px;
+    border-radius: 14px;
+    gap: 12px;
+  }
+
+  .doctor-medical-reports-header h2 {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .doctor-medical-reports-header p {
+    font-size: 13px;
+    opacity: 0.9;
+  }
+
+  /* Doctor Info → badge style */
+  .doctor-medical-reports-doctor-box {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 13px;
+  }
+
+  /* STACK spacing */
+  .doctor-medical-reports-stack-layout {
+    gap: 14px;
+  }
+
+  /* Upload Form Section */
+  .doctor-medical-reports-top {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  /* Table Section */
+  .doctor-medical-reports-bottom {
+    padding: 14px;
+    border-radius: 14px;
+  }
+
+  /* 🔥 TABLE → Convert to mobile card style */
+  .doctor-medical-reports-bottom table {
+    display: none;
+  }
+
+  /* Create mobile cards instead */
+  .medical-report-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px;
+    margin-bottom: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef3f7;
+  }
+
+  .medical-report-card h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #0f172a;
+  }
+
+  .medical-report-card p {
+    font-size: 13px;
+    color: #475569;
+    margin: 3px 0;
+  }
+
+  .medical-report-card .status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 6px;
+  }
+
+  .status.uploaded {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+
+  .status.pending {
+    background: #fef3c7;
+    color: #d97706;
+  }
+
+  .status.rejected {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  /* Buttons */
+  .medical-report-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .medical-report-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-delete {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+
+  .btn-view {
+    background: #e0f2fe;
+    color: #0284c7;
+  }
+
+  /* Loading box */
+  .doctor-report-loading-box {
+    padding: 18px;
+    font-size: 13px;
+  }
+
+  .doctor-report-form-card {
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .doctor-report-form-card h3 {
+    font-size: 18px;
+    margin-bottom: 14px;
+  }
+
+  .doctor-report-form-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .doctor-form-group label {
+    font-size: 13px;
+  }
+
+  .doctor-form-group input,
+  .doctor-form-group select,
+  .doctor-form-group textarea {
+    padding: 12px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .doctor-form-group-full {
+    grid-column: span 1;
+  }
+
+  .doctor-form-group textarea {
+    min-height: 100px;
+  }
+
+  .doctor-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+  .doctor-reports-table-wrapper table {
+    display: none;
+  }
+
+  .doctor-reports-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .doctor-report-card {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 14px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #eef3f7;
+  }
+
+  .doctor-report-card h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    color: #0f172a;
+  }
+
+  .doctor-report-card p {
+    font-size: 13px;
+    color: #475569;
+    margin: 3px 0;
+  }
+
+  .doctor-report-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .doctor-report-actions button {
+    flex: 1;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .doctor-btn-view {
+    background: #e0f2fe;
+    color: #0284c7;
+  }
+
+  .doctor-btn-delete {
+    background: #fee2e2;
+    color: #dc2626;
+  }
+}

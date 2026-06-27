@@ -1,0 +1,141 @@
+/* ===============================
+   Doctor Footer Main Container
+================================ */
+
+.doctor-footer {
+  position: fixed;
+  bottom: 0;
+  left: 260px; /* sidebar width */
+  right: 0;
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+  border-top: 1px solid #334155;
+  padding: 12px 20px;
+  color: #e2e8f0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+
+  font-size: 14px;
+  z-index: 1000;
+}
+
+/* ===============================
+   Footer Items
+================================ */
+
+.footer-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+/* ===============================
+   Icons
+================================ */
+
+.footer-icon {
+  font-size: 16px;
+}
+
+/* Icon Colors */
+
+/* .server {
+  color: #22c55e;
+}
+
+.ai {
+  color: #a855f7;
+}
+
+.bell {
+  color: #f59e0b;
+}
+
+.clock {
+  color: #38bdf8;
+}
+
+.hospital {
+  color: #3b82f6;
+} */
+
+/* ===============================
+   Status Colors
+================================ */
+
+.status-online {
+  color: #22c55e;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.status-offline {
+  color: #ef4444;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.status-ai {
+  color: #c084fc;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+/* ===============================
+   Notification Badge
+================================ */
+
+.notification-count {
+  background: #ef4444;
+  color: white;
+  padding: 2px 8px;
+  border-radius: 20px;
+  margin-left: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ===============================
+   Tablet Responsive
+================================ */
+
+@media (max-width: 992px) {
+  .doctor-footer {
+    left: 0;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* ===============================
+   Mobile Layout
+================================ */
+
+@media (max-width: 768px) {
+  .doctor-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 8px;
+    font-size: 13px;
+  }
+
+  .footer-item {
+    justify-content: center;
+  }
+}
+
+/* ===============================
+   Small Mobile Devices
+================================ */
+
+@media (max-width: 480px) {
+  .doctor-footer {
+    grid-template-columns: 1fr;
+    padding: 10px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,173 @@
+/* ================= ROOT ================= */
+.patient-medical-card {
+  background: linear-gradient(135deg, #ffffff, #f8fbff);
+  border-radius: 22px;
+  padding: 22px;
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.patient-medical-card:hover {
+  transform: translateY(-4px);
+}
+
+/* ================= HEADER ================= */
+.patient-medical-card__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.patient-medical-card__title-icon {
+  font-size: 20px;
+  color: #2563eb;
+}
+
+.patient-medical-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* ================= GRID ================= */
+.patient-medical-card__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ================= ITEM ================= */
+.patient-medical-card__item {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  transition: 0.25s ease;
+  min-height: 170px;
+}
+
+.patient-medical-card__item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 24px rgba(15, 23, 42, 0.08);
+}
+
+.medical-item-icon {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.patient-medical-card__item h4 {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.patient-medical-card__item p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: #334155;
+}
+
+.patient-medical-card__item span {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #2563eb;
+  margin-top: 6px;
+}
+
+.patient-medical-card__item small {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.patient-medical-card__item ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.patient-medical-card__item li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #475569;
+}
+
+/* ================= COLOR VARIANTS ================= */
+.patient-medical-card__item--visit {
+  background: #eff6ff;
+}
+
+.patient-medical-card__item--visit .medical-item-icon {
+  color: #2563eb;
+}
+
+.patient-medical-card__item--visits {
+  background: #f0fdf4;
+}
+
+.patient-medical-card__item--visits .medical-item-icon {
+  color: #16a34a;
+}
+
+.patient-medical-card__item--conditions {
+  background: #fff7ed;
+}
+
+.patient-medical-card__item--conditions .medical-item-icon {
+  color: #ea580c;
+}
+
+.patient-medical-card__item--prescriptions {
+  background: #f5f3ff;
+}
+
+.patient-medical-card__item--prescriptions .medical-item-icon {
+  color: #7c3aed;
+}
+
+.patient-medical-card__item--reports {
+  background: #ecfeff;
+}
+
+.patient-medical-card__item--reports .medical-item-icon {
+  color: #0891b2;
+}
+
+.patient-medical-card__item--allergies {
+  background: #fef2f2;
+}
+
+.patient-medical-card__item--allergies .medical-item-icon {
+  color: #dc2626;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  .patient-medical-card {
+    padding: 16px;
+  }
+
+  .patient-medical-card__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .patient-medical-card__item {
+    min-height: auto;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .patient-medical-card__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 901px) {
+  .patient-medical-card__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

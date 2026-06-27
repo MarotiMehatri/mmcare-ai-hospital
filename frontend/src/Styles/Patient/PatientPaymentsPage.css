@@ -1,0 +1,352 @@
+.patient-payments-page {
+  min-height: 100vh;
+  padding: 28px;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(37, 99, 235, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(135deg, #f8fbff 0%, #eef4ff 45%, #f9fafb 100%);
+  color: #0f172a;
+}
+
+/* HERO */
+
+.payments-hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 22px;
+  padding: 30px;
+  margin-bottom: 24px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #0f172a, #1d4ed8);
+  color: #ffffff;
+  box-shadow: 0 22px 55px rgba(15, 23, 42, 0.22);
+  position: relative;
+  overflow: hidden;
+}
+
+.payments-hero::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -70px;
+  top: -90px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.payments-hero::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  right: 150px;
+  bottom: -80px;
+  border-radius: 50%;
+  background: rgba(59, 130, 246, 0.35);
+}
+
+.payments-hero > * {
+  position: relative;
+  z-index: 2;
+}
+
+.payments-eyebrow {
+  display: inline-flex;
+  padding: 7px 14px;
+  margin-bottom: 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #dbeafe;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.payments-hero h1 {
+  margin: 0;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+}
+
+.payments-hero p {
+  max-width: 680px;
+  margin-top: 10px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #dbeafe;
+}
+
+.payments-hero-badge {
+  min-width: 150px;
+  padding: 22px;
+  border-radius: 24px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+.payments-hero-badge span {
+  display: block;
+  font-size: 42px;
+  font-weight: 900;
+}
+
+.payments-hero-badge p {
+  margin: 4px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #e0f2fe;
+}
+
+/* COMMON CARDS */
+
+.payments-section-card,
+.payments-empty-card,
+.payments-loading-card {
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 24px;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(16px);
+}
+
+.payments-section-card {
+  padding: 20px;
+  margin: 22px 0;
+}
+
+/* MAIN LAYOUT */
+
+.payments-content-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(360px, 0.75fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.payments-left-panel,
+.payments-right-panel {
+  min-width: 0;
+}
+
+.payments-right-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: sticky;
+  top: 20px;
+}
+
+/* Make child components look modern */
+
+.patient-payments-page .history-table-card,
+.patient-payments-page .patient-details-card,
+.patient-payments-page .payment-method-card,
+.patient-payments-page .upi-payment-card,
+.patient-payments-page .medicine-bill-table-card,
+.patient-payments-page .invoice-card {
+  border-radius: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.patient-payments-page .history-table-card:hover,
+.patient-payments-page .patient-details-card:hover,
+.patient-payments-page .payment-method-card:hover,
+.patient-payments-page .upi-payment-card:hover,
+.patient-payments-page .medicine-bill-table-card:hover,
+.patient-payments-page .invoice-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
+}
+
+/* TABLE SCROLL FIX */
+
+.patient-payments-page .table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 18px;
+}
+
+.patient-payments-page table {
+  width: 100%;
+  min-width: 950px;
+  border-collapse: collapse;
+}
+
+.patient-payments-page thead th {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.patient-payments-page tbody tr {
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.patient-payments-page tbody tr:hover {
+  background: #eff6ff;
+}
+
+/* EMPTY */
+
+.payments-empty-card {
+  padding: 48px 24px;
+  text-align: center;
+}
+
+.payments-empty-card h2 {
+  margin: 0;
+  font-size: 24px;
+  color: #0f172a;
+}
+
+.payments-empty-card p {
+  margin: 10px 0 22px;
+  color: #64748b;
+}
+
+.payments-empty-card button {
+  border: none;
+  padding: 12px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(37, 99, 235, 0.25);
+}
+
+/* LOADING */
+
+.payments-loading-card {
+  max-width: 520px;
+  margin: 90px auto;
+  padding: 42px 28px;
+  text-align: center;
+}
+
+.payments-loader {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 20px;
+  border-radius: 50%;
+  border: 5px solid #dbeafe;
+  border-top-color: #2563eb;
+  animation: paymentsSpin 0.9s linear infinite;
+}
+
+@keyframes paymentsSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.payments-loading-card h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.payments-loading-card p {
+  color: #64748b;
+}
+
+/* FORM SMOOTHNESS */
+
+.patient-payments-page input,
+.patient-payments-page select,
+.patient-payments-page textarea {
+  border-radius: 14px;
+  border: 1px solid #dbe3ef;
+  transition:
+    border 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.patient-payments-page input:focus,
+.patient-payments-page select:focus,
+.patient-payments-page textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.patient-payments-page button {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.patient-payments-page button:hover {
+  transform: translateY(-2px);
+}
+
+.patient-payments-page button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 1180px) {
+  .payments-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .payments-right-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .patient-payments-page {
+    padding: 16px;
+  }
+
+  .payments-hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    border-radius: 22px;
+  }
+
+  .payments-hero-badge {
+    width: 100%;
+  }
+
+  .payments-section-card {
+    padding: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .payments-hero h1 {
+    font-size: 28px;
+  }
+
+  .payments-hero p {
+    font-size: 14px;
+  }
+
+  .payments-empty-card,
+  .payments-loading-card {
+    padding: 34px 18px;
+  }
+}

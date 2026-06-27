@@ -1,0 +1,65 @@
+.doctor-table-wrapper {
+  background: #fff;
+  border-radius: 18px;
+  overflow-x: auto;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+}
+
+.doctor-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.doctor-table th,
+.doctor-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eef2f7;
+}
+
+.doctor-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-size: 14px;
+}
+
+.doctor-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.doctor-actions button {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.doctor-delete-btn {
+  background: #ef4444;
+  color: #fff;
+}
+
+.doctor-status-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.doctor-status-badge.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.doctor-status-badge.inactive {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.doctor-table-empty {
+  background: #fff;
+  padding: 40px;
+  border-radius: 16px;
+  text-align: center;
+}

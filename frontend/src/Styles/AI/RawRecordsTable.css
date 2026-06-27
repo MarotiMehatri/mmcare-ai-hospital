@@ -1,0 +1,166 @@
+.records-card {
+  background: linear-gradient(135deg, #ffffff, #f8fafc);
+  border-radius: 26px;
+  padding: 24px;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+}
+
+.records-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.records-card__header h3 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.records-card__header p {
+  margin: 6px 0 0;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.records-count {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: #dbeafe;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 18px;
+}
+
+.table-wrapper::-webkit-scrollbar {
+  height: 8px;
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 20px;
+}
+
+.trend-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.trend-table thead {
+  background: #eff6ff;
+}
+
+.trend-table th {
+  padding: 16px;
+  text-align: left;
+  color: #1e40af;
+  font-size: 14px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.trend-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e2e8f0;
+  color: #334155;
+  font-size: 14px;
+}
+
+.trend-table tbody tr {
+  transition: 0.25s ease;
+}
+
+.trend-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.metric {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.metric-bp {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+.metric-sugar {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.metric-heart {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.metric-weight {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.metric-spo2 {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.records-empty {
+  padding: 40px 20px;
+  text-align: center;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 2px dashed #cbd5e1;
+}
+
+.records-empty svg {
+  font-size: 38px;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.records-empty h4 {
+  margin: 0;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.records-empty p {
+  margin-top: 8px;
+  color: #64748b;
+}
+
+@media (max-width: 768px) {
+  .records-card {
+    padding: 18px;
+  }
+
+  .records-card__header {
+    flex-direction: column;
+  }
+
+  .trend-table {
+    min-width: 700px;
+  }
+
+  .trend-table th,
+  .trend-table td {
+    padding: 12px;
+    font-size: 13px;
+  }
+}

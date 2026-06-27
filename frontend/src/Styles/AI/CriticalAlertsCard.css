@@ -1,0 +1,21 @@
+.critical-alerts-card {
+  background: linear-gradient(135deg, #fff3f3, #ffe1e1);
+  border: 1px solid #ffc9c9;
+  border-radius: 18px;
+  padding: 20px;
+}
+
+.critical-alerts-card h3 {
+  margin-top: 0;
+  color: #b71c1c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.critical-alerts-card ul {
+  margin: 12px 0 0;
+  padding-left: 20px;
+  color: #8b1e1e;
+  line-height: 1.8;
+}

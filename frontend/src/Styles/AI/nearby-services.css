@@ -1,0 +1,289 @@
+.ai-nearby-page {
+  padding: 24px;
+  background: #f6f9fc;
+  min-height: 100vh;
+}
+
+.ai-nearby-header {
+  margin-bottom: 20px;
+}
+
+.ai-nearby-header h1 {
+  font-size: 30px;
+  margin-bottom: 8px;
+  color: #1e293b;
+}
+
+.ai-nearby-header p {
+  color: #64748b;
+  font-size: 15px;
+}
+
+.ai-nearby-search-section {
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+  margin-bottom: 20px;
+}
+
+.nearby-search-bar {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto auto;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.nearby-search-input-group {
+  display: flex;
+  align-items: center;
+  background: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+.nearby-search-input-group input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 14px 10px;
+}
+
+.nearby-input-icon {
+  color: #2563eb;
+}
+
+.nearby-location-btn,
+.nearby-search-btn,
+.nearby-card-actions button,
+.emergency-call-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.nearby-location-btn {
+  background: #e0f2fe;
+  color: #0369a1;
+}
+
+.nearby-search-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.service-type-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.service-tab {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #e2e8f0;
+  cursor: pointer;
+  text-transform: capitalize;
+}
+
+.service-tab.active {
+  background: #2563eb;
+  color: white;
+}
+
+.nearby-filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.nearby-filter-item,
+.nearby-filter-checks {
+  background: #f8fafc;
+  padding: 14px;
+  border-radius: 12px;
+}
+
+.nearby-filter-item label,
+.nearby-filter-checks label {
+  display: block;
+  margin-bottom: 8px;
+  color: #334155;
+  font-weight: 600;
+}
+
+.nearby-filter-item input,
+.nearby-filter-item select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+}
+
+.emergency-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  background: #fee2e2;
+  border-left: 5px solid #dc2626;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+}
+
+.top-recommendation-card,
+.query-summary-card,
+.nearby-error-box,
+.nearby-map-preview {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+}
+
+.nearby-error-box {
+  color: #b91c1c;
+  background: #fef2f2;
+}
+
+.ai-nearby-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.nearby-service-list {
+  display: grid;
+  gap: 16px;
+}
+
+.nearby-service-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.nearby-card-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.nearby-service-type {
+  text-transform: capitalize;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.nearby-open-badge {
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+  height: fit-content;
+}
+
+.nearby-open-badge.open {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.nearby-open-badge.closed {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.nearby-card-info p {
+  margin: 8px 0;
+  color: #475569;
+}
+
+.nearby-ai-reason {
+  margin-top: 12px;
+  background: #eff6ff;
+  padding: 12px;
+  border-radius: 12px;
+  color: #1e40af;
+}
+
+.nearby-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.nearby-card-actions button {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+.nearby-map-preview .map-placeholder {
+  height: 220px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #dbeafe, #e0f2fe);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+  font-weight: 700;
+  margin-top: 12px;
+}
+
+.empty-nearby-state,
+.nearby-loading {
+  background: white;
+  border-radius: 16px;
+  padding: 40px 20px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.empty-icon {
+  font-size: 42px;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 992px) {
+  .nearby-search-bar,
+  .nearby-filters,
+  .ai-nearby-content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .emergency-banner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 576px) {
+  .ai-nearby-page {
+    padding: 16px;
+  }
+
+  .ai-nearby-header h1 {
+    font-size: 24px;
+  }
+
+  .nearby-card-actions {
+    flex-direction: column;
+  }
+
+  .nearby-card-actions button,
+  .nearby-location-btn,
+  .nearby-search-btn {
+    width: 100%;
+  }
+}
