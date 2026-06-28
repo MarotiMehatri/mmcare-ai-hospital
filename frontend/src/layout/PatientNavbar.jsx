@@ -3,7 +3,7 @@ import { FaBell, FaEnvelope, FaUserCircle, FaBars } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 
-import "../Styles/Patient/PatientNavbar.css";
+import "../Styles/Patient/patientNavbar.css";
 
 import { getNotifications } from "../services/Patient/notificationAPI";
 import { getUserById } from "../api/UserAPI";
