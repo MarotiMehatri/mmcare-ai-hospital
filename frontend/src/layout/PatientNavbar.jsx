@@ -3,10 +3,10 @@ import { FaBell, FaEnvelope, FaUserCircle, FaBars } from "react-icons/fa";
 
 import { useNavigate } from "react-router-dom";
 
-import "../Styles/Patient/PatientNavbar1.css";
+import "../Styles/Patient/PatientNavbar.css";
 
 import { getNotifications } from "../services/Patient/notificationAPI";
-import { getUserById } from "../API/UserAPI";
+import { getUserById } from "../api/UserAPI";
 import { getMessages } from "../services/Patient/messageAPI";
 import { getPatientByUserId } from "../services/Patient/PatientAPI";
 

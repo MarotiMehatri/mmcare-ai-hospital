@@ -6,7 +6,7 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 
-import "../../../Styles/AI/HealthSummary/AIReportDownloadCard.css";
+import "../../../Styles/AI/HealthSummary/AIreportDownloadCard.css";
 
 function AIReportDownloadCard({ summary = {}, report = {} }) {
   const finalReport = summary || report || {};

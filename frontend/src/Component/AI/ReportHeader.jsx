@@ -1,6 +1,6 @@
 import React from "react";
 import { FaFileMedical, FaRobot } from "react-icons/fa";
-import "../../styles/AI/ReportHeader.css";
+import "../../Styles/AI/ReportHeader.css";
 
 function ReportHeader() {
   return (
