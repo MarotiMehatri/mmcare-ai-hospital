@@ -71,7 +71,7 @@ const Header = () => {
           </li>
           <li
             onClick={() => {
-              navigate("/departments");
+              navigate("/appointments");
               closeMenu();
             }}
           >
