@@ -11,6 +11,11 @@ const PatientRoutes = lazy(() => import("./routes/PatientRoutes"));
 const AIHealthRoutes = lazy(() => import("./routes/AIHealthRoutes"));
 import Unauthorized from "./Pages/Unauthorized/Unauthorized";
 import PageLoader from "./Component/loaders/PageLoader";
+import About from "./Pages/Hospital-Home/About";
+import Departments from "./Pages/Hospital-Home/Departments";
+import Doctors from "./Component/HomePage/Doctors";
+import AppointmentSection from "./Component/HomePage/AppointmentSection";
+import Contact from "./Pages/Hospital-Home/Contact";
 function App() {
   return (
     <BrowserRouter>
@@ -18,6 +23,11 @@ function App() {
         <Routes>
           {/* ================= PUBLIC ROUTES ================= */}
           <Route path="/" element={<HospitalHome />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/departments" element={<Departments />} />
+          <Route path="/doctors" element={<Doctors />} />
+          <Route path="/appointments" element={<AppointmentSection />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
 

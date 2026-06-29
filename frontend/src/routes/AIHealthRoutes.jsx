@@ -39,51 +39,6 @@ function AIHealthRoutes() {
         <Route index element={<AIHealthAssistantPage />} />
 
         <Route
-          path="about"
-          element={
-            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
-              <Aboute />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="departments"
-          element={
-            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
-              <Departments />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="doctors"
-          element={
-            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
-              <Doctors />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="contact"
-          element={
-            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
-              <Contact />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
-          path="appointment"
-          element={
-            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
-              <AppointmentSection />
-            </ProtectedRoute>
-          }
-        />
-
-        <Route
           path="ai-chat"
           element={
             <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
