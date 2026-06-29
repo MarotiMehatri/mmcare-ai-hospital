@@ -37,12 +37,54 @@ const Header = () => {
 
       <nav className={`hospital-header__nav ${open ? "active" : ""}`}>
         <ul>
-          <li onClick={closeMenu}>Home</li>
-          <li onClick={closeMenu}>About</li>
-          <li onClick={closeMenu}>Doctors</li>
-          <li onClick={closeMenu}>Departments</li>
-          <li onClick={closeMenu}>Appointment</li>
-          <li onClick={closeMenu}>Contact</li>
+          <li
+            onClick={() => {
+              navigate("/");
+              closeMenu();
+            }}
+          >
+            Home
+          </li>
+          <li
+            onClick={() => {
+              navigate("/about");
+              closeMenu();
+            }}
+          >
+            About
+          </li>
+          <li
+            onClick={() => {
+              navigate("/doctors");
+              closeMenu();
+            }}
+          >
+            Doctors
+          </li>
+          <li
+            onClick={() => {
+              navigate("/departments");
+              closeMenu();
+            }}
+          >
+            Departments
+          </li>
+          <li
+            onClick={() => {
+              navigate("/departments");
+              closeMenu();
+            }}
+          >
+            Appointment
+          </li>
+          <li
+            onClick={() => {
+              navigate("/contact");
+              closeMenu();
+            }}
+          >
+            Contact
+          </li>
         </ul>
 
         <button className="hospital-header__login-mobile" onClick={goToLogin}>

@@ -1,0 +1,100 @@
+.about-page {
+  font-family: "Poppins", sans-serif;
+  background: #f4f8fb;
+  color: #1f2937;
+}
+
+.about-hero {
+  min-height: 420px;
+  display: flex;
+  align-items: center;
+  padding: 80px 8%;
+  background: linear-gradient(135deg, #0f6cbd, #063970);
+  color: white;
+}
+
+.about-badge {
+  background: rgba(255, 255, 255, 0.18);
+  padding: 8px 18px;
+  border-radius: 30px;
+  font-weight: 600;
+}
+
+.about-hero h1 {
+  max-width: 850px;
+  margin-top: 22px;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.about-hero p {
+  max-width: 780px;
+  margin-top: 18px;
+  font-size: 17px;
+  color: #e5eef8;
+}
+
+.about-section,
+.why-section {
+  padding: 70px 8%;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.about-card,
+.why-card {
+  background: white;
+  padding: 35px;
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(15, 108, 189, 0.12);
+}
+
+.about-card svg,
+.why-card svg {
+  font-size: 38px;
+  color: #0f6cbd;
+  margin-bottom: 18px;
+}
+
+.why-section h2 {
+  text-align: center;
+  font-size: 34px;
+  margin-bottom: 35px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.about-stats {
+  margin: 20px 8% 80px;
+  padding: 45px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, #0f6cbd, #00a6ff);
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+  color: white;
+}
+
+.about-stats h2 {
+  font-size: 38px;
+}
+
+@media (max-width: 900px) {
+  .about-section,
+  .why-grid,
+  .about-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero h1 {
+    font-size: 34px;
+  }
+}

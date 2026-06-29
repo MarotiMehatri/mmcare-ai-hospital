@@ -18,6 +18,13 @@ import AIMemoryPage from "../Pages/AI-Dashboard/AIMemoryPage";
 import AINearbyServicesPage from "../Pages/AI-Dashboard/AINearbyServicesPage";
 import AIIntegrationPage from "../Pages/AI-Dashboard/AIIntegrationPage";
 import AIHealthSummaryPage from "../Pages/AI-Dashboard/AIHealthSummaryPage";
+import About from "../Pages/Hospital-Home/About";
+import Departments from "../Pages/Hospital-Home/Departments";
+import Contact from "../Pages/Hospital-Home/Contact";
+
+import Doctors from "../Component/HomePage/Doctors";
+
+import AppointmentSection from "../Component/HomePage/AppointmentSection";
 
 function AIHealthRoutes() {
   return (
@@ -30,6 +37,51 @@ function AIHealthRoutes() {
         }
       >
         <Route index element={<AIHealthAssistantPage />} />
+
+        <Route
+          path="about"
+          element={
+            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
+              <Aboute />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="departments"
+          element={
+            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
+              <Departments />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="doctors"
+          element={
+            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
+              <Doctors />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="contact"
+          element={
+            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
+              <Contact />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route
+          path="appointment"
+          element={
+            <ProtectedRoute allowedRoles={["PATIENT", "DOCTOR", "ADMIN"]}>
+              <AppointmentSection />
+            </ProtectedRoute>
+          }
+        />
 
         <Route
           path="ai-chat"

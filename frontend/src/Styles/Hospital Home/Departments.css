@@ -1,0 +1,104 @@
+.departments-page {
+  font-family: "Poppins", sans-serif;
+  background: #f4f8fb;
+  color: #1f2937;
+}
+
+.departments-hero {
+  padding: 90px 8%;
+  text-align: center;
+  background: linear-gradient(135deg, #063970, #0f6cbd);
+  color: white;
+}
+
+.departments-hero span {
+  padding: 8px 18px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.18);
+  font-weight: 600;
+}
+
+.departments-hero h1 {
+  margin-top: 22px;
+  font-size: 46px;
+}
+
+.departments-hero p {
+  max-width: 760px;
+  margin: 16px auto 0;
+  color: #e5eef8;
+}
+
+.departments-grid {
+  padding: 70px 8%;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.department-card {
+  background: white;
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 15px 35px rgba(15, 108, 189, 0.12);
+  transition: 0.3s ease;
+}
+
+.department-card:hover {
+  transform: translateY(-8px);
+}
+
+.department-icon {
+  width: 62px;
+  height: 62px;
+  border-radius: 18px;
+  background: #eaf4ff;
+  color: #0f6cbd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 18px;
+}
+
+.department-card h3 {
+  font-size: 21px;
+  margin-bottom: 10px;
+}
+
+.department-card p {
+  color: #6b7280;
+  font-size: 14px;
+  min-height: 80px;
+}
+
+.department-card button {
+  margin-top: 18px;
+  border: none;
+  background: #0f6cbd;
+  color: white;
+  padding: 11px 18px;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.department-card button:hover {
+  background: #084f91;
+}
+
+@media (max-width: 1100px) {
+  .departments-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 650px) {
+  .departments-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .departments-hero h1 {
+    font-size: 34px;
+  }
+}
