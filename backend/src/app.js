@@ -2,111 +2,92 @@ import express from "express";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import path from "path";
+import fs from "fs";
 
-// ============================================================
+// ===============================
 // ROUTES
-// ============================================================
+// ===============================
 
-// User
 import usersRoutes from "./Routes/user/usersRoutes.js";
-
-// Doctor
 import doctorRoutes from "./Routes/Doctor/doctorRoutes.js";
-import doctorPaymentRoutes from "./Routes/Doctor/doctorPaymentRoutes.js";
-
-// Patient
 import patientRoutes from "./Routes/patinet/patientRoutes.js";
-import patientOnlineStatusRoutes from "./Routes/patinet/patientOnlineStatusRoutes.js";
 
-// Appointment
-import appointmentRoutes from "./Routes/appointment/appointmentRoutes.js";
-
-// Prescription
-import prescriptionRoutes from "./Routes/prescription/prescriptionRoutes.js";
-
-// Reports
-import medicalReportsRoutes from "./Routes/report/medicalReportsRoutes.js";
-
-// Chat
+import healthTrendsRoutes from "./Routes/healthTrends/healthTrendsRoutes.js";
 import messageRoutes from "./Routes/chat/messageRoutes.js";
-
-// Notifications
 import notificationRoutes from "./Routes/notification/notificationRoutes.js";
 
-// Health Trends
-import healthTrendsRoutes from "./Routes/healthTrends/healthTrendsRoutes.js";
+import appointmentRoutes from "./Routes/appointment/appointmentRoutes.js";
+import prescriptionRoutes from "./Routes/prescription/prescriptionRoutes.js";
 
-// AI
+import doctorPaymentRoutes from "./Routes/Doctor/doctorPaymentRoutes.js";
+
+import medicalReportsRoutes from "./Routes/report/medicalReportsRoutes.js";
+
+import patientOnlineStatusRoutes from "./Routes/patinet/patientOnlineStatusRoutes.js";
+
 import aiIntergrationRoutes from "./Routes/ai/aiIntegrationRoutes.js";
 import aiSummaryRoutes from "./Routes/ai/aiSummaryRoutes.js";
 import aiSuggestionsRoutes from "./Routes/ai/aiSuggestionsRoutes.js";
 import aiMemoryRoutes from "./Routes/ai/aiMemoryRoutes.js";
 
-// ============================================================
-// CREATE EXPRESS APPLICATION
-// ============================================================
+// ===============================
+// EXPRESS APP
+// ===============================
 
 const app = express();
 
-// ============================================================
+// ===============================
 // ENVIRONMENT
-// ============================================================
+// ===============================
 
-const NODE_ENV = process.env.NODE_ENV || "development";
+const NODE_ENV = process.env.NODE_ENV || "production";
 
-// ============================================================
-// CORS CONFIGURATION
-// ============================================================
+// ===============================
+// CORS
+// ===============================
+
+const normalizeOrigin = (origin) => {
+  if (!origin) return null;
+
+  return origin
+    .trim()
+    .replace(/\/+$/, "");
+};
 
 const allowedOrigins = [
-  // Local Vite frontend
   "http://localhost:5173",
-
-  // Local React development
   "http://localhost:3000",
-
-  // Production frontend
   "https://mmcare-ai-hospital.vercel.app",
-
-  // Environment-based frontend URL
   process.env.CLIENT_URL,
 ]
-  .filter(Boolean)
-  .map((origin) => origin.replace(/\/$/, ""));
+  .map(normalizeOrigin)
+  .filter(Boolean);
 
-console.log("==============================================");
-console.log("🌐 MMCare AI Hospital Backend");
-console.log("==============================================");
-console.log("🌍 Environment:", NODE_ENV);
-console.log("🌐 Allowed CORS Origins:", allowedOrigins);
-console.log("==============================================");
-
-// ============================================================
-// CORS OPTIONS
-// ============================================================
+console.log("======================================");
+console.log("🚀 MMCare AI Backend");
+console.log("Environment:", NODE_ENV);
+console.log("Allowed CORS origins:");
+console.log(allowedOrigins);
+console.log("======================================");
 
 const corsOptions = {
-  origin: (origin, callback) => {
-    // Allow requests without Origin header.
-    // Useful for:
-    // - Postman
-    // - curl
-    // - server-to-server requests
-    // - health checks
+  origin: function (origin, callback) {
+    // Allow requests without Origin.
+    // Example: Postman, server-to-server requests.
     if (!origin) {
       return callback(null, true);
     }
 
-    const normalizedOrigin = origin.replace(/\/$/, "");
+    const normalizedOrigin = normalizeOrigin(origin);
 
     if (allowedOrigins.includes(normalizedOrigin)) {
       return callback(null, true);
     }
 
-    console.warn("⚠️ CORS blocked origin:", origin);
+    console.error("❌ CORS blocked origin:", origin);
 
     return callback(
-      new Error(`CORS blocked origin: ${origin}`)
+      new Error(`CORS blocked for origin: ${origin}`)
     );
   },
 
@@ -122,302 +103,292 @@ const corsOptions = {
   ],
 
   allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "Accept",
     "Origin",
     "X-Requested-With",
+    "Content-Type",
+    "Accept",
+    "Authorization",
   ],
 
   optionsSuccessStatus: 204,
 };
 
-// ============================================================
-// CORS MIDDLEWARE
-// IMPORTANT: Must be before routes
-// ============================================================
-
+// IMPORTANT:
+// CORS MUST BE BEFORE ROUTES.
 app.use(cors(corsOptions));
 
-// Explicit OPTIONS / preflight support
+// Explicit OPTIONS handler.
 app.options("*", cors(corsOptions));
 
-// ============================================================
+// ===============================
 // BODY PARSERS
-// ============================================================
+// ===============================
 
 app.use(
   express.json({
-    limit: "50mb",
+    limit: "10mb",
   })
 );
 
 app.use(
   express.urlencoded({
     extended: true,
-    limit: "50mb",
+    limit: "10mb",
   })
 );
 
-// ============================================================
+// ===============================
 // COOKIE PARSER
-// ============================================================
+// ===============================
 
 app.use(cookieParser());
 
-// ============================================================
-// STATIC UPLOADS
-// ============================================================
+// ===============================
+// REQUEST LOGGER
+// ===============================
+
+app.use((req, res, next) => {
+  console.log(
+    `➡️ ${req.method} ${req.originalUrl} | Origin: ${
+      req.headers.origin || "none"
+    }`
+  );
+
+  next();
+});
+
+// ===============================
+// UPLOADS
+// ===============================
 
 const uploadsDirectory = path.join(
   process.cwd(),
   "uploads"
 );
 
-console.log(
-  "📁 Uploads directory:",
-  uploadsDirectory
-);
+if (!fs.existsSync(uploadsDirectory)) {
+  try {
+    fs.mkdirSync(uploadsDirectory, {
+      recursive: true,
+    });
+  } catch (error) {
+    console.warn(
+      "⚠️ Could not create uploads directory:",
+      error.message
+    );
+  }
+}
 
 app.use(
   "/uploads",
   express.static(uploadsDirectory)
 );
 
-// ============================================================
-// REQUEST LOGGER
-// ============================================================
-
-app.use((req, res, next) => {
-  console.log(
-    `➡️ ${req.method} ${req.originalUrl}`
-  );
-
-  next();
-});
-
-// ============================================================
-// ROOT API
-// ============================================================
+// ===============================
+// ROOT
+// ===============================
 
 app.get("/", (req, res) => {
-  return res.status(200).json({
+  res.status(200).json({
     success: true,
-    message:
-      "MMCare AI Hospital API Running Successfully 🚀",
-    service: "MMCare AI Hospital Backend",
+    message: "MMCare AI Hospital Backend is running",
     environment: NODE_ENV,
+    platform: "Vercel",
     timestamp: new Date().toISOString(),
   });
 });
 
-// ============================================================
+// ===============================
 // HEALTH CHECK
-// ============================================================
+// ===============================
 
 app.get("/health", (req, res) => {
-  return res.status(200).json({
+  res.status(200).json({
     success: true,
-    status: "OK",
-    message: "Server is healthy ❤️",
-    service: "MMCare AI Hospital Backend",
+    message: "MMCare AI Hospital API is healthy",
+    database: "MongoDB",
     environment: NODE_ENV,
-    database:
-      process.env.MONGODB_URI
-        ? "MongoDB configured"
-        : "MongoDB URI missing",
     timestamp: new Date().toISOString(),
   });
 });
 
-// ============================================================
+// ===============================
 // API ROOT
-// ============================================================
+// ===============================
 
 app.get("/api", (req, res) => {
-  return res.status(200).json({
+  res.status(200).json({
     success: true,
     message: "MMCare AI Hospital API",
     version: "1.0.0",
-    environment: NODE_ENV,
-
+    database: "MongoDB",
     endpoints: {
       users: "/api/users",
       doctors: "/api/doctors",
       patients: "/api/patients",
       appointments: "/api/appointments",
       prescriptions: "/api/prescriptions",
-      doctorPayments: "/api/doctorPayments",
       medicalReports: "/api/medical-reports",
-      reports: "/api/reports",
       messages: "/api/messages",
       notifications: "/api/notifications",
-      patientOnlineStatus:
-        "/api/patientOnlineStatus",
-      healthTrends: "/api/health-trends",
-      aiIntegration: "/api/ai-integration",
-      aiSummary: "/api/ai-summary",
-      aiSuggestions: "/api/ai-suggestions",
-      aiMemory: "/api/ai-memory",
     },
-
-    timestamp: new Date().toISOString(),
   });
 });
 
-// ============================================================
+// ===============================
 // USER ROUTES
-// ============================================================
+// ===============================
 
 app.use(
   "/api/users",
   usersRoutes
 );
 
-// ============================================================
+// ===============================
 // DOCTOR ROUTES
-// ============================================================
+// ===============================
 
 app.use(
   "/api/doctors",
   doctorRoutes
 );
 
-// ============================================================
+// ===============================
 // PATIENT ROUTES
-// ============================================================
+// ===============================
 
 app.use(
   "/api/patients",
   patientRoutes
 );
 
-// ============================================================
+// ===============================
 // APPOINTMENT ROUTES
-// ============================================================
+// ===============================
 
 app.use(
   "/api/appointments",
   appointmentRoutes
 );
 
-// ============================================================
+// ===============================
 // PRESCRIPTION ROUTES
-// ============================================================
+// ===============================
 
 app.use(
   "/api/prescriptions",
   prescriptionRoutes
 );
 
-// ============================================================
+// ===============================
 // DOCTOR PAYMENT ROUTES
-// ============================================================
+// ===============================
 
 app.use(
   "/api/doctorPayments",
   doctorPaymentRoutes
 );
 
-// ============================================================
+// ===============================
 // MEDICAL REPORT ROUTES
-// ============================================================
+// ===============================
 
-// Main route
 app.use(
   "/api/medical-reports",
   medicalReportsRoutes
 );
 
-// Backward-compatible reports route
+// ===============================
+// REPORT ALIAS
+// ===============================
+
 app.use(
   "/api/reports",
   medicalReportsRoutes
 );
 
-// ============================================================
-// CHAT / MESSAGE ROUTES
-// ============================================================
+// ===============================
+// CHAT / MESSAGES
+// ===============================
 
 app.use(
   "/api/messages",
   messageRoutes
 );
 
-// ============================================================
-// NOTIFICATION ROUTES
-// ============================================================
+// ===============================
+// NOTIFICATIONS
+// ===============================
 
 app.use(
   "/api/notifications",
   notificationRoutes
 );
 
-// ============================================================
-// PATIENT ONLINE STATUS ROUTES
-// ============================================================
+// ===============================
+// PATIENT ONLINE STATUS
+// ===============================
 
 app.use(
   "/api/patientOnlineStatus",
   patientOnlineStatusRoutes
 );
 
-// ============================================================
-// HEALTH TRENDS ROUTES
-// ============================================================
+// ===============================
+// HEALTH TRENDS
+// ===============================
 
 app.use(
   "/api/health-trends",
   healthTrendsRoutes
 );
 
-// ============================================================
-// AI INTEGRATION ROUTES
-// ============================================================
+// ===============================
+// AI INTEGRATION
+// ===============================
 
 app.use(
   "/api/ai-integration",
   aiIntergrationRoutes
 );
 
-// ============================================================
-// AI HEALTH SUMMARY ROUTES
-// ============================================================
+// ===============================
+// AI SUMMARY
+// ===============================
 
 app.use(
   "/api/ai-summary",
   aiSummaryRoutes
 );
 
-// ============================================================
-// AI SUGGESTIONS ROUTES
-// ============================================================
+// ===============================
+// AI SUGGESTIONS
+// ===============================
 
 app.use(
   "/api/ai-suggestions",
   aiSuggestionsRoutes
 );
 
-// ============================================================
-// AI MEMORY ROUTES
-// ============================================================
+// ===============================
+// AI MEMORY
+// ===============================
 
 app.use(
   "/api/ai-memory",
   aiMemoryRoutes
 );
 
-// ============================================================
+// ===============================
 // 404 HANDLER
-// IMPORTANT: MUST BE AFTER ALL ROUTES
-// ============================================================
+// ===============================
 
 app.use((req, res) => {
   console.warn(
-    `⚠️ Route not found: ${req.method} ${req.originalUrl}`
+    `❌ Route not found: ${req.method} ${req.originalUrl}`
   );
 
-  return res.status(404).json({
+  res.status(404).json({
     success: false,
     message: `Route not found: ${req.method} ${req.originalUrl}`,
     path: req.originalUrl,
@@ -425,60 +396,44 @@ app.use((req, res) => {
   });
 });
 
-// ============================================================
+// ===============================
 // GLOBAL ERROR HANDLER
-// IMPORTANT: MUST BE LAST
-// ============================================================
+// ===============================
 
-app.use((err, req, res, next) => {
-  console.error("==============================================");
-  console.error("💥 EXPRESS ERROR");
-  console.error("==============================================");
-  console.error("Method:", req.method);
-  console.error("URL:", req.originalUrl);
-  console.error("Error:", err);
-  console.error("==============================================");
+app.use((error, req, res, next) => {
+  console.error("======================================");
+  console.error("❌ GLOBAL ERROR");
+  console.error(error);
+  console.error("======================================");
 
-  // ----------------------------------------------------------
-  // CORS ERROR
-  // ----------------------------------------------------------
-
+  // CORS error
   if (
-    err.message &&
-    err.message.startsWith(
-      "CORS blocked origin:"
-    )
+    error.message &&
+    error.message.toLowerCase().includes("cors")
   ) {
     return res.status(403).json({
       success: false,
-      message: err.message,
+      message: "CORS policy blocked this request",
+      error:
+        NODE_ENV === "development"
+          ? error.message
+          : undefined,
     });
   }
 
-  // ----------------------------------------------------------
-  // DEFAULT ERROR
-  // ----------------------------------------------------------
-
-  const statusCode =
-    err.status ||
-    err.statusCode ||
-    500;
-
-  return res.status(statusCode).json({
+  res.status(error.status || 500).json({
     success: false,
-
     message:
-      err.message ||
-      "Internal Server Error",
-
-    ...(NODE_ENV === "development" && {
-      stack: err.stack,
-    }),
+      error.message || "Internal server error",
+    error:
+      NODE_ENV === "development"
+        ? error.stack
+        : undefined,
   });
 });
 
-// ============================================================
-// EXPORT EXPRESS APP
-// ============================================================
+// ===============================
+// EXPORT
+// ===============================
 
 export default app;
