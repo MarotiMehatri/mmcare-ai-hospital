@@ -20,8 +20,13 @@ console.log(
 
 const server = http.createServer(app);
 
+// ============================================================
+// SOCKET.IO
+// ============================================================
+
 const socketAllowedOrigins = [
   "http://localhost:5173",
+  "http://localhost:3000",
   "https://mmcare-ai-hospital.vercel.app",
   CLIENT_URL,
 ].filter(Boolean);
@@ -30,11 +35,15 @@ const io = new Server(server, {
   cors: {
     origin: socketAllowedOrigins,
     methods: ["GET", "POST"],
-    credentials: true,
+    credentials: false,
   },
 });
 
 setupSocket(io);
+
+// ============================================================
+// START SERVER
+// ============================================================
 
 const startServer = async () => {
   try {
@@ -50,34 +59,34 @@ const startServer = async () => {
         "========================================"
       );
       console.log(
-        "   MMCARE AI HOSPITAL BACKEND"
+        "       MMCARE AI HOSPITAL BACKEND"
       );
       console.log(
         "========================================"
       );
 
       console.log(
-        `🚀 Server:      http://localhost:${PORT}`
+        `🚀 Server: http://localhost:${PORT}`
       );
 
       console.log(
-        `🌐 API:         http://localhost:${PORT}/api`
+        `🌐 API: http://localhost:${PORT}/api`
       );
 
       console.log(
-        `❤️ Health:      http://localhost:${PORT}/health`
+        `❤️ Health: http://localhost:${PORT}/health`
       );
 
       console.log(
-        `🔌 Socket.IO:   http://localhost:${PORT}`
+        `🔌 Socket.IO: http://localhost:${PORT}`
       );
 
       console.log(
-        `📁 Uploads:     http://localhost:${PORT}/uploads`
+        `📁 Uploads: http://localhost:${PORT}/uploads`
       );
 
       console.log(
-        `🔗 Client:      ${CLIENT_URL}`
+        `🔗 Client: ${CLIENT_URL}`
       );
 
       console.log(
@@ -85,40 +94,6 @@ const startServer = async () => {
           process.env.NODE_ENV ||
           "development"
         }`
-      );
-
-      console.log(
-        "========================================"
-      );
-
-      console.log("");
-
-      console.log(
-        "📌 Available API endpoints:"
-      );
-
-      console.log(
-        `   GET  http://localhost:${PORT}/api/users`
-      );
-
-      console.log(
-        `   GET  http://localhost:${PORT}/api/doctors`
-      );
-
-      console.log(
-        `   GET  http://localhost:${PORT}/api/patients`
-      );
-
-      console.log(
-        `   GET  http://localhost:${PORT}/api/appointments`
-      );
-
-      console.log(
-        `   GET  http://localhost:${PORT}/api/prescriptions`
-      );
-
-      console.log(
-        `   GET  http://localhost:${PORT}/api/reports`
       );
 
       console.log(
@@ -137,15 +112,14 @@ const startServer = async () => {
         );
 
         if (
-          error.code ===
-          "EADDRINUSE"
+          error.code === "EADDRINUSE"
         ) {
           console.error(
             `❌ Port ${PORT} is already being used.`
           );
 
           console.error(
-            "💡 Stop the existing server or change PORT in .env"
+            "💡 Stop the existing server."
           );
         }
 
@@ -172,6 +146,10 @@ const startServer = async () => {
   }
 };
 
+// ============================================================
+// PROCESS ERROR HANDLERS
+// ============================================================
+
 process.on(
   "unhandledRejection",
   (reason) => {
@@ -195,5 +173,9 @@ process.on(
     process.exit(1);
   }
 );
+
+// ============================================================
+// START
+// ============================================================
 
 startServer();
