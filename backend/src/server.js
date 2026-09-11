@@ -1,18 +1,29 @@
 import "dotenv/config";
-console.log("🚀 MMCare backend server.js started");
 
 import http from "http";
 import { Server } from "socket.io";
 
 import app from "./app.js";
 import setupSocket from "./socket/socketHandler.js";
+import connectDB from "./config/db.js";
+
+const PORT =
+  Number(process.env.PORT) || 8000;
+
+const CLIENT_URL =
+  process.env.CLIENT_URL ||
+  "http://localhost:5173";
+
+console.log(
+  "🚀 MMCare AI Hospital backend starting..."
+);
 
 const server = http.createServer(app);
 
 const socketAllowedOrigins = [
   "http://localhost:5173",
   "https://mmcare-ai-hospital.vercel.app",
-  process.env.CLIENT_URL,
+  CLIENT_URL,
 ].filter(Boolean);
 
 const io = new Server(server, {
@@ -25,16 +36,164 @@ const io = new Server(server, {
 
 setupSocket(io);
 
-const PORT = process.env.PORT || 8000;
+const startServer = async () => {
+  try {
+    await connectDB();
 
-server.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-  console.log(`API URL: http://localhost:${PORT}`);
-  console.log(
-    `Client URL: ${process.env.CLIENT_URL || "http://localhost:5173"}`,
-  );
-  console.log(
-    `JSON Server URL: ${process.env.JSON_SERVER_URL || "http://localhost:5001"}`,
-  );
-  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
-});
+    console.log(
+      "✅ MongoDB connection established"
+    );
+
+    server.listen(PORT, () => {
+      console.log("");
+      console.log(
+        "========================================"
+      );
+      console.log(
+        "   MMCARE AI HOSPITAL BACKEND"
+      );
+      console.log(
+        "========================================"
+      );
+
+      console.log(
+        `🚀 Server:      http://localhost:${PORT}`
+      );
+
+      console.log(
+        `🌐 API:         http://localhost:${PORT}/api`
+      );
+
+      console.log(
+        `❤️ Health:      http://localhost:${PORT}/health`
+      );
+
+      console.log(
+        `🔌 Socket.IO:   http://localhost:${PORT}`
+      );
+
+      console.log(
+        `📁 Uploads:     http://localhost:${PORT}/uploads`
+      );
+
+      console.log(
+        `🔗 Client:      ${CLIENT_URL}`
+      );
+
+      console.log(
+        `🌍 Environment: ${
+          process.env.NODE_ENV ||
+          "development"
+        }`
+      );
+
+      console.log(
+        "========================================"
+      );
+
+      console.log("");
+
+      console.log(
+        "📌 Available API endpoints:"
+      );
+
+      console.log(
+        `   GET  http://localhost:${PORT}/api/users`
+      );
+
+      console.log(
+        `   GET  http://localhost:${PORT}/api/doctors`
+      );
+
+      console.log(
+        `   GET  http://localhost:${PORT}/api/patients`
+      );
+
+      console.log(
+        `   GET  http://localhost:${PORT}/api/appointments`
+      );
+
+      console.log(
+        `   GET  http://localhost:${PORT}/api/prescriptions`
+      );
+
+      console.log(
+        `   GET  http://localhost:${PORT}/api/reports`
+      );
+
+      console.log(
+        "========================================"
+      );
+
+      console.log("");
+    });
+
+    server.on(
+      "error",
+      (error) => {
+        console.error(
+          "❌ HTTP Server Error:",
+          error
+        );
+
+        if (
+          error.code ===
+          "EADDRINUSE"
+        ) {
+          console.error(
+            `❌ Port ${PORT} is already being used.`
+          );
+
+          console.error(
+            "💡 Stop the existing server or change PORT in .env"
+          );
+        }
+
+        process.exit(1);
+      }
+    );
+  } catch (error) {
+    console.error("");
+    console.error(
+      "========================================"
+    );
+    console.error(
+      "❌ SERVER STARTUP FAILED"
+    );
+    console.error(
+      "========================================"
+    );
+    console.error(error);
+    console.error(
+      "========================================"
+    );
+
+    process.exit(1);
+  }
+};
+
+process.on(
+  "unhandledRejection",
+  (reason) => {
+    console.error(
+      "❌ Unhandled Promise Rejection:"
+    );
+
+    console.error(reason);
+  }
+);
+
+process.on(
+  "uncaughtException",
+  (error) => {
+    console.error(
+      "❌ Uncaught Exception:"
+    );
+
+    console.error(error);
+
+    process.exit(1);
+  }
+);
+
+startServer();

@@ -1,643 +1,879 @@
-/* =========================
-   PAGE BASE
-========================= */
+/* ==========================================================================
+   DOCTOR MEDICAL REPORTS PAGE
+   ========================================================================== */
+
 .doctor-medical-reports-page {
   width: 100%;
-  min-height: 100vh;
-  padding: 2px;
-  background: linear-gradient(135deg, #eef5ff, #f9fcff);
-  font-family: "Inter", sans-serif;
+  min-height: 100%;
+  padding: 24px;
   box-sizing: border-box;
+  background: #f6f8fb;
+  color: #1f2937;
 }
 
-/* =========================
-   HEADER
-========================= */
+/* ==========================================================================
+   PAGE HEADER
+   ========================================================================== */
+
 .doctor-medical-reports-header {
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 18px;
-  padding: 26px 30px;
-  border-radius: 24px;
-  background: linear-gradient(135deg, #0f766e, #14b8a6);
-  color: #ffffff;
-  box-shadow: 0 16px 35px rgba(15, 118, 110, 0.22);
+  justify-content: space-between;
+  gap: 20px;
   margin-bottom: 24px;
 }
 
 .doctor-medical-reports-header h2 {
-  margin: 0;
+  margin: 0 0 6px;
   font-size: 28px;
-  font-weight: 800;
+  line-height: 1.25;
+  font-weight: 700;
+  color: #111827;
 }
 
 .doctor-medical-reports-header p {
-  margin: 8px 0 0;
-  opacity: 0.9;
-  font-size: 15px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #6b7280;
 }
 
-/* Doctor Box */
 .doctor-medical-reports-doctor-box {
-  min-width: 220px;
-  padding: 16px 18px;
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  min-width: 190px;
+  padding: 14px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.05);
 }
 
 .doctor-medical-reports-doctor-box span {
   display: block;
-  font-size: 13px;
-  opacity: 0.85;
+  margin-bottom: 4px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #9ca3af;
 }
 
 .doctor-medical-reports-doctor-box strong {
   display: block;
-  font-size: 16px;
-  margin-top: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
 }
 
-.doctor-medical-reports-layout {
+/* ==========================================================================
+   MAIN STACK LAYOUT
+   ========================================================================== */
+
+.doctor-medical-reports-stack-layout {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
+
 .doctor-medical-reports-top,
 .doctor-medical-reports-bottom {
-  background: #ffffff;
-  border-radius: 22px;
-  padding: 24px;
-  border: 1px solid #e5eef5;
-  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
-}
-
-.doctor-report-loading-box {
-  padding: 30px;
-  text-align: center;
-  color: #64748b;
-  font-weight: 600;
-}
-
-.doctor-report-loading-box {
-  padding: 30px;
-  text-align: center;
-  color: #64748b;
-  font-weight: 600;
-}
-
-.doctor-medical-reports-bottom {
-  overflow-x: auto;
-}
-
-.doctor-medical-reports-bottom table {
   width: 100%;
-  min-width: 850px;
-  border-collapse: collapse;
-}
-/* =========================
-   STATS CARDS
-========================= */
-.doctor-reports-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-bottom: 28px;
 }
 
-.doctor-reports-stat-card {
-  background: linear-gradient(145deg, #ffffff, #f4f8ff);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 0 12px 30px rgba(0, 80, 180, 0.08);
-  transition: 0.3s ease;
+/* ==========================================================================
+   UPLOAD CARD
+   ========================================================================== */
+
+.report-upload-card {
+  width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
 }
 
-.doctor-reports-stat-card:hover {
-  transform: translateY(-4px);
-}
-
-.doctor-reports-stat-card h4 {
-  font-size: 14px;
-  color: #6a8298;
-  margin-bottom: 8px;
-}
-
-.doctor-reports-stat-card span {
-  font-size: 28px;
-  font-weight: 800;
-  color: #0f2f4f;
-}
-
-/* =========================
-   LAYOUT GRID
-========================= */
-.doctor-medical-reports-stack-layout {
-  display: grid;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* =========================
-   FORM CARD
-========================= */
-.doctor-report-form-card {
-  border-radius: 22px;
-  padding: 22px;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(10px);
-  border: 1px solid #e2edf8;
-  box-shadow: 0 14px 40px rgba(0, 90, 200, 0.08);
-}
-
-/* Header inside form */
-.doctor-report-card-header {
+.report-upload-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  gap: 14px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #eef0f3;
+  background: #ffffff;
+}
+
+.report-upload-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 21px;
+}
+
+.report-upload-header h3 {
+  margin: 0 0 4px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.report-upload-header p {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* ==========================================================================
+   FORM
+   ========================================================================== */
+
+.report-upload-form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.report-form-section {
+  padding: 22px;
+  border-bottom: 1px solid #eef0f3;
+}
+
+.report-form-section:last-of-type {
+  border-bottom: 0;
+}
+
+.report-section-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
   margin-bottom: 18px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1f2937;
 }
 
-.doctor-report-card-header h3 {
-  font-size: 22px;
-  color: #103b5c;
+.report-section-title svg {
+  color: #2563eb;
+  font-size: 18px;
 }
 
-.doctor-report-card-header p {
-  font-size: 14px;
-  color: #6c879c;
-}
-
-/* =========================
-   FORM GRID
-========================= */
-.doctor-report-form-grid {
+.report-form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
 }
 
-/* Inputs */
-.doctor-form-group {
+.report-form-group {
+  min-width: 0;
   display: flex;
   flex-direction: column;
+  gap: 7px;
 }
 
-.doctor-form-group label {
+.report-form-full {
+  grid-column: 1 / -1;
+}
+
+.report-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 3px;
   font-size: 13px;
   font-weight: 600;
-  margin-bottom: 6px;
-  color: #3c5870;
+  color: #374151;
 }
 
-.doctor-form-group input,
-.doctor-form-group select,
-.doctor-form-group textarea {
-  border-radius: 12px;
-  border: 1px solid #d5e4f3;
-  padding: 12px 14px;
+.report-form-group label span {
+  color: #dc2626;
+}
+
+.report-form-group input,
+.report-form-group select,
+.report-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 9px;
+  background: #ffffff;
+  color: #111827;
+  font-family: inherit;
   font-size: 14px;
-  background: #fdfefe;
-  transition: 0.2s;
+  outline: none;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
-/* Focus effect */
-.doctor-form-group input:focus,
-.doctor-form-group select:focus,
-.doctor-form-group textarea:focus {
-  border-color: #2d8cff;
-  box-shadow: 0 0 0 3px rgba(45, 140, 255, 0.15);
+.report-form-group input,
+.report-form-group select {
+  height: 44px;
+  padding: 0 13px;
 }
 
-/* Full width textarea */
-.doctor-form-group-full {
-  grid-column: span 2;
+.report-form-group textarea {
+  min-height: 95px;
+  padding: 12px 13px;
+  resize: vertical;
+  line-height: 1.5;
 }
 
-/* =========================
-   BUTTONS
-========================= */
-.doctor-report-form-actions {
+.report-form-group input::placeholder,
+.report-form-group textarea::placeholder {
+  color: #9ca3af;
+}
+
+.report-form-group input:focus,
+.report-form-group select:focus,
+.report-form-group textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.report-form-group input[readonly] {
+  background: #f9fafb;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   DATE INPUT WITH ICON
+   ========================================================================== */
+
+.report-input-icon {
+  position: relative;
+  width: 100%;
+}
+
+.report-input-icon > svg {
+  position: absolute;
+  top: 50%;
+  left: 13px;
+  z-index: 1;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.report-input-icon input {
+  padding-left: 39px;
+}
+
+/* ==========================================================================
+   ALERTS
+   ========================================================================== */
+
+.report-form-alert {
+  margin: 18px 22px 0;
+  padding: 12px 14px;
+  border-radius: 9px;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.report-form-error {
+  border: 1px solid #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
+}
+
+.report-form-success {
+  border: 1px solid #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
+}
+
+/* ==========================================================================
+   FILE UPLOAD
+   ========================================================================== */
+
+.report-file-upload {
+  width: 100%;
+}
+
+.report-file-label {
+  min-height: 150px;
+  padding: 25px;
+  box-sizing: border-box;
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1.5px dashed #cbd5e1;
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #475569;
+  cursor: pointer;
+  text-align: center;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease;
+}
+
+.report-file-label:hover {
+  border-color: #2563eb;
+  background: #eff6ff;
+}
+
+.report-file-label > svg {
+  margin-bottom: 3px;
+  color: #2563eb;
+  font-size: 28px;
+}
+
+.report-file-label strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.report-file-label span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.report-file-label input {
+  display: none;
+}
+
+/* ==========================================================================
+   SELECTED FILE
+   ========================================================================== */
+
+.selected-report-file {
+  min-height: 74px;
+  padding: 12px 14px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #bfdbfe;
+  border-radius: 11px;
+  background: #eff6ff;
+}
+
+.selected-report-file > svg {
+  flex: 0 0 auto;
+  font-size: 25px;
+  color: #2563eb;
+}
+
+.selected-report-file > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.selected-report-file strong {
+  display: block;
+  overflow: hidden;
+  margin-bottom: 3px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1e3a8a;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.selected-report-file span {
+  display: block;
+  font-size: 11px;
+  color: #64748b;
+}
+
+.selected-report-file button {
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #dc2626;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.selected-report-file button:hover {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* ==========================================================================
+   FORM ACTIONS
+   ========================================================================== */
+
+.report-form-actions {
+  display: flex;
+  align-items: center;
   justify-content: flex-end;
   gap: 12px;
-  margin-top: 20px;
+  padding: 20px 22px;
+  border-top: 1px solid #eef0f3;
+  background: #fafbfc;
 }
 
-/* Base Button */
-.doctor-btn {
-  border: none;
-  border-radius: 14px;
-  padding: 12px 18px;
-  font-size: 14px;
-  font-weight: 700;
+.report-cancel-button,
+.report-submit-button {
+  min-height: 43px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
   cursor: pointer;
-  transition: 0.25s;
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
 }
 
-/* Primary */
-.doctor-btn-primary {
-  background: linear-gradient(135deg, #1d8cf8, #3c5bff);
-  color: white;
-}
-
-.doctor-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 18px rgba(0, 90, 255, 0.2);
-}
-
-/* Secondary */
-.doctor-btn-secondary {
-  background: #eef5fb;
-  color: #2c4a64;
-}
-
-/* 🔥 NEW MODERN VIEW BUTTON */
-.doctor-btn-view {
-  background: linear-gradient(135deg, #00c6ff, #0072ff);
-  color: white;
-  border-radius: 12px;
-  padding: 10px 16px;
-  font-size: 13px;
-  font-weight: 700;
-  transition: 0.3s;
-}
-
-.doctor-btn-view:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0, 140, 255, 0.25);
-}
-
-/* =========================
-   TABLE CARD
-========================= */
-.doctor-reports-table-card {
-  border-radius: 22px;
-  padding: 20px;
+.report-cancel-button {
+  border: 1px solid #d1d5db;
   background: #ffffff;
-  border: 1px solid #e4edf6;
-  box-shadow: 0 14px 35px rgba(0, 80, 180, 0.08);
+  color: #374151;
 }
 
-.doctor-reports-table-wrapper {
-  overflow-x: auto;
+.report-cancel-button:hover:not(:disabled) {
+  background: #f3f4f6;
 }
 
-.doctor-reports-table {
+.report-submit-button {
+  border: 1px solid #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.18);
+}
+
+.report-submit-button:hover:not(:disabled) {
+  background: #1d4ed8;
+  box-shadow: 0 5px 14px rgba(37, 99, 235, 0.24);
+}
+
+.report-cancel-button:active:not(:disabled),
+.report-submit-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.report-cancel-button:disabled,
+.report-submit-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   REPORT TABLE
+   ========================================================================== */
+
+.medical-reports-table-wrapper {
   width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+  scrollbar-width: thin;
+}
+
+.medical-reports-table {
+  width: 100%;
+  min-width: 1100px;
   border-collapse: collapse;
-}
-
-.doctor-reports-table th {
-  background: #f4f8fc;
-  padding: 14px;
-  text-align: left;
   font-size: 13px;
-  color: #5a738a;
 }
 
-.doctor-reports-table td {
-  padding: 14px;
-  border-bottom: 1px solid #eef4fa;
+.medical-reports-table thead {
+  background: #f8fafc;
 }
 
-/* Hover effect */
-.doctor-reports-table tr:hover {
-  background: #f9fcff;
+.medical-reports-table th {
+  padding: 14px 13px;
+  border-bottom: 1px solid #e5e7eb;
+  color: #475569;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
-/* =========================
-   BADGES
-========================= */
-.doctor-report-badge {
+.medical-reports-table td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #eef0f3;
+  color: #4b5563;
+  vertical-align: middle;
+}
+
+.medical-reports-table tbody tr {
+  transition: background 0.15s ease;
+}
+
+.medical-reports-table tbody tr:hover {
+  background: #f8fafc;
+}
+
+.medical-reports-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.medical-reports-table td strong {
+  display: block;
+  margin-bottom: 3px;
+  color: #111827;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.medical-reports-table td small {
+  display: block;
+  color: #9ca3af;
+  font-size: 11px;
+}
+
+.medical-reports-table td a {
+  display: inline-flex;
+  align-items: center;
   padding: 6px 10px;
-  border-radius: 20px;
+  border-radius: 7px;
+  background: #eff6ff;
+  color: #2563eb;
   font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+
+.medical-reports-table td a:hover {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.medical-reports-table td button {
+  min-height: 32px;
+  padding: 0 10px;
+  border: 1px solid #fecaca;
+  border-radius: 7px;
+  background: #fff;
+  color: #dc2626;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease;
+}
+
+.medical-reports-table td button:hover:not(:disabled) {
+  border-color: #fca5a5;
+  background: #fef2f2;
+}
+
+.medical-reports-table td button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* ==========================================================================
+   LOADING
+   ========================================================================== */
+
+.doctor-report-loading-box {
+  min-height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  color: #6b7280;
+  font-size: 14px;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+/* ==========================================================================
+   EMPTY STATE
+   ========================================================================== */
+
+.empty-reports-state {
+  min-height: 220px;
+  padding: 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+}
+
+.empty-reports-state svg {
+  margin-bottom: 12px;
+  color: #94a3b8;
+  font-size: 38px;
+}
+
+.empty-reports-state h3 {
+  margin: 0 0 6px;
+  color: #1f2937;
+  font-size: 16px;
+}
+
+.empty-reports-state p {
+  margin: 0;
+  max-width: 420px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   STATS
+   ========================================================================== */
+
+.doctor-reports-stats {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.doctor-report-stat-card {
+  min-width: 0;
+  padding: 18px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  border: 1px solid #e5e7eb;
+  border-radius: 13px;
+  background: #ffffff;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.04);
+}
+
+.doctor-report-stat-icon {
+  width: 42px;
+  height: 42px;
+  flex: 0 0 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background: #eff6ff;
+  color: #2563eb;
+  font-size: 19px;
+}
+
+.doctor-report-stat-card h4 {
+  margin: 0 0 3px;
+  color: #6b7280;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.doctor-report-stat-card strong {
+  color: #111827;
+  font-size: 22px;
   font-weight: 700;
 }
 
-/* Status */
-.doctor-status-uploaded {
-  background: #e6f4ff;
-  color: #0077cc;
-}
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
 
-.doctor-status-reviewed {
-  background: #e7faef;
-  color: #1a8f5a;
-}
-
-.doctor-status-pending-review {
-  background: #fff4dc;
-  color: #c27a00;
-}
-
-/* Priority */
-.doctor-priority-normal {
-  background: #eef4f8;
-}
-
-.doctor-priority-urgent {
-  background: #fff0e5;
-  color: #cc6a00;
-}
-
-.doctor-priority-critical {
-  background: #ffe7e7;
-  color: #d62828;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
 @media (max-width: 1024px) {
-  .doctor-medical-reports-layout {
-    grid-template-columns: 1fr;
+  .doctor-medical-reports-page {
+    padding: 20px;
   }
 
-  .doctor-reports-stats-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .doctor-medical-reports-header h2 {
+    font-size: 25px;
+  }
+
+  .doctor-reports-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .report-form-grid {
+    gap: 15px;
   }
 }
+
+/* ==========================================================================
+   MOBILE
+   ========================================================================== */
 
 @media (max-width: 768px) {
   .doctor-medical-reports-page {
-    padding: 20px;
+    padding: 14px;
   }
 
   .doctor-medical-reports-header {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 22px;
-    border-radius: 20px;
+    align-items: stretch;
+    gap: 14px;
   }
 
   .doctor-medical-reports-header h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .doctor-medical-reports-doctor-box {
     width: 100%;
-    min-width: unset;
     box-sizing: border-box;
   }
 
-  .doctor-medical-reports-top,
-  .doctor-medical-reports-bottom {
-    padding: 20px;
-    border-radius: 18px;
-  }
-  .doctor-reports-table-card {
-    padding: 18px;
-    border-radius: 16px;
+  .doctor-reports-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
   }
 
-  .doctor-report-card-header h3 {
+  .doctor-report-stat-card {
+    padding: 13px;
+  }
+
+  .doctor-report-stat-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+    font-size: 16px;
+  }
+
+  .doctor-report-stat-card strong {
+    font-size: 19px;
+  }
+
+  .report-upload-header {
+    padding: 16px;
+  }
+
+  .report-upload-icon {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
     font-size: 18px;
   }
 
-  .doctor-reports-table th,
-  .doctor-reports-table td {
-    padding: 10px;
-    font-size: 13px;
+  .report-upload-header h3 {
+    font-size: 16px;
   }
 
-  /* Keep table scrollable */
-  .doctor-reports-table-wrapper {
-    overflow-x: auto;
+  .report-form-section {
+    padding: 16px;
+  }
+
+  .report-form-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .report-form-full {
+    grid-column: auto;
+  }
+
+  .report-form-actions {
+    padding: 15px 16px;
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .report-cancel-button,
+  .report-submit-button {
+    width: 100%;
+  }
+
+  .report-form-alert {
+    margin-right: 16px;
+    margin-left: 16px;
+  }
+
+  .medical-reports-table-wrapper {
+    border-radius: 11px;
+  }
+
+  .medical-reports-table {
+    min-width: 1050px;
   }
 }
 
-/* ===============================
-   Mobile - 480px
-================================ */
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
 
 @media (max-width: 480px) {
-  /* Page spacing */
   .doctor-medical-reports-page {
     padding: 10px;
-  }
-
-  /* HEADER → Card style */
-  .doctor-medical-reports-header {
-    padding: 16px;
-    border-radius: 14px;
-    gap: 12px;
   }
 
   .doctor-medical-reports-header h2 {
     font-size: 20px;
-    font-weight: 700;
   }
 
   .doctor-medical-reports-header p {
-    font-size: 13px;
-    opacity: 0.9;
-  }
-
-  /* Doctor Info → badge style */
-  .doctor-medical-reports-doctor-box {
-    width: 100%;
-    padding: 12px;
-    border-radius: 12px;
-    font-size: 13px;
-  }
-
-  /* STACK spacing */
-  .doctor-medical-reports-stack-layout {
-    gap: 14px;
-  }
-
-  /* Upload Form Section */
-  .doctor-medical-reports-top {
-    padding: 14px;
-    border-radius: 14px;
-  }
-
-  /* Table Section */
-  .doctor-medical-reports-bottom {
-    padding: 14px;
-    border-radius: 14px;
-  }
-
-  /* 🔥 TABLE → Convert to mobile card style */
-  .doctor-medical-reports-bottom table {
-    display: none;
-  }
-
-  /* Create mobile cards instead */
-  .medical-report-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 14px;
-    margin-bottom: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid #eef3f7;
-  }
-
-  .medical-report-card h4 {
-    font-size: 15px;
-    margin-bottom: 6px;
-    color: #0f172a;
-  }
-
-  .medical-report-card p {
-    font-size: 13px;
-    color: #475569;
-    margin: 3px 0;
-  }
-
-  .medical-report-card .status {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 20px;
     font-size: 12px;
-    font-weight: 600;
-    margin-top: 6px;
   }
 
-  .status.uploaded {
-    background: #dcfce7;
-    color: #16a34a;
-  }
-
-  .status.pending {
-    background: #fef3c7;
-    color: #d97706;
-  }
-
-  .status.rejected {
-    background: #fee2e2;
-    color: #dc2626;
-  }
-
-  /* Buttons */
-  .medical-report-actions {
-    margin-top: 10px;
-    display: flex;
-    gap: 10px;
-  }
-
-  .medical-report-actions button {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
-    font-size: 13px;
-    border: none;
-    cursor: pointer;
-  }
-
-  .btn-delete {
-    background: #fee2e2;
-    color: #dc2626;
-  }
-
-  .btn-view {
-    background: #e0f2fe;
-    color: #0284c7;
-  }
-
-  /* Loading box */
-  .doctor-report-loading-box {
-    padding: 18px;
-    font-size: 13px;
-  }
-
-  .doctor-report-form-card {
-    padding: 16px;
-    border-radius: 16px;
-  }
-
-  .doctor-report-form-card h3 {
-    font-size: 18px;
-    margin-bottom: 14px;
-  }
-
-  .doctor-report-form-grid {
+  .doctor-reports-stats {
     grid-template-columns: 1fr;
-    gap: 12px;
   }
 
-  .doctor-form-group label {
-    font-size: 13px;
+  .doctor-report-stat-card {
+    min-height: 65px;
   }
 
-  .doctor-form-group input,
-  .doctor-form-group select,
-  .doctor-form-group textarea {
-    padding: 12px;
-    font-size: 13px;
-    border-radius: 10px;
-  }
-
-  .doctor-form-group-full {
-    grid-column: span 1;
-  }
-
-  .doctor-form-group textarea {
-    min-height: 100px;
-  }
-
-  .doctor-btn {
-    width: 100%;
-    padding: 14px;
-    font-size: 14px;
-    border-radius: 10px;
-  }
-  .doctor-reports-table-wrapper table {
-    display: none;
-  }
-
-  .doctor-reports-mobile-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    margin-top: 12px;
-  }
-
-  .doctor-report-card {
-    background: #ffffff;
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    border: 1px solid #eef3f7;
-  }
-
-  .doctor-report-card h4 {
-    font-size: 15px;
-    margin-bottom: 6px;
-    color: #0f172a;
-  }
-
-  .doctor-report-card p {
-    font-size: 13px;
-    color: #475569;
-    margin: 3px 0;
-  }
-
-  .doctor-report-actions {
-    display: flex;
+  .report-upload-header {
     gap: 10px;
-    margin-top: 10px;
   }
 
-  .doctor-report-actions button {
-    flex: 1;
-    padding: 10px;
-    border-radius: 10px;
+  .report-section-title {
+    margin-bottom: 14px;
+    font-size: 14px;
+  }
+
+  .report-form-group input,
+  .report-form-group select {
+    height: 42px;
     font-size: 13px;
-    border: none;
-    cursor: pointer;
   }
 
-  .doctor-btn-view {
-    background: #e0f2fe;
-    color: #0284c7;
+  .report-form-group textarea {
+    font-size: 13px;
   }
 
-  .doctor-btn-delete {
-    background: #fee2e2;
-    color: #dc2626;
+  .report-file-label {
+    min-height: 135px;
+    padding: 18px;
+  }
+
+  .selected-report-file {
+    padding: 10px;
+  }
+
+  .selected-report-file strong {
+    max-width: 190px;
   }
 }

@@ -3,10 +3,12 @@ import "../../Styles/Patient/PatientHistoryTable.css";
 
 function PatientHistoryTable({
   payments = [],
-  onSelectPayment = () => {},
+  onSelectPayment = () => { },
   prescription = null,
 }) {
   const safePayments = payments.filter(Boolean);
+
+
 
   return (
     <div className="history-table-card">
@@ -34,11 +36,17 @@ function PatientHistoryTable({
           <tbody>
             {safePayments.length > 0 ? (
               safePayments.map((payment) => {
-                const isPaid = payment.paymentStatus === "Paid";
+                const paymentStatus = String(
+                  payment?.paymentStatus || "Pending",
+                );
 
+                const isPaid =
+                  paymentStatus.toLowerCase() === "paid";
+
+                const paymentId = payment?._id || payment?.id || payment?.paymentId || "N/A"
                 return (
-                  <tr key={payment.id}>
-                    <td>{payment.id || "N/A"}</td>
+                  <tr key={paymentId}>
+                    <td>{paymentId}</td>
 
                     <td>{payment.paymentDate || payment.visitDate || "N/A"}</td>
 

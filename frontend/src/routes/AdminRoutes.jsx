@@ -10,6 +10,8 @@ import AdminReportsPage from "../Pages/Admin-Dashboard/AdminReportsPage";
 import AdminDepartmentsPage from "../Pages/Admin-Dashboard/AdminDepartmentsPage";
 
 import ProtectedRoute from "../routes/ProtectedRoute";
+import AdminProfilePage from "../Pages/Admin-Dashboard/AdminProfilePage";
+import AdminSettingsPage from "../Pages/Admin-Dashboard/AdminSettingsPage";
 
 const AdminRoutes = () => {
   return (
@@ -70,6 +72,9 @@ const AdminRoutes = () => {
             </ProtectedRoute>
           }
         />
+
+        <Route path="profile" element={<AdminProfilePage />} />
+        <Route path="settings" element={<AdminSettingsPage />} />
       </Route>
     </Routes>
   );

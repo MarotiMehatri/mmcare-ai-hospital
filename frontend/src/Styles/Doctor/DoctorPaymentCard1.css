@@ -1,0 +1,507 @@
+/* =========================================================
+   DoctorPaymentCard.css
+   Modern Healthcare + FinTech Dashboard Card
+   ========================================================= */
+
+:root {
+  --payment-primary: #2563eb;
+  --payment-primary-dark: #1d4ed8;
+  --payment-primary-soft: #eff6ff;
+
+  --payment-success: #16a34a;
+  --payment-success-soft: #f0fdf4;
+
+  --payment-warning: #f59e0b;
+  --payment-warning-soft: #fffbeb;
+
+  --payment-purple: #7c3aed;
+  --payment-purple-soft: #f5f3ff;
+
+  --payment-cyan: #0891b2;
+  --payment-cyan-soft: #ecfeff;
+
+  --payment-text: #172033;
+  --payment-text-secondary: #64748b;
+  --payment-text-light: #94a3b8;
+
+  --payment-border: #e5eaf1;
+  --payment-background: #ffffff;
+  --payment-page-background: #f6f9fc;
+
+  --payment-radius: 18px;
+  --payment-radius-small: 12px;
+
+  --payment-shadow:
+    0 8px 30px rgba(15, 23, 42, 0.07);
+
+  --payment-shadow-hover:
+    0 18px 45px rgba(37, 99, 235, 0.14);
+}
+
+/* =========================================================
+   MAIN CARD
+   ========================================================= */
+
+.doctor-payment-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  min-height: 205px;
+  padding: 22px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      #ffffff 0%,
+      #ffffff 65%,
+      #f8fbff 100%
+    );
+
+  border: 1px solid var(--payment-border);
+  border-radius: var(--payment-radius);
+
+  box-shadow: var(--payment-shadow);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* Decorative glow */
+
+.doctor-payment-card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 120px;
+  height: 120px;
+
+  top: -55px;
+  right: -45px;
+
+  border-radius: 50%;
+
+  background: rgba(37, 99, 235, 0.06);
+
+  pointer-events: none;
+}
+
+.doctor-payment-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 70px;
+  height: 70px;
+
+  bottom: -35px;
+  left: -25px;
+
+  border-radius: 50%;
+
+  background: rgba(14, 165, 233, 0.035);
+
+  pointer-events: none;
+}
+
+/* Hover */
+
+.doctor-payment-card:hover {
+  transform: translateY(-6px);
+
+  border-color: rgba(37, 99, 235, 0.18);
+
+  box-shadow: var(--payment-shadow-hover);
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.doctor-payment-card__header {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  min-height: 48px;
+}
+
+/* =========================================================
+   ICON
+   ========================================================= */
+
+.doctor-payment-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  border-radius: 14px;
+
+  color: var(--payment-primary);
+
+  background:
+    linear-gradient(
+      145deg,
+      #eff6ff,
+      #dbeafe
+    );
+
+  border: 1px solid rgba(37, 99, 235, 0.08);
+
+  font-size: 21px;
+
+  box-shadow:
+    0 6px 16px rgba(37, 99, 235, 0.09);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.doctor-payment-card:hover .doctor-payment-card__icon {
+  transform: scale(1.08) rotate(-3deg);
+
+  box-shadow:
+    0 10px 22px rgba(37, 99, 235, 0.15);
+}
+
+/* =========================================================
+   GROWTH BADGE
+   ========================================================= */
+
+.doctor-payment-card__growth {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 28px;
+  padding: 5px 10px;
+
+  border-radius: 999px;
+
+  color: #15803d;
+  background: var(--payment-success-soft);
+
+  border: 1px solid rgba(22, 163, 74, 0.12);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.2px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   BODY
+   ========================================================= */
+
+.doctor-payment-card__body {
+  position: relative;
+  z-index: 2;
+
+  flex: 1;
+
+  margin-top: 18px;
+}
+
+.doctor-payment-card__title {
+  margin: 0 0 7px;
+
+  color: var(--payment-text-secondary);
+
+  font-size: 13px;
+  font-weight: 600;
+
+  line-height: 1.4;
+
+  letter-spacing: 0.15px;
+}
+
+.doctor-payment-card__value {
+  margin: 0;
+
+  color: var(--payment-text);
+
+  font-size: clamp(24px, 2vw, 31px);
+
+  font-weight: 800;
+
+  line-height: 1.15;
+
+  letter-spacing: -0.7px;
+
+  word-break: break-word;
+}
+
+.doctor-payment-card__subtitle {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--payment-text-light);
+
+  font-size: 11px;
+  font-weight: 500;
+
+  line-height: 1.4;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.doctor-payment-card__footer {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  margin-top: 15px;
+  padding-top: 13px;
+
+  border-top: 1px solid #edf1f5;
+
+  color: var(--payment-primary);
+
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.1px;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.doctor-payment-card__footer span {
+  transition: transform 0.2s ease;
+}
+
+.doctor-payment-card:hover .doctor-payment-card__footer {
+  color: var(--payment-primary-dark);
+}
+
+.doctor-payment-card:hover .doctor-payment-card__footer span {
+  transform: translateX(3px);
+}
+
+/* =========================================================
+   OPTIONAL COLOR VARIANTS
+   These can be added to the card if desired:
+   total / paid / pending / consultation / medical / test
+   ========================================================= */
+
+.doctor-payment-card.total .doctor-payment-card__icon {
+  color: var(--payment-primary);
+
+  background:
+    linear-gradient(
+      145deg,
+      #eff6ff,
+      #dbeafe
+    );
+}
+
+.doctor-payment-card.paid .doctor-payment-card__icon {
+  color: var(--payment-success);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f0fdf4,
+      #dcfce7
+    );
+}
+
+.doctor-payment-card.pending .doctor-payment-card__icon {
+  color: var(--payment-warning);
+
+  background:
+    linear-gradient(
+      145deg,
+      #fffbeb,
+      #fef3c7
+    );
+}
+
+.doctor-payment-card.consultation .doctor-payment-card__icon {
+  color: var(--payment-purple);
+
+  background:
+    linear-gradient(
+      145deg,
+      #f5f3ff,
+      #ede9fe
+    );
+}
+
+.doctor-payment-card.medical .doctor-payment-card__icon {
+  color: var(--payment-cyan);
+
+  background:
+    linear-gradient(
+      145deg,
+      #ecfeff,
+      #cffafe
+    );
+}
+
+.doctor-payment-card.test .doctor-payment-card__icon {
+  color: #db2777;
+
+  background:
+    linear-gradient(
+      145deg,
+      #fdf2f8,
+      #fce7f3
+    );
+}
+
+/* =========================================================
+   ACCESSIBILITY
+   ========================================================= */
+
+.doctor-payment-card:focus-within {
+  outline: 3px solid rgba(37, 99, 235, 0.15);
+  outline-offset: 2px;
+}
+
+/* =========================================================
+   LARGE TABLETS
+   ========================================================= */
+
+@media (max-width: 1200px) {
+  .doctor-payment-card {
+    min-height: 195px;
+    padding: 20px;
+  }
+
+  .doctor-payment-card__value {
+    font-size: 27px;
+  }
+}
+
+/* =========================================================
+   TABLETS
+   ========================================================= */
+
+@media (max-width: 768px) {
+  .doctor-payment-card {
+    min-height: 185px;
+    padding: 18px;
+
+    border-radius: 16px;
+  }
+
+  .doctor-payment-card__icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    font-size: 19px;
+  }
+
+  .doctor-payment-card__body {
+    margin-top: 15px;
+  }
+
+  .doctor-payment-card__title {
+    font-size: 12px;
+  }
+
+  .doctor-payment-card__value {
+    font-size: 24px;
+  }
+
+  .doctor-payment-card__subtitle {
+    font-size: 10px;
+  }
+
+  .doctor-payment-card__footer {
+    margin-top: 12px;
+    padding-top: 11px;
+
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+  .doctor-payment-card {
+    min-height: 175px;
+    padding: 17px;
+
+    border-radius: 15px;
+  }
+
+  .doctor-payment-card__header {
+    min-height: 42px;
+  }
+
+  .doctor-payment-card__icon {
+    width: 42px;
+    height: 42px;
+
+    font-size: 18px;
+  }
+
+  .doctor-payment-card__growth {
+    min-height: 25px;
+    padding: 4px 8px;
+
+    font-size: 10px;
+  }
+
+  .doctor-payment-card__value {
+    font-size: 23px;
+    letter-spacing: -0.5px;
+  }
+
+  .doctor-payment-card__footer {
+    font-size: 10px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .doctor-payment-card,
+  .doctor-payment-card__icon,
+  .doctor-payment-card__footer,
+  .doctor-payment-card__footer span {
+    transition: none;
+  }
+
+  .doctor-payment-card:hover {
+    transform: none;
+  }
+
+  .doctor-payment-card:hover .doctor-payment-card__icon {
+    transform: none;
+  }
+
+  .doctor-payment-card:hover .doctor-payment-card__footer span {
+    transform: none;
+  }
+}

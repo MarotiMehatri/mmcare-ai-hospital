@@ -2,7 +2,7 @@ import express from "express";
 import {
   getPatientHealthTrends,
   addPatientHealthRecord,
-} from "../../controllers/healthTrends/healthTrendsController.js";
+} from "../../controllers/health/healthTrendsController.js";
 
 const router = express.Router();
 

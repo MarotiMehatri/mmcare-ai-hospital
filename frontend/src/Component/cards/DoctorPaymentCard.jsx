@@ -1,5 +1,5 @@
 import React from "react";
-import "../../Styles/Doctor/DoctorPaymentCard.css";
+import "../../Styles/Doctor/DoctorPaymentCard1.css";
 function DoctorPaymentCard({ title, value, subtitle, growth, icon }) {
   return (
     <div className="doctor-payment-card">

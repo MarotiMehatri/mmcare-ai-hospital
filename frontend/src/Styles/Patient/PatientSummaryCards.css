@@ -1,131 +1,238 @@
-.payment-summary-cards {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin: 24px 0;
+.patient-summary-section {
+  width: 100%;
+  margin: 0 0 24px;
 }
 
-.summary-card {
-  position: relative;
-  overflow: hidden;
-  min-height: 150px;
-  padding: 22px;
-  border-radius: 26px;
-  background: rgba(255, 255, 255, 0.92);
-  border: 1px solid rgba(226, 232, 240, 0.95);
-  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+.patient-summary-heading {
   display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  transition: 0.25s ease;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 18px;
 }
 
-.summary-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 25px 65px rgba(15, 23, 42, 0.13);
+.patient-summary-heading-left {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.summary-card-glow {
-  position: absolute;
-  width: 135px;
-  height: 135px;
-  right: -45px;
-  top: -45px;
-  border-radius: 50%;
-  opacity: 0.22;
-}
-
-.summary-icon {
-  position: relative;
-  z-index: 2;
-  min-width: 54px;
-  width: 54px;
-  height: 54px;
-  display: grid;
-  place-items: center;
-  border-radius: 18px;
-  font-size: 24px;
-  color: #ffffff;
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.18);
-}
-
-.summary-content {
-  position: relative;
-  z-index: 2;
-}
-
-.summary-content p {
-  margin: 0;
-  color: #64748b;
-  font-size: 13px;
-  font-weight: 900;
-}
-
-.summary-content h2 {
-  margin: 8px 0 4px;
-  color: #0f172a;
-  font-size: clamp(22px, 2.5vw, 31px);
-  font-weight: 900;
-  letter-spacing: -0.04em;
-}
-
-.summary-content span {
-  color: #94a3b8;
-  font-size: 12px;
+.patient-summary-eyebrow {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border: 1px solid #d7ebe7;
+  border-radius: 7px;
+  background: #f1faf8;
+  color: #147d70;
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-/* Card themes */
-
-.total-card .summary-icon {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+.patient-summary-heading h2 {
+  margin: 0;
+  color: #17232f;
+  font-size: 23px;
+  font-weight: 750;
+  line-height: 1.2;
 }
 
-.total-card .summary-card-glow {
-  background: #2563eb;
+.patient-summary-heading p {
+  margin: 5px 0 0;
+  color: #71808d;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
-.paid-card .summary-icon {
-  background: linear-gradient(135deg, #16a34a, #15803d);
+.patient-summary-total {
+  min-width: 190px;
+  padding: 12px 15px;
+  border: 1px solid #e1e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 12px rgba(23, 35, 47, 0.04);
+  text-align: right;
 }
 
-.paid-card .summary-card-glow {
-  background: #22c55e;
+.patient-summary-total span {
+  display: block;
+  margin-bottom: 3px;
+  color: #7b8791;
+  font-size: 11px;
+  font-weight: 600;
 }
 
-.pending-card .summary-icon {
-  background: linear-gradient(135deg, #f97316, #ea580c);
+.patient-summary-total strong {
+  color: #17232f;
+  font-size: 19px;
+  font-weight: 750;
 }
 
-.pending-card .summary-card-glow {
-  background: #fb923c;
+.patient-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
 }
 
-.payment-card .summary-icon {
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+.patient-summary-card {
+  position: relative;
+  min-height: 145px;
+  padding: 17px;
+  overflow: hidden;
+  border: 1px solid #e3e8eb;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(23, 35, 47, 0.045);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s ease;
 }
 
-.payment-card .summary-card-glow {
-  background: #8b5cf6;
+.patient-summary-card::after {
+  content: "";
+  position: absolute;
+  right: -22px;
+  bottom: -28px;
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: rgba(20, 125, 112, 0.035);
 }
 
-/* Responsive */
+.patient-summary-card:hover {
+  transform: translateY(-2px);
+  border-color: #d3dddf;
+  box-shadow: 0 8px 24px rgba(23, 35, 47, 0.08);
+}
 
-@media (max-width: 1200px) {
-  .payment-summary-cards {
-    grid-template-columns: repeat(2, 1fr);
+.patient-summary-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.patient-summary-icon {
+  width: 39px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9px;
+  background: #f0f8f7;
+  color: #147d70;
+  font-size: 17px;
+}
+
+.patient-summary-label {
+  padding: 4px 7px;
+  border-radius: 5px;
+  background: #f5f7f8;
+  color: #7a8790;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.035em;
+}
+
+.patient-summary-card-content {
+  display: flex;
+  flex-direction: column;
+  margin-top: 18px;
+}
+
+.patient-summary-title {
+  color: #687681;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.patient-summary-value {
+  margin-top: 4px;
+  color: #17232f;
+  font-size: 22px;
+  font-weight: 780;
+  line-height: 1.2;
+}
+
+.patient-summary-subtitle {
+  margin-top: 5px;
+  color: #87929a;
+  font-size: 11px;
+}
+
+.patient-summary-card--paid {
+  border-top: 3px solid #2f8f68;
+}
+
+.patient-summary-card--paid .patient-summary-icon {
+  background: #eef8f2;
+  color: #25835e;
+}
+
+.patient-summary-card--pending {
+  border-top: 3px solid #c88a28;
+}
+
+.patient-summary-card--pending .patient-summary-icon {
+  background: #fff8ea;
+  color: #b8791d;
+}
+
+.patient-summary-card--consultation {
+  border-top: 3px solid #4d7180;
+}
+
+.patient-summary-card--consultation .patient-summary-icon {
+  background: #f0f6f8;
+  color: #416b7b;
+}
+
+.patient-summary-card--medical {
+  border-top: 3px solid #147d70;
+}
+
+.patient-summary-card--paidBills {
+  border-top: 3px solid #2f8f68;
+}
+
+.patient-summary-card--activity {
+  border-top: 3px solid #64748b;
+}
+
+@media (max-width: 1100px) {
+  .patient-summary-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
-@media (max-width: 650px) {
-  .payment-summary-cards {
+@media (max-width: 700px) {
+  .patient-summary-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .patient-summary-total {
+    width: 100%;
+    text-align: left;
+  }
+}
+
+@media (max-width: 520px) {
+  .patient-summary-grid {
     grid-template-columns: 1fr;
-    gap: 16px;
   }
 
-  .summary-card {
-    min-height: 135px;
-    padding: 20px;
-    border-radius: 22px;
+  .patient-summary-card {
+    min-height: 130px;
+  }
+
+  .patient-summary-heading h2 {
+    font-size: 20px;
   }
 }

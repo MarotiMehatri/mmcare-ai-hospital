@@ -1,62 +1,107 @@
-import fs from "fs/promises";
-import path from "path";
-import { ensureDir } from "../utils/fileHelpers.js";
+import mongoose from "mongoose"; 
+import ReportAnalysis from "../models/ReportAnalysis.model.js"; 
 
-const dataDir = path.join(process.cwd(), "src", "data");
-const reportFilePath = path.join(dataDir, "reportAnalyses.json");
+/** * Check whether a value is a valid MongoDB ObjectId. */ 
 
-const defaultData = {
-  reportAnalyses: [],
-};
-
-const ensureStorageFile = async () => {
-  ensureDir(dataDir);
-
-  try {
-    await fs.access(reportFilePath);
-  } catch {
-    await fs.writeFile(reportFilePath, JSON.stringify(defaultData, null, 2));
-  }
-};
-
-export const readReportStorage = async () => {
-  await ensureStorageFile();
-  const raw = await fs.readFile(reportFilePath, "utf-8");
-  return JSON.parse(raw);
-};
-
-export const writeReportStorage = async (data) => {
-  await ensureStorageFile();
-  await fs.writeFile(reportFilePath, JSON.stringify(data, null, 2));
-};
-
-export const saveReportAnalysis = async (record) => {
-  const db = await readReportStorage();
-
-  const newRecord = {
-    id: db.reportAnalyses.length
-      ? db.reportAnalyses[db.reportAnalyses.length - 1].id + 1
-      : 1,
-    ...record,
-    createdAt: new Date().toISOString(),
-    updatedAt: new Date().toISOString(),
+const isValidObjectId = (value) => { 
+  return mongoose.Types.ObjectId.
+  isValid(String(value)); 
+}; 
+  
+  /** * Save a new AI report analysis. * 
+   * * Data is stored directly in MongoDB. */ 
+  
+  export const saveReportAnalysis = async (record) => { 
+    if (!record || typeof record !== "object") { 
+      throw new Error("Report analysis record is required"); 
+    } if (!record.patientId) { 
+      throw new Error("patientId is required"); 
+    } const newRecord = await ReportAnalysis.create({ 
+      ...record, 
+    }); 
+    return newRecord.toObject(); 
   };
 
-  db.reportAnalyses.push(newRecord);
-  await writeReportStorage(db);
+  /** * Get all AI report analyses for a patient. * 
+   * * Latest reports are returned first. */ 
+  
+  export const getPatientReportHistory = async (patientId) => { 
+    if (!patientId) { return []; 
+    } 
+    const reports = await ReportAnalysis.find({ 
+      patientId: String(patientId), }) 
+      .sort({ createdAt: -1 }) 
+    .lean(); return reports; }; 
 
-  return newRecord;
-};
+    /** * Get one AI report analysis by MongoDB _id * or legacyId. */ 
+    
+    export const getSingleReportAnalysis = async (id) => { 
+      if (!id) { return null; 
+      } 
+      let report = null;  
 
-export const getPatientReportHistory = async (patientId) => {
-  const db = await readReportStorage();
+      //First try MongoDB _id. 
+       if (isValidObjectId(id)) { 
+        report = await ReportAnalysis.findById(id).lean(); 
+      }  
+      
+      //If not found, try legacyId. 
+      if (!report) { 
+        report = await ReportAnalysis.findOne({ 
+          legacyId: String(id), 
+        }).lean(); 
+      } 
+      return report; 
+    }; 
+    
+    /** * Update an existing report analysis. *
+     *  * Useful if the AI analysis is processed in multiple stages. */ 
+    
+    export const updateReportAnalysis = async (id, updates) => { 
+      if (!id) { 
+        throw new Error("Report analysis id is required"); 
+      } 
+      if (!updates || typeof updates !== "object") { 
+        throw new Error("Updates are required"); 
+      } 
 
-  return db.reportAnalyses
-    .filter((item) => String(item.patientId) === String(patientId))
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-};
-
-export const getSingleReportAnalysis = async (id) => {
-  const db = await readReportStorage();
-  return db.reportAnalyses.find((item) => String(item.id) === String(id));
-};
+      let report = null; 
+      
+      if (isValidObjectId(id)) { 
+        report = await ReportAnalysis.findByIdAndUpdate( 
+          id, 
+          { $set: updates, }, 
+          { new: true, runValidators: true, } 
+        ).lean(); 
+      } 
+      if (!report) { 
+        report = await ReportAnalysis.findOneAndUpdate( 
+          { legacyId: String(id), }, 
+          { $set: updates, }, 
+          { new: true, runValidators: true, } 
+        ).lean(); 
+      } 
+      return report; 
+    }; 
+    
+    /** * Delete one report analysis. */ 
+    
+    export const deleteReportAnalysis = async (id) => { 
+      if (!id) 
+        { 
+          throw new Error("Report analysis id is required"); 
+        } 
+        
+        let result = null; 
+        if (isValidObjectId(id)) { 
+          
+          result = await ReportAnalysis.findByIdAndDelete(id); 
+        } 
+        
+        if (!result) { 
+          result = await ReportAnalysis.findOneAndDelete(
+            { legacyId: String(id),}
+          ); 
+        } 
+        return result ? result.toObject() : null; 
+      };

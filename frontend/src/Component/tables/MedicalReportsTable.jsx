@@ -1,17 +1,204 @@
 import React from "react";
-import { FaTrash, FaEye, FaFileMedical } from "react-icons/fa";
+
+import {
+  FaTrash,
+  FaEye,
+  FaFileMedical,
+  FaUserInjured,
+  FaUserMd,
+} from "react-icons/fa";
 
 import "../../Styles/Doctor/MedicalReportsTable.css";
 
-function MedicalReportsTable({ reports = [], onDelete }) {
+function MedicalReportsTable({
+  reports = [],
+  patients = [],
+  onDelete,
+}) {
   const safeReports = Array.isArray(reports) ? reports : [];
+  const safePatients = Array.isArray(patients) ? patients : [];
+
+  /*
+  |--------------------------------------------------------------------------
+  | FIND PATIENT
+  |--------------------------------------------------------------------------
+  */
+
+  const getPatient = (patientId) => {
+    return safePatients.find((patient) => {
+      const id =
+        patient?._id ||
+        patient?.id ||
+        patient?.patientId ||
+        patient?.userId;
+
+      return String(id) === String(patientId);
+    });
+  };
+
+  /*
+  |--------------------------------------------------------------------------
+  | PATIENT NAME
+  |--------------------------------------------------------------------------
+  */
+
+  const getPatientName = (report) => {
+    if (report?.patientName) {
+      return report.patientName;
+    }
+
+    const patient = getPatient(report?.patientId);
+
+    return (
+      patient?.FullName ||
+      patient?.fullName ||
+      patient?.name ||
+      patient?.patientName ||
+      "Unknown Patient"
+    );
+  };
+
+  /*
+  |--------------------------------------------------------------------------
+  | PATIENT CODE
+  |--------------------------------------------------------------------------
+  */
+
+  const getPatientCode = (report) => {
+    if (report?.patientCode) {
+      return report.patientCode;
+    }
+
+    const patient = getPatient(report?.patientId);
+
+    return (
+      patient?.patientCode ||
+      patient?.patientID ||
+      patient?.patientNumber ||
+      "No Code"
+    );
+  };
+
+  /*
+  |--------------------------------------------------------------------------
+  | DATE
+  |--------------------------------------------------------------------------
+  */
+
+  const formatDate = (date) => {
+    if (!date) {
+      return "N/A";
+    }
+
+    const parsedDate = new Date(date);
+
+    if (Number.isNaN(parsedDate.getTime())) {
+      return date;
+    }
+
+    return parsedDate.toLocaleDateString("en-IN", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric",
+    });
+  };
+
+  /*
+  |--------------------------------------------------------------------------
+  | INTERNAL REPORT ID
+  |--------------------------------------------------------------------------
+  | Used only for Delete API.
+  | It is NOT displayed in the table.
+  |--------------------------------------------------------------------------
+  */
+
+  const getReportId = (report) => {
+    return (
+      report?._id ||
+      report?.id ||
+      report?.reportId ||
+      null
+    );
+  };
+
+  /*
+  |--------------------------------------------------------------------------
+  | REPORT TITLE
+  |--------------------------------------------------------------------------
+  */
+
+  const getReportTitle = (report) => {
+    return (
+      report?.reportTitle ||
+      report?.title ||
+      "Untitled Report"
+    );
+  };
+
+  /*
+  |--------------------------------------------------------------------------
+  | FILE
+  |--------------------------------------------------------------------------
+  */
+
+  const renderFile = (report) => {
+    const fileUrl =
+      report?.fileUrl ||
+      report?.fileURL ||
+      report?.filePath ||
+      null;
+
+    const fileName =
+      report?.fileName ||
+      report?.originalFileName ||
+      null;
+
+    /*
+     * Actual uploaded file
+     */
+    if (fileUrl) {
+      return (
+        <a
+          className="report-file-link"
+          href={fileUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FaEye />
+          <span>View</span>
+        </a>
+      );
+    }
+
+    /*
+     * File name exists but URL is not available
+     */
+    if (fileName) {
+      return (
+        <span className="report-file-name">
+          <FaFileMedical />
+          <span>{fileName}</span>
+        </span>
+      );
+    }
+
+    /*
+     * No file
+     */
+    return (
+      <span className="no-report-file">
+        No File
+      </span>
+    );
+  };
 
   return (
     <div className="medical-reports-table-wrapper">
+
       <table className="medical-reports-table">
+
         <thead>
           <tr>
-            <th>Report No</th>
             <th>Patient</th>
             <th>Doctor</th>
             <th>Department</th>
@@ -26,72 +213,163 @@ function MedicalReportsTable({ reports = [], onDelete }) {
         </thead>
 
         <tbody>
-          {safeReports.map((report) => (
-            <tr key={report.id || report.reportNumber}>
-              <td>{report.reportNumber || "N/A"}</td>
 
-              <td>
-                <strong>{report.patientName || "Unknown Patient"}</strong>
-                <br />
-                <small>{report.patientCode || "No Code"}</small>
-              </td>
+          {safeReports.length === 0 ? (
 
-              <td>{report.doctorName || report.uploadedBy || "Doctor"}</td>
-              <td>{report.department || "N/A"}</td>
-              <td>{report.reportTitle || "N/A"}</td>
-              <td>{report.reportType || "N/A"}</td>
-              <td>{report.reportDate || "N/A"}</td>
-
-              <td>
-                <span className="report-status">
-                  {report.status || "Uploaded"}
-                </span>
-              </td>
-
-              <td>
-                <span
-                  className={`report-priority ${
-                    report.priority?.toLowerCase() || "normal"
-                  }`}
-                >
-                  {report.priority || "Normal"}
-                </span>
-              </td>
-
-              <td>
-                {report.fileUrl ? (
-                  <a
-                    className="report-file-link"
-                    href={report.fileUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <FaEye /> View
-                  </a>
-                ) : report.fileName ? (
-                  <span className="report-file-name">
-                    <FaFileMedical /> {report.fileName}
-                  </span>
-                ) : (
-                  <span className="no-report-file">No File</span>
-                )}
-              </td>
-
-              <td>
-                <button
-                  type="button"
-                  className="report-delete-btn"
-                  onClick={() => onDelete?.(report.id)}
-                  disabled={!report.id}
-                  title="Delete report"
-                >
-                  <FaTrash />
-                </button>
+            <tr>
+              <td
+                colSpan="10"
+                className="medical-reports-empty"
+              >
+                No medical reports found.
               </td>
             </tr>
-          ))}
+
+          ) : (
+
+            safeReports.map((report, index) => {
+
+              /*
+               * API ID is still required internally
+               * for DELETE operation.
+               */
+              const reportId = getReportId(report);
+
+              const rowKey =
+                reportId
+                  ? `medical-report-${String(reportId)}`
+                  : `medical-report-row-${index}`;
+
+              return (
+                <tr key={rowKey}>
+
+                  {/* PATIENT */}
+
+                  <td>
+                    <div className="report-patient-cell">
+
+                      <div className="report-table-icon">
+                        <FaUserInjured />
+                      </div>
+
+                      <div>
+                        <strong>
+                          {getPatientName(report)}
+                        </strong>
+
+                        <small>
+                          {getPatientCode(report)}
+                        </small>
+                      </div>
+
+                    </div>
+                  </td>
+
+                  {/* DOCTOR */}
+
+                  <td>
+                    <div className="report-doctor-cell">
+
+                      <FaUserMd />
+
+                      <span>
+                        {report?.doctorName ||
+                          report?.uploadedBy ||
+                          `Doctor #${report?.doctorId || "N/A"}`}
+                      </span>
+
+                    </div>
+                  </td>
+
+                  {/* DEPARTMENT */}
+
+                  <td>
+                    {report?.department || "N/A"}
+                  </td>
+
+                  {/* TITLE */}
+
+                  <td>
+                    <strong className="report-title">
+                      {getReportTitle(report)}
+                    </strong>
+                  </td>
+
+                  {/* TYPE */}
+
+                  <td>
+                    {report?.reportType || "-"}
+                  </td>
+
+                  {/* DATE */}
+
+                  <td>
+                    {formatDate(
+                      report?.reportDate ||
+                      report?.uploadDate ||
+                      report?.createdAt
+                    )}
+                  </td>
+
+                  {/* STATUS */}
+
+                  <td>
+                    <span
+                      className={`report-status ${String(
+                        report?.status || "Pending"
+                      )
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
+                    >
+                      {report?.status || "Pending"}
+                    </span>
+                  </td>
+
+                  {/* PRIORITY */}
+
+                  <td>
+                    <span
+                      className={`report-priority ${String(
+                        report?.priority || "Normal"
+                      )
+                        .toLowerCase()
+                        .replace(/\s+/g, "-")}`}
+                    >
+                      {report?.priority || "Normal"}
+                    </span>
+                  </td>
+
+                  {/* FILE */}
+
+                  <td>
+                    {renderFile(report)}
+                  </td>
+
+                  {/* ACTION */}
+
+                  <td>
+
+                    <button
+                      type="button"
+                      className="report-delete-btn"
+                      onClick={() => onDelete?.(reportId)}
+                      disabled={!reportId}
+                      title="Delete report"
+                    >
+                      <FaTrash />
+                    </button>
+
+                  </td>
+
+                </tr>
+              );
+            })
+          )}
+
         </tbody>
+
       </table>
+
     </div>
   );
 }

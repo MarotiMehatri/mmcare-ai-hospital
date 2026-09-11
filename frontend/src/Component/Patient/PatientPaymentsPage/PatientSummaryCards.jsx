@@ -1,90 +1,209 @@
 import React, { useMemo } from "react";
 import {
   FaFileInvoiceDollar,
+  FaRupeeSign,
   FaCheckCircle,
   FaClock,
-  FaMoneyBillWave,
+  FaStethoscope,
+  FaCapsules,
+  FaReceipt,
+  FaChartLine,
 } from "react-icons/fa";
 
 import "../../../Styles/Patient/PatientSummaryCards.css";
 
 function PatientSummaryCards({ payments = [] }) {
-  console.log("PatientSummaryCards payments:", payments);
-
-  const safePayments = Array.isArray(payments) ? payments : [];
+  const safePayments = Array.isArray(payments)
+    ? payments.filter(Boolean)
+    : [];
 
   const summary = useMemo(() => {
-    const getAmount = (payment) =>
-      Number(payment.totalAmount || payment.amount || payment.total || 0);
+    let totalAmount = 0;
+    let paidAmount = 0;
+    let pendingAmount = 0;
+    let consultationAmount = 0;
+    let medicalAmount = 0;
 
-    const isPaid = (payment) =>
-      String(payment.paymentStatus || payment.status || "")
-        .toLowerCase()
-        .trim() === "paid";
+    let paidBills = 0;
+    let pendingBills = 0;
+    let cancelledBills = 0;
 
-    const totalBills = safePayments.reduce(
-      (sum, payment) => sum + getAmount(payment),
-      0,
-    );
+    safePayments.forEach((payment) => {
+      const total = Number(
+        payment?.totalAmount ||
+          payment?.grandTotal ||
+          payment?.total ||
+          0,
+      );
 
-    const paidAmount = safePayments
-      .filter(isPaid)
-      .reduce((sum, payment) => sum + getAmount(payment), 0);
+      const consultation = Number(payment?.consultationFee || 0);
+      const medical = Number(payment?.medicalBill || 0);
 
-    const pendingAmount = safePayments
-      .filter((payment) => !isPaid(payment))
-      .reduce((sum, payment) => sum + getAmount(payment), 0);
+      const status = String(
+        payment?.paymentStatus || "Pending",
+      ).toLowerCase();
+
+      totalAmount += total;
+      consultationAmount += consultation;
+      medicalAmount += medical;
+
+      if (status === "paid") {
+        paidAmount += total;
+        paidBills += 1;
+      } else if (status === "cancelled" || status === "canceled") {
+        cancelledBills += 1;
+      } else {
+        pendingAmount += total;
+        pendingBills += 1;
+      }
+    });
 
     return {
-      totalBills,
+      totalBills: safePayments.length,
+      totalAmount,
       paidAmount,
       pendingAmount,
-      totalPayments: safePayments.length,
+      consultationAmount,
+      medicalAmount,
+      paidBills,
+      pendingBills,
+      cancelledBills,
     };
   }, [safePayments]);
 
+  const formatMoney = (amount) => {
+    return `₹${Number(amount || 0).toLocaleString("en-IN")}`;
+  };
+
+  const cards = [
+    {
+      key: "total",
+      title: "Total Bills",
+      value: summary.totalBills,
+      subtitle: `${summary.totalBills === 1 ? "Billing record" : "Billing records"}`,
+      icon: <FaFileInvoiceDollar />,
+      label: "All records",
+    },
+    {
+      key: "amount",
+      title: "Total Amount",
+      value: formatMoney(summary.totalAmount),
+      subtitle: "Overall billed amount",
+      icon: <FaRupeeSign />,
+      label: "Billing value",
+    },
+    {
+      key: "paid",
+      title: "Paid Amount",
+      value: formatMoney(summary.paidAmount),
+      subtitle: `${summary.paidBills} paid ${summary.paidBills === 1 ? "bill" : "bills"}`,
+      icon: <FaCheckCircle />,
+      label: "Completed",
+    },
+    {
+      key: "pending",
+      title: "Pending Amount",
+      value: formatMoney(summary.pendingAmount),
+      subtitle: `${summary.pendingBills} pending ${summary.pendingBills === 1 ? "bill" : "bills"}`,
+      icon: <FaClock />,
+      label: "Due amount",
+    },
+    {
+      key: "consultation",
+      title: "Consultation Fees",
+      value: formatMoney(summary.consultationAmount),
+      subtitle: "Doctor consultation",
+      icon: <FaStethoscope />,
+      label: "Consultation",
+    },
+    {
+      key: "medical",
+      title: "Medical Bills",
+      value: formatMoney(summary.medicalAmount),
+      subtitle: "Medicines & medical charges",
+      icon: <FaCapsules />,
+      label: "Medical",
+    },
+    {
+      key: "paidBills",
+      title: "Paid Bills",
+      value: summary.paidBills,
+      subtitle: "Successfully completed",
+      icon: <FaReceipt />,
+      label: "Completed",
+    },
+    {
+      key: "activity",
+      title: "Payment Activity",
+      value:
+        summary.totalBills > 0
+          ? `${Math.round(
+              (summary.paidBills / summary.totalBills) * 100,
+            )}%`
+          : "0%",
+      subtitle: "Bills paid",
+      icon: <FaChartLine />,
+      label: "Payment progress",
+    },
+  ];
+
   return (
-    <div className="patient-summary-cards">
-      <div className="summary-card total-card">
-        <div className="summary-icon">
-          <FaFileInvoiceDollar />
+    <section className="patient-summary-section">
+      <div className="patient-summary-heading">
+        <div className="patient-summary-heading-left">
+          <span className="patient-summary-eyebrow">
+            <FaReceipt />
+            Billing Overview
+          </span>
+
+          <div>
+            <h2>Payment Summary</h2>
+            <p>
+              A quick overview of your hospital billing and payment
+              activity.
+            </p>
+          </div>
         </div>
-        <div className="summary-content">
-          <h4>Total Bills</h4>
-          <h2>₹{summary.totalBills}</h2>
+
+        <div className="patient-summary-total">
+          <span>Current Billing Value</span>
+          <strong>{formatMoney(summary.totalAmount)}</strong>
         </div>
       </div>
 
-      <div className="summary-card paid-card">
-        <div className="summary-icon">
-          <FaCheckCircle />
-        </div>
-        <div className="summary-content">
-          <h4>Paid Amount</h4>
-          <h2>₹{summary.paidAmount}</h2>
-        </div>
-      </div>
+      <div className="patient-summary-grid">
+        {cards.map((card) => (
+          <article
+            key={card.key}
+            className={`patient-summary-card patient-summary-card--${card.key}`}
+          >
+            <div className="patient-summary-card-top">
+              <div className="patient-summary-icon">
+                {card.icon}
+              </div>
 
-      <div className="summary-card pending-card">
-        <div className="summary-icon">
-          <FaClock />
-        </div>
-        <div className="summary-content">
-          <h4>Pending Amount</h4>
-          <h2>₹{summary.pendingAmount}</h2>
-        </div>
-      </div>
+              <span className="patient-summary-label">
+                {card.label}
+              </span>
+            </div>
 
-      <div className="summary-card payment-card">
-        <div className="summary-icon">
-          <FaMoneyBillWave />
-        </div>
-        <div className="summary-content">
-          <h4>Total Payments</h4>
-          <h2>{summary.totalPayments}</h2>
-        </div>
+            <div className="patient-summary-card-content">
+              <span className="patient-summary-title">
+                {card.title}
+              </span>
+
+              <strong className="patient-summary-value">
+                {card.value}
+              </strong>
+
+              <span className="patient-summary-subtitle">
+                {card.subtitle}
+              </span>
+            </div>
+          </article>
+        ))}
       </div>
-    </div>
+    </section>
   );
 }
 

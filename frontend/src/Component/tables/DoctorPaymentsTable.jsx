@@ -6,7 +6,7 @@ import {
   FaUserInjured,
 } from "react-icons/fa";
 
-import "../../Styles/Doctor/DoctorPaymentsTable.css";
+import "../../Styles/Doctor/DoctorPaymentsTable1.css";
 
 function DoctorPaymentsTable({ payments = [] }) {
   const formatMoney = (amount) =>
