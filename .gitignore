@@ -1,105 +1,24 @@
-# ==========================================
-# Node.js / React Project
-# ==========================================
-
 # Node modules
 node_modules/
 
-
-# ==========================================
-# Environment Variables / Secrets
-# ==========================================
-
+# Environment variables
 .env
-.env.*
-!.env.example
 
-
-# ==========================================
-# Build / Production Files
-# ==========================================
-
+# Build folders
 dist/
 build/
-out/
 
-
-# ==========================================
 # Logs
-# ==========================================
-
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
-
-# ==========================================
-# Coverage / Testing
-# ==========================================
-
-coverage/
-.nyc_output/
-
-
-# ==========================================
-# Cache / Temporary Files
-# ==========================================
-
-.cache/
-.parcel-cache/
-.eslintcache
-*.tmp
-*.temp
-
-
-# ==========================================
-# Operating System Files
-# ==========================================
-
+# Operating System files
 .DS_Store
 Thumbs.db
 
-
-# ==========================================
 # VS Code
-# ==========================================
-
 .vscode/
-*.code-workspace
 
-
-# ==========================================
-# Legacy JSON Server Database
-# MongoDB is now used instead
-# ==========================================
-
-backend/db.json
-backend/src/db.json
-
-
-# ==========================================
-# MongoDB / Local Database Dumps
-# ==========================================
-
-dump/
-mongodb-dump/
-*.bson
-*.gz
-
-
-# ==========================================
-# Uploads / Generated Files
-# ==========================================
-
-backend/uploads/
-backend/temp/
-backend/tmp/
-
-
-# ==========================================
-# Optional: Local Development Files
-# ==========================================
-
-*.local
+# Coverage
+coverage/
